@@ -1,0 +1,45 @@
+{
+  "_comment": "Curated list of veteran-related state bills tracked for the SLEF national tracker. Add new entries as MOAA chapters identify priority bills. 'state' must be a 2-letter LegiScan state code. 'bill_number' must match the bill's official number (e.g. HB5262, SB123).",
+  "bills": [
+    {
+      "state": "MI",
+      "bill_number": "HB5262",
+      "label": "Veteran of the Uniformed Services Definition",
+      "category": "Veteran Recognition (NOAA/USPHS)",
+      "chapter": "Michigan Council of Chapters",
+      "summary": "Amends 1965 PA 190 (MCL 35.61) to define 'veteran of the uniformed services' to include NOAA and U.S. Public Health Service commissioned officers, consistent with Title 38 USC.",
+      "priority": false,
+      "advocacy_url": "https://moaa-mcoc.github.io/LAC/?bill=HB5262"
+    },
+    {
+      "state": "MI",
+      "bill_number": "HB5278",
+      "label": "State ID Card Veteran Designation",
+      "category": "Veteran Recognition (NOAA/USPHS)",
+      "chapter": "Michigan Council of Chapters",
+      "summary": "Amends 1972 PA 222 to extend the veteran designation on Michigan state ID cards to NOAA and USPHS commissioned officers.",
+      "priority": false,
+      "advocacy_url": "https://moaa-mcoc.github.io/LAC/?bill=HB5278"
+    },
+    {
+      "state": "MI",
+      "bill_number": "HB5279",
+      "label": "Driver's License Veteran Designation",
+      "category": "Veteran Recognition (NOAA/USPHS)",
+      "chapter": "Michigan Council of Chapters",
+      "summary": "Amends 1949 PA 300 (Michigan Vehicle Code) to extend the veteran designation on driver's licenses to NOAA and USPHS commissioned officers.",
+      "priority": false,
+      "advocacy_url": "https://moaa-mcoc.github.io/LAC/?bill=HB5279"
+    },
+    {
+      "state": "MI",
+      "bill_number": "HB5280",
+      "label": "Retirement Pay Tax Equity",
+      "category": "Veteran Recognition (NOAA/USPHS)",
+      "chapter": "Michigan Council of Chapters",
+      "summary": "Amends 1967 PA 281 (Income Tax Act) to extend Michigan retirement/pension tax deductions to NOAA and USPHS commissioned officers on par with other uniformed services veterans.",
+      "priority": true,
+      "advocacy_url": "https://moaa-mcoc.github.io/LAC/?bill=HB5280"
+    }
+  ]
+}
