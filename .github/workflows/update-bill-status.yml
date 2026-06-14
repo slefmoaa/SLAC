@@ -30,4 +30,5 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add bills.json
           git diff --staged --quiet || git commit -m "Update bill status (automated)"
+          git pull --rebase origin main
           git push
