@@ -1,0 +1,33 @@
+name: Update Bill Status
+
+on:
+  schedule:
+    # Runs daily at 12:00 UTC (8am ET)
+    - cron: '0 12 * * *'
+  workflow_dispatch: {}  # allows manual run from the Actions tab
+  push:
+    paths:
+      - 'tracked-bills.json'  # re-run automatically when the bill list changes
+
+permissions:
+  contents: write
+
+jobs:
+  update-bills:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v5
+
+      - name: Fetch bill status from LegiScan
+        env:
+          LEGISCAN_API_KEY: ${{ secrets.LEGISCAN_API_KEY }}
+        run: node scripts/fetch-bill-status.mjs
+
+      - name: Commit updated bills.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add bills.json
+          git diff --staged --quiet || git commit -m "Update bill status (automated)"
+          git push
