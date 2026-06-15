@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-15T21:38:52.346Z",
+  "generated": "2026-06-15T21:47:21.681Z",
   "bills": [
     {
       "state": "MI",
@@ -21,7 +21,7 @@
       "committee": "Government Operations",
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5262",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5262/2025",
-      "updated": "2026-06-15T21:38:48.908Z"
+      "updated": "2026-06-15T21:47:18.846Z"
     },
     {
       "state": "MI",
@@ -43,7 +43,7 @@
       "committee": "Government Operations",
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5278",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5278/2025",
-      "updated": "2026-06-15T21:38:49.421Z"
+      "updated": "2026-06-15T21:47:19.343Z"
     },
     {
       "state": "MI",
@@ -65,7 +65,7 @@
       "committee": "Government Operations",
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5279",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5279/2025",
-      "updated": "2026-06-15T21:38:49.903Z"
+      "updated": "2026-06-15T21:47:19.771Z"
     },
     {
       "state": "MI",
@@ -87,7 +87,7 @@
       "committee": "Government Operations",
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5280",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5280/2025",
-      "updated": "2026-06-15T21:38:50.380Z"
+      "updated": "2026-06-15T21:47:20.197Z"
     },
     {
       "state": "MN",
@@ -109,7 +109,7 @@
       "committee": "Veterans and Military Affairs",
       "state_link": "https://www.revisor.mn.gov/bills/94/2026/0/HF/3911/",
       "legiscan_url": "https://legiscan.com/MN/bill/HF3911/2025",
-      "updated": "2026-06-15T21:38:51.218Z"
+      "updated": "2026-06-15T21:47:20.788Z"
     },
     {
       "state": "PA",
@@ -131,7 +131,7 @@
       "committee": "Appropriations",
       "state_link": "https://www.palegis.us/legislation/bills/2025/sb1209",
       "legiscan_url": "https://legiscan.com/PA/bill/SB1209/2025",
-      "updated": "2026-06-15T21:38:51.945Z"
+      "updated": "2026-06-15T21:47:21.280Z"
     }
   ]
 }
