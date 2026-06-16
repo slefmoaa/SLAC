@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-16T21:51:01.418Z",
+  "generated": "2026-06-16T22:33:37.966Z",
   "bills": [
     {
       "state": "MI",
@@ -13,9 +13,15 @@
       "chamber_target": "lower",
       "email_subject": "Support for HB 5262 — Veteran Recognition for NOAA & USPHS Officers",
       "email_template": "Dear [LEGISLATOR_NAME],\n\nI am writing to urge your support for HB 5262, which would amend Act 190 of 1965 to include commissioned officers of NOAA and the USPHS as a class of veterans, consistent with the federal definition under Title 38 of the United States Code.\n\nUnder federal law, NOAA and USPHS commissioned officers are recognized as veterans by the Department of Veterans Affairs. Michigan law currently fails to extend this same recognition, creating an unjust gap in benefits and honors for individuals who have served in a uniformed capacity.\n\nHB 5262 is a straightforward alignment of Michigan law with existing federal standards. I respectfully ask for your support in advancing this bill through committee.\n\nThank you for your service to the people of Michigan.\n\nRespectfully,\n[FULL_NAME]\n[CITY], [STATE]\nMember, [CHAPTER]",
-      "status_label": "Error",
-      "error": "fetch failed",
-      "updated": "2026-06-16T21:49:46.394Z"
+      "title": "Veterans: other; definition for veteran of the uniformed services; create. Amends sec. 1 of 1965 PA 190 (MCL 35.61).",
+      "status": 1,
+      "status_label": "Introduced",
+      "last_action_date": "2025-11-13",
+      "last_action": "Bill Electronically Reproduced 11/12/2025",
+      "committee": "Government Operations",
+      "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5262",
+      "legiscan_url": "https://legiscan.com/MI/bill/HB5262/2025",
+      "updated": "2026-06-16T22:33:35.078Z"
     },
     {
       "state": "MI",
@@ -29,9 +35,15 @@
       "chamber_target": "lower",
       "email_subject": "Support for HB 5278 — Veteran ID Recognition for NOAA & USPHS Officers",
       "email_template": "Dear [LEGISLATOR_NAME],\n\nI am writing to ask for your support of HB 5278, which would extend the veteran designation on Michigan state identification cards to commissioned officers of NOAA and the USPHS.\n\nThese uniformed service members are recognized as veterans under federal law (38 USC) but are currently excluded from this recognition on Michigan state IDs. This small change would mean a great deal to the men and women who served in these federal uniformed services and now call Michigan home.\n\nI respectfully request your support in moving HB 5278 forward in the House Government Operations Committee.\n\nRespectfully,\n[FULL_NAME]\n[CITY], [STATE]\nMember, [CHAPTER]",
-      "status_label": "Error",
-      "error": "fetch failed",
-      "updated": "2026-06-16T21:49:46.439Z"
+      "title": "State: identification cards; individuals who served in the NOAACOC or USPHSCC; include in the definition of veteran. Amends sec. 2 of 1972 PA 222 (MCL 28.292).",
+      "status": 1,
+      "status_label": "Introduced",
+      "last_action_date": "2025-11-13",
+      "last_action": "Bill Electronically Reproduced 11/12/2025",
+      "committee": "Government Operations",
+      "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5278",
+      "legiscan_url": "https://legiscan.com/MI/bill/HB5278/2025",
+      "updated": "2026-06-16T22:33:35.529Z"
     },
     {
       "state": "MI",
@@ -45,9 +57,15 @@
       "chamber_target": "lower",
       "email_subject": "Support for HB 5279 — Veteran Driver's License Recognition for NOAA & USPHS Officers",
       "email_template": "Dear [LEGISLATOR_NAME],\n\nI am writing to request your support for HB 5279, which would extend the veteran designation on Michigan driver's licenses to commissioned officers of NOAA and the USPHS.\n\nThese federally recognized uniformed service veterans currently cannot receive the veteran designation on their Michigan driver's license — an inconsistency with federal law that this bill would correct. The change carries no meaningful fiscal impact and simply provides fair, equal recognition to all who have served.\n\nI ask that you support HB 5279 and help advance it through the House Government Operations Committee.\n\nRespectfully,\n[FULL_NAME]\n[CITY], [STATE]\nMember, [CHAPTER]",
-      "status_label": "Error",
-      "error": "fetch failed",
-      "updated": "2026-06-16T21:49:46.439Z"
+      "title": "Vehicles: registration plates; individuals who served in the NOAACOC or USPHSCC; include in the definition of veteran and provide special registration plates for. Amends sec. 310 of 1949 PA 300 (MCL 257.310) & adds secs. 803v & 803w.",
+      "status": 1,
+      "status_label": "Introduced",
+      "last_action_date": "2025-11-13",
+      "last_action": "Bill Electronically Reproduced 11/12/2025",
+      "committee": "Government Operations",
+      "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5279",
+      "legiscan_url": "https://legiscan.com/MI/bill/HB5279/2025",
+      "updated": "2026-06-16T22:33:35.954Z"
     },
     {
       "state": "MI",
@@ -61,9 +79,15 @@
       "chamber_target": "lower",
       "email_subject": "Support for HB 5280 — Retirement Pay Tax Equity for NOAA & USPHS Officers",
       "email_template": "Dear [LEGISLATOR_NAME],\n\nI am writing to respectfully request your support for HB 5280, which would extend Michigan retirement tax fairness to active duty, retired officers, and surviving spouses of the United States Public Health Service (USPHS) and National Oceanic and Atmospheric Administration (NOAA) Commissioned Corps.\n\nThese individuals are members of the uniformed services of the United States and are recognized as veterans by the Department of Veterans Affairs. HB 5280 is a narrow, fiscally responsible measure that simply ensures equal treatment among federally recognized uniformed services retirees.\n\nI respectfully ask that you support HB 5280 and assist in advancing the bill through the House Government Operations Committee.\n\nRespectfully,\n[FULL_NAME]\n[CITY], [STATE]\nMember, [CHAPTER]",
-      "status_label": "Error",
-      "error": "fetch failed",
-      "updated": "2026-06-16T21:49:46.439Z"
+      "title": "Individual income tax: deductions; retirement and pension benefits and student loan forgiveness deductions for certain commissioned officers; provide for. Amends sec. 30 of 1967 PA 281 (MCL 206.30).",
+      "status": 1,
+      "status_label": "Introduced",
+      "last_action_date": "2025-11-13",
+      "last_action": "Bill Electronically Reproduced 11/12/2025",
+      "committee": "Government Operations",
+      "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5280",
+      "legiscan_url": "https://legiscan.com/MI/bill/HB5280/2025",
+      "updated": "2026-06-16T22:33:36.381Z"
     },
     {
       "state": "MN",
@@ -77,9 +101,15 @@
       "chamber_target": "lower",
       "email_subject": "Support for HF 3911 — Veterans Home Eligibility for NOAA & USPHS Officers",
       "email_template": "Dear [LEGISLATOR_NAME],\n\nI am writing to urge your support for HF 3911, which would authorize certain former commissioned officers of the United States Public Health Service (USPHS) and the National Oceanic and Atmospheric Administration (NOAA) Commissioned Corps to reside in Minnesota veterans homes, provided they meet honorable service and active duty requirements.\n\nUnder federal law (Title 38 USC), commissioned officers of the USPHS and NOAA are recognized as veterans by the Department of Veterans Affairs. Minnesota's veterans home eligibility rules currently do not reflect this recognition, leaving these veterans without access to a benefit available to their peers in other uniformed services.\n\nHF 3911 is a narrow, common-sense fix that aligns Minnesota law with the federal definition of veteran. I respectfully ask for your support in advancing this bill.\n\nThank you for your service to the people of Minnesota.\n\nRespectfully,\n[FULL_NAME]\n[CITY], [STATE]\nMember, [CHAPTER]",
-      "status_label": "Error",
-      "error": "fetch failed",
-      "updated": "2026-06-16T21:50:23.927Z"
+      "title": "Former officers of the Public Health Service and the National Oceanic and Atmospheric Administration authorized to reside in state veterans homes.",
+      "status": 1,
+      "status_label": "Introduced",
+      "last_action_date": "2026-03-05",
+      "last_action": "Author added Hansen, R.",
+      "committee": "Veterans and Military Affairs",
+      "state_link": "https://www.revisor.mn.gov/bills/94/2026/0/HF/3911/",
+      "legiscan_url": "https://legiscan.com/MN/bill/HF3911/2025",
+      "updated": "2026-06-16T22:33:37.016Z"
     },
     {
       "state": "PA",
@@ -93,9 +123,15 @@
       "chamber_target": "upper",
       "email_subject": "Support for SB 1209 — PA Benefit Scam Protection",
       "email_template": "Dear [LEGISLATOR_NAME],\n\nI am writing to urge your support for SB 1209, which amends Title 51 (Military Affairs) of the Pennsylvania Consolidated Statutes to strengthen protections for veterans seeking help with their benefits claims.\n\nClaim sharks and predatory benefit consultants continue to take advantage of veterans, often charging illegal fees or providing inadequate assistance with VA claims. SB 1209 addresses this by further providing for the Veterans' Trust Fund, supporting grants to veterans' service officer programs, establishing clear standards for veterans' claims assistance, and imposing penalties on bad actors who exploit veterans.\n\nThis bill is an important step toward ensuring Pennsylvania veterans can access trustworthy, accountable help when filing for the benefits they have earned.\n\nI respectfully ask for your support in advancing SB 1209.\n\nThank you for your service to the people of Pennsylvania.\n\nRespectfully,\n[FULL_NAME]\n[CITY], [STATE]\nMember, [CHAPTER]",
-      "status_label": "Error",
-      "error": "fetch failed",
-      "updated": "2026-06-16T21:51:01.418Z"
+      "title": "In State Veterans' Commission and Deputy Adjutant General for Veterans' Affairs, further providing for Veterans' Trust Fund; in veterans' organizations, further providing for grants to veterans' service officer programs and providing for veterans' claims assistance standards; and imposing penalties.",
+      "status": 1,
+      "status_label": "Introduced",
+      "last_action_date": "2026-03-18",
+      "last_action": "Re-referred to Appropriations",
+      "committee": "Appropriations",
+      "state_link": "https://www.palegis.us/legislation/bills/2025/sb1209",
+      "legiscan_url": "https://legiscan.com/PA/bill/SB1209/2025",
+      "updated": "2026-06-16T22:33:37.566Z"
     }
   ]
 }
