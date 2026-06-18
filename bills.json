@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-18T10:22:44.668Z",
+  "generated": "2026-06-18T11:36:12.938Z",
   "bills": [
     {
       "state": "MI",
@@ -24,7 +24,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5262",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5262/2025",
       "final_date": null,
-      "updated": "2026-06-18T10:22:41.913Z"
+      "updated": "2026-06-18T11:36:08.651Z"
     },
     {
       "state": "MI",
@@ -49,7 +49,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5278",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5278/2025",
       "final_date": null,
-      "updated": "2026-06-18T10:22:42.358Z"
+      "updated": "2026-06-18T11:36:09.127Z"
     },
     {
       "state": "MI",
@@ -74,7 +74,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5279",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5279/2025",
       "final_date": null,
-      "updated": "2026-06-18T10:22:42.780Z"
+      "updated": "2026-06-18T11:36:09.605Z"
     },
     {
       "state": "MI",
@@ -99,7 +99,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5280",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5280/2025",
       "final_date": null,
-      "updated": "2026-06-18T10:22:43.202Z"
+      "updated": "2026-06-18T11:36:10.078Z"
     },
     {
       "state": "MN",
@@ -124,7 +124,7 @@
       "state_link": "https://www.revisor.mn.gov/bills/94/2026/0/HF/3911/",
       "legiscan_url": "https://legiscan.com/MN/bill/HF3911/2025",
       "final_date": null,
-      "updated": "2026-06-18T10:22:43.765Z"
+      "updated": "2026-06-18T11:36:10.918Z"
     },
     {
       "state": "PA",
@@ -149,7 +149,57 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/sb1209",
       "legiscan_url": "https://legiscan.com/PA/bill/SB1209/2025",
       "final_date": null,
-      "updated": "2026-06-18T10:22:44.267Z"
+      "updated": "2026-06-18T11:36:11.587Z"
+    },
+    {
+      "state": "PA",
+      "bill_number": "HB1918",
+      "label": "Prohibiting Compensation for Veterans' Benefits Assistance",
+      "category": "Benefits",
+      "chapter": "Cumberland Valley (PA) Chapter",
+      "summary": "Amends Title 51 (Military Affairs) of the Pennsylvania Consolidated Statutes to prohibit charging veterans for benefits claims assistance, except as permitted under federal law, mirroring the proposed federal GUARD VA Benefits Act.",
+      "priority": true,
+      "advocacy_url": "https://moaa-mcoc.github.io/LAC/?bill=HB1918",
+      "chamber_target": "both",
+      "position": "support",
+      "position_notes": "",
+      "email_subject": "Support for HB 1918 — Prohibiting Predatory Fees for Veterans’ Benefits Assistance",
+      "email_template": "Dear [LEGISLATOR_NAME],\n\nI am writing to urge your support for HB 1918, which would amend Title 51 (Military Affairs) of the Pennsylvania Consolidated Statutes to prohibit the charging of fees for veterans’ benefits claims assistance, except as expressly permitted under federal law.\n\nVeterans often face significant challenges when applying for the benefits they have earned through their service and sacrifice. Unfortunately, their need for assistance makes them vulnerable to “claim sharks” — unaccredited individuals and organizations that charge excessive fees and engage in predatory practices to exploit veterans’ trust. These bad actors do not adhere to the professional standards required of VA-accredited representatives, leaving veterans worse off than before.\n\nHB 1918 mirrors the proposed federal GUARD VA Benefits Act and would ensure that Pennsylvania veterans can access the benefits they have rightfully earned without fear of being taken advantage of. I respectfully ask for your support in advancing this bill.\n\nThank you for your service to the people of Pennsylvania.\n\nRespectfully,\n[FULL_NAME]\n[CITY], [STATE]\nMember, [CHAPTER]",
+      "title": "In general provisions, providing for prohibiting the receipt of compensation with regard to veterans' benefits.",
+      "status": 1,
+      "status_label": "Introduced",
+      "last_action_date": "2025-10-06",
+      "last_action": "Referred to Veterans Affairs & Emergency Preparedness",
+      "committee": "Veterans Affairs & Emergency Preparedness",
+      "state_link": "https://www.palegis.us/legislation/bills/2025/hb1918",
+      "legiscan_url": "https://legiscan.com/PA/bill/HB1918/2025",
+      "final_date": null,
+      "updated": "2026-06-18T11:36:12.059Z"
+    },
+    {
+      "state": "PA",
+      "bill_number": "HB1177",
+      "label": "Income Tax Relief for USPHS and NOAA Officers on Active Duty",
+      "category": "Taxes",
+      "chapter": "Cumberland Valley (PA) Chapter",
+      "summary": "Amends the Tax Reform Code of 1971 to extend Pennsylvania income tax relief to USPHS and NOAA commissioned officers while on active duty or active-duty orders outside Pennsylvania, consistent with the exemption already provided to Armed Forces members.",
+      "priority": true,
+      "advocacy_url": "https://moaa-mcoc.github.io/LAC/?bill=HB1177",
+      "chamber_target": "both",
+      "position": "support",
+      "position_notes": "",
+      "email_subject": "Support for HB 1177 — Income Tax Relief for USPHS & NOAA Officers",
+      "email_template": "Dear [LEGISLATOR_NAME],\n\nI am writing to urge your support for HB 1177, which would amend the Tax Reform Code of 1971 to extend Pennsylvania income tax relief to commissioned officers of the United States Public Health Service (USPHS) and the National Oceanic and Atmospheric Administration (NOAA) while serving on active duty or active-duty orders outside Pennsylvania.\n\nBoth USPHS and NOAA serve vital roles for our nation’s health and well-being. Their officers routinely go into harm’s way in service to our country, just as members of the Armed Forces do. Yet while Pennsylvania exempts Armed Forces income from state income tax, USPHS and NOAA officers’ income remains taxable — an inequity that HB 1177 would correct.\n\nThis is a straightforward matter of equal treatment for those who serve in uniform. I respectfully ask for your support in advancing HB 1177.\n\nThank you for your service to the people of Pennsylvania.\n\nRespectfully,\n[FULL_NAME]\n[CITY], [STATE]\nMember, [CHAPTER]",
+      "title": "In personal income tax, further providing for classes of income.",
+      "status": 1,
+      "status_label": "Introduced",
+      "last_action_date": "2025-04-09",
+      "last_action": "Referred to Finance",
+      "committee": "Finance",
+      "state_link": "https://www.palegis.us/legislation/bills/2025/hb1177",
+      "legiscan_url": "https://legiscan.com/PA/bill/HB1177/2025",
+      "final_date": null,
+      "updated": "2026-06-18T11:36:12.538Z"
     }
   ]
 }
