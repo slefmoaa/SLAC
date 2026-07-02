@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-02T14:27:28.101Z",
+  "generated": "2026-07-02T14:51:15.573Z",
   "bills": [
     {
       "state": "MI",
@@ -24,7 +24,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5262",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5262/2025",
       "final_date": null,
-      "updated": "2026-07-02T14:27:23.468Z"
+      "updated": "2026-07-02T14:51:11.346Z"
     },
     {
       "state": "MI",
@@ -49,7 +49,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5278",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5278/2025",
       "final_date": null,
-      "updated": "2026-07-02T14:27:23.960Z"
+      "updated": "2026-07-02T14:51:11.839Z"
     },
     {
       "state": "MI",
@@ -74,7 +74,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5279",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5279/2025",
       "final_date": null,
-      "updated": "2026-07-02T14:27:24.435Z"
+      "updated": "2026-07-02T14:51:12.272Z"
     },
     {
       "state": "MI",
@@ -99,7 +99,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5280",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5280/2025",
       "final_date": null,
-      "updated": "2026-07-02T14:27:24.893Z"
+      "updated": "2026-07-02T14:51:12.737Z"
     },
     {
       "state": "MN",
@@ -124,7 +124,7 @@
       "state_link": "https://www.revisor.mn.gov/bills/94/2026/0/HF/3911/",
       "legiscan_url": "https://legiscan.com/MN/bill/HF3911/2025",
       "final_date": null,
-      "updated": "2026-07-02T14:27:25.749Z"
+      "updated": "2026-07-02T14:51:13.582Z"
     },
     {
       "state": "PA",
@@ -149,7 +149,7 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/sb1209",
       "legiscan_url": "https://legiscan.com/PA/bill/SB1209/2025",
       "final_date": null,
-      "updated": "2026-07-02T14:27:26.457Z"
+      "updated": "2026-07-02T14:51:14.117Z"
     },
     {
       "state": "PA",
@@ -174,7 +174,7 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/hb1918",
       "legiscan_url": "https://legiscan.com/PA/bill/HB1918/2025",
       "final_date": null,
-      "updated": "2026-07-02T14:27:26.927Z"
+      "updated": "2026-07-02T14:51:14.549Z"
     },
     {
       "state": "PA",
@@ -199,7 +199,7 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/hb1177",
       "legiscan_url": "https://legiscan.com/PA/bill/HB1177/2025",
       "final_date": null,
-      "updated": "2026-07-02T14:27:27.396Z"
+      "updated": "2026-07-02T14:51:14.982Z"
     },
     {
       "state": "NJ",
@@ -215,7 +215,7 @@
       "email_template": "Dear [LEGISLATOR_NAME],\n\nI am writing to urge your support for S1194, which would extend New Jersey's gross income tax exemption for Armed Forces retirement pay to veterans of all Uniformed Services of the United States, including the United States Public Health Service (USPHS) and the National Oceanic and Atmospheric Administration (NOAA) Commissioned Corps.\n\nUSPHS and NOAA Corps officers are recognized as veterans under federal law (Title 38 USC) and serve alongside the Armed Forces in vital roles for our nation's health and environmental security. New Jersey currently taxes their retirement pay while exempting that of Armed Forces retirees — an inconsistency S1194 would correct at minimal cost to the state, as only a small number of USPHS and NOAA Corps retirees reside in New Jersey.\n\nI respectfully ask for your support in advancing S1194.\n\nThank you for your service to the people of New Jersey.\n\nRespectfully,\n[FULL_NAME]\n[CITY], [STATE]\nMember, [CHAPTER]",
       "status_label": "Not found",
       "error": null,
-      "updated": "2026-07-02T14:27:28.100Z"
+      "updated": "2026-07-02T14:51:15.573Z"
     }
   ]
 }
