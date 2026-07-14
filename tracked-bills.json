@@ -144,6 +144,20 @@
       "email_template": "Dear [LEGISLATOR_NAME],\n\nI am writing to urge your support for S1194, which would extend New Jersey's gross income tax exemption for Armed Forces retirement pay to veterans of all Uniformed Services of the United States, including the United States Public Health Service (USPHS) and the National Oceanic and Atmospheric Administration (NOAA) Commissioned Corps.\n\nUSPHS and NOAA Corps officers are recognized as veterans under federal law (Title 38 USC) and serve alongside the Armed Forces in vital roles for our nation's health and environmental security. New Jersey currently taxes their retirement pay while exempting that of Armed Forces retirees — an inconsistency S1194 would correct at minimal cost to the state, as only a small number of USPHS and NOAA Corps retirees reside in New Jersey.\n\nI respectfully ask for your support in advancing S1194.\n\nThank you for your service to the people of New Jersey.\n\nRespectfully,\n[FULL_NAME]\n[CITY], [STATE]\nMember, [CHAPTER]",
       "position": "support",
       "position_notes": "Tax parity will cost the state very little (two NOAA Corps retirees and 49 USPHS retirees live in New Jersey) but will be very meaningful recognition of the USPHS and NOAA Corps retirees' service."
+    },
+    {
+      "state": "DE",
+      "bill_number": "SB219",
+      "bill_url": "https://legis.delaware.gov/BillDetail/142742",
+      "label": "Military Pension Tax Exclusion Increase",
+      "category": "Taxes",
+      "chapter": "MD01, MD05",
+      "summary": "Phases in a larger state income tax exclusion for military pensions, including NOAA and USPHS commissioned officers, rising to $25,000 for all military retirees regardless of age by tax year 2029.",
+      "priority": true,
+      "advocacy_url": "",
+      "chamber_target": "upper",
+      "position": "support",
+      "position_notes": "Delaware is one of the remaining states that does not fully exclude Uniformed Services pensions from taxable income; affects roughly 9,000 veterans. As a cost-control measure, the bill includes a 3-5 year domicile requirement for persons over age 60."
     }
   ]
 }
