@@ -347,7 +347,7 @@
 
 <script>
 (function () {
-  var DATA_URL = 'https://resolute1950.github.io/SLEFLAC/bills.json';
+  var DATA_URL = 'https://slefmoaa.github.io/SLAC/bills.json';
   var SUGGEST_FORM_URL = 'https://forms.gle/kFd8oKXxBBZGjef87';
   var STATE_NAMES = {
     AL:'Alabama', AK:'Alaska', AZ:'Arizona', AR:'Arkansas', CA:'California',
@@ -407,7 +407,7 @@
     if (billLinkHtml) metaParts.push('<span>' + billLinkHtml + '</span>');
     if (metaParts.length) metaLine = '<div class="sleflac-bill-meta-line">' + metaParts.join('') + '</div>';
 
-    var TAKE_ACTION_BASE = 'https://resolute1950.github.io/SLEFLAC/take-action.html';
+    var TAKE_ACTION_BASE = 'https://slefmoaa.github.io/SLAC/take-action.html';
     var actionUrl = bill.email_template
       ? TAKE_ACTION_BASE + '?bill=' + encodeURIComponent(bill.bill_number || '') + '&state=' + encodeURIComponent(bill.state || '')
       : bill.advocacy_url;
