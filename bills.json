@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-14T13:28:34.921Z",
+  "generated": "2026-07-14T15:44:02.339Z",
   "bills": [
     {
       "state": "MI",
@@ -24,7 +24,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5262",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5262/2025",
       "final_date": null,
-      "updated": "2026-07-13T14:36:23.692Z"
+      "updated": "2026-07-14T15:43:57.584Z"
     },
     {
       "state": "MI",
@@ -49,7 +49,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5278",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5278/2025",
       "final_date": null,
-      "updated": "2026-07-13T14:36:24.191Z"
+      "updated": "2026-07-14T15:43:58.071Z"
     },
     {
       "state": "MI",
@@ -74,7 +74,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5279",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5279/2025",
       "final_date": null,
-      "updated": "2026-07-13T14:36:24.642Z"
+      "updated": "2026-07-14T15:43:58.514Z"
     },
     {
       "state": "MI",
@@ -99,7 +99,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5280",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5280/2025",
       "final_date": null,
-      "updated": "2026-07-13T14:36:25.090Z"
+      "updated": "2026-07-14T15:43:58.949Z"
     },
     {
       "state": "MN",
@@ -124,7 +124,7 @@
       "state_link": "https://www.revisor.mn.gov/bills/94/2026/0/HF/3911/",
       "legiscan_url": "https://legiscan.com/MN/bill/HF3911/2025",
       "final_date": null,
-      "updated": "2026-07-13T14:36:25.812Z"
+      "updated": "2026-07-14T15:43:59.507Z"
     },
     {
       "state": "PA",
@@ -149,7 +149,7 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/sb1209",
       "legiscan_url": "https://legiscan.com/PA/bill/SB1209/2025",
       "final_date": null,
-      "updated": "2026-07-13T14:36:26.377Z"
+      "updated": "2026-07-14T15:44:00.057Z"
     },
     {
       "state": "PA",
@@ -174,7 +174,7 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/hb1918",
       "legiscan_url": "https://legiscan.com/PA/bill/HB1918/2025",
       "final_date": null,
-      "updated": "2026-07-13T14:36:26.826Z"
+      "updated": "2026-07-14T15:44:00.493Z"
     },
     {
       "state": "PA",
@@ -199,7 +199,7 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/hb1177",
       "legiscan_url": "https://legiscan.com/PA/bill/HB1177/2025",
       "final_date": null,
-      "updated": "2026-07-13T14:36:27.272Z"
+      "updated": "2026-07-14T15:44:00.921Z"
     },
     {
       "state": "NJ",
@@ -224,7 +224,7 @@
       "state_link": "https://www.njleg.state.nj.us/bill-search/2026/S1194",
       "legiscan_url": "https://legiscan.com/NJ/bill/S1194/2026",
       "final_date": null,
-      "updated": "2026-07-13T14:36:27.916Z"
+      "updated": "2026-07-14T15:44:01.449Z"
     },
     {
       "state": "DE",
@@ -234,20 +234,21 @@
       "chapter": "MD01, MD05",
       "summary": "Phases in a larger state income tax exclusion for military pensions, including NOAA and USPHS commissioned officers, rising to $25,000 for all military retirees regardless of age by tax year 2029.",
       "priority": true,
-      "advocacy_url": "",
+      "advocacy_url": null,
       "chamber_target": "upper",
       "position": "support",
       "position_notes": "Delaware is one of the remaining states that does not fully exclude Uniformed Services pensions from taxable income; affects roughly 9,000 veterans.",
+      "email_subject": null,
+      "email_template": null,
       "title": "An Act To Amend Title 30 Of The Delaware Code Relating To Exclusion Of Military Pensions From Taxable Income.",
       "status": 3,
       "status_label": "Enrolled",
       "last_action_date": "2026-07-01",
       "last_action": "Passed By House. Votes: 40 YES 1 ABSENT",
-      "committee": "",
       "state_link": "https://legis.delaware.gov/BillDetail?LegislationId=142742",
       "legiscan_url": "https://legiscan.com/DE/bill/SB219/2025",
       "final_date": null,
-      "updated": "2026-07-14T13:28:34.887Z"
+      "updated": "2026-07-14T15:44:01.938Z"
     }
   ]
 }
