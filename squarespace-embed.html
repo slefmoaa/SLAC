@@ -118,6 +118,15 @@
   text-decoration: none;
 }
 .sleflac-footer a:hover { text-decoration: underline; }
+.sleflac-attribution {
+  margin-top: 6px;
+  font-size: 11px;
+  color: var(--gray-500);
+}
+.sleflac-attribution a {
+  color: var(--gray-500);
+  text-decoration: underline;
+}
 
 .sleflac-disclaimer {
   font-size: 12px;
@@ -492,6 +501,10 @@
       '<div class="sleflac-footer">' +
         'Know of a veteran-related bill we should track? ' +
         '<a href="' + SUGGEST_FORM_URL + '" target="_blank" rel="noopener">Suggest a bill &rarr;</a>' +
+        '<div class="sleflac-attribution">' +
+          'Bill status data provided by <a href="https://legiscan.com" target="_blank" rel="noopener">LegiScan</a>, ' +
+          'used under <a href="https://creativecommons.org/licenses/by/4.0" target="_blank" rel="noopener">CC BY 4.0</a>.' +
+        '</div>' +
       '</div>';
 
     var introHtml =
