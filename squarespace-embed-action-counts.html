@@ -1,0 +1,617 @@
+<div id="sleflac-tracker" class="sleflac-tracker">
+  <div class="sleflac-loading">Loading bill tracker&hellip;</div>
+</div>
+
+<style>
+.sleflac-tracker {
+  --navy: #1a2d4f;
+  --navy-mid: #243d6b;
+  --gold: #b8912a;
+  --gold-light: #f0d896;
+  --gold-pale: #fdf8ec;
+  --paper: #faf8f4;
+  --slate: #2d3142;
+  --gray-100: #eeede9;
+  --gray-300: #c8c6bf;
+  --gray-500: #8a8880;
+  --gray-700: #4a4845;
+  --text: #1e1d1b;
+  --radius: 6px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  color: var(--text);
+  width: 100%;
+  background: var(--paper);
+  border: 1px solid var(--gray-100);
+  border-radius: 12px;
+  overflow: hidden;
+  container-type: inline-size;
+  container-name: sleflac;
+}
+.sleflac-tracker * { box-sizing: border-box; }
+
+.sleflac-loading, .sleflac-error {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  color: var(--gray-500);
+  font-size: 14px;
+}
+.sleflac-error { color: #8b1a1a; }
+
+/* Header bar */
+.sleflac-header {
+  background: var(--navy);
+  color: #fff;
+  padding: 1.1rem 1.5rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.sleflac-header-title {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+.sleflac-header-meta {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--gold-light);
+  text-align: right;
+}
+
+/* Intro blurb */
+.sleflac-intro {
+  padding: 1rem 1.5rem;
+  background: #fff;
+  border-bottom: 1px solid var(--gray-100);
+  font-size: 13px;
+  color: var(--gray-700);
+  line-height: 1.55;
+}
+
+/* State selector */
+.sleflac-state-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 1rem 1.5rem;
+  background: var(--paper);
+  border-bottom: 1px solid var(--gray-100);
+}
+.sleflac-state-pill {
+  display: inline-flex;
+  align-items: center;
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 1.5px solid var(--gray-300);
+  background: #fff;
+  color: var(--slate);
+  cursor: pointer;
+  transition: all 0.15s;
+  font-family: inherit;
+}
+.sleflac-state-pill:hover { border-color: var(--navy); }
+.sleflac-state-pill.active {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: #fff;
+}
+
+/* Suggest-a-bill footer */
+.sleflac-footer {
+  padding: 1rem 1.5rem;
+  background: var(--paper);
+  border-top: 1px solid var(--gray-100);
+  text-align: center;
+  font-size: 12.5px;
+  color: var(--gray-500);
+}
+.sleflac-footer a {
+  color: var(--navy);
+  font-weight: 700;
+  text-decoration: none;
+}
+.sleflac-footer a:hover { text-decoration: underline; }
+.sleflac-attribution {
+  margin-top: 6px;
+  font-size: 11px;
+  color: var(--gray-500);
+}
+.sleflac-attribution a {
+  color: var(--gray-500);
+  text-decoration: underline;
+}
+
+.sleflac-disclaimer {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--gray-700);
+  line-height: 1.6;
+  padding: 10px 1.5rem;
+  background: var(--gold-pale);
+  border-bottom: 1px solid var(--gold-light);
+  border-left: 4px solid var(--gold);
+}
+
+.sleflac-position-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 20px;
+  letter-spacing: 0.04em;
+  vertical-align: middle;
+}
+.sleflac-position-badge.support {
+  background: #eaf5ef;
+  color: #1a6b3c;
+  border: 1px solid #7dbf99;
+}
+.sleflac-position-badge.oppose {
+  background: #faeaea;
+  color: #8b1a1a;
+  border: 1px solid #d98080;
+}
+
+/* Category section */
+.sleflac-category-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  padding: 1.1rem 1.5rem 0.5rem;
+  background: var(--paper);
+}
+
+/* Row layout */
+.sleflac-row {
+  display: grid;
+  grid-template-columns: 7px minmax(60px, 100px) minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0;
+  border-top: 1px solid var(--gray-100);
+  background: #fff;
+  transition: background 0.15s;
+}
+.sleflac-row:hover { background: var(--gold-pale); }
+.sleflac-row.priority { background: var(--gold-pale); }
+.sleflac-row.priority:hover { background: #fbf0d4; }
+
+.sleflac-rail {
+  align-self: stretch;
+}
+
+.sleflac-anchor {
+  padding: 10px 12px;
+  text-align: center;
+  border-right: 1px solid var(--gray-100);
+}
+.sleflac-bill-code {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.15;
+}
+.sleflac-state-code {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--gray-500);
+  margin-top: 2px;
+}
+
+.sleflac-main {
+  padding: 10px 16px;
+  min-width: 0;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+.sleflac-bill-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--slate);
+  margin-bottom: 3px;
+}
+.sleflac-bill-summary {
+  font-size: 12.5px;
+  color: var(--gray-500);
+  line-height: 1.5;
+}
+.sleflac-bill-meta-line {
+  font-size: 11px;
+  color: var(--gray-500);
+  margin-top: 6px;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.sleflac-bill-meta-line > * + *::before {
+  content: '\00b7';
+  margin-right: 6px;
+  color: var(--gray-300);
+}
+.sleflac-bill-meta-line a {
+  color: var(--navy);
+  font-weight: 600;
+  text-decoration: none;
+}
+.sleflac-bill-meta-line a:hover { text-decoration: underline; }
+.sleflac-priority-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.sleflac-side {
+  padding: 10px 14px;
+  text-align: right;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 7px;
+}
+.sleflac-status-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #fff;
+}
+.sleflac-take-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--navy);
+  color: #fff;
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 7px 16px;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+.sleflac-take-action:hover { background: var(--navy-mid); }
+.sleflac-row.priority .sleflac-take-action { background: var(--gold); }
+.sleflac-row.priority .sleflac-take-action:hover { background: #a07820; }
+
+/* Action count â€” shown under the Take Action button when clicks exist */
+.sleflac-action-count {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--gray-500);
+  letter-spacing: 0.02em;
+}
+
+/* Responsive: stack on narrow containers (container query, not viewport) */
+@container sleflac (max-width: 640px) {
+  .sleflac-row {
+    grid-template-columns: 7px 1fr;
+    grid-template-areas:
+      "rail anchor"
+      "rail main"
+      "rail side";
+  }
+  .sleflac-anchor {
+    grid-area: anchor;
+    text-align: left;
+    border-right: none;
+    border-bottom: 1px solid var(--gray-100);
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding-bottom: 8px;
+  }
+  .sleflac-state-code { margin-top: 0; }
+  .sleflac-main { grid-area: main; padding-top: 10px; }
+  .sleflac-side {
+    grid-area: side;
+    text-align: left;
+    align-items: flex-start;
+    padding-top: 0;
+  }
+}
+
+/* Fallback for browsers without container query support: also respond
+   to viewport width so it's never worse than before */
+@media (max-width: 640px) {
+  .sleflac-row {
+    grid-template-columns: 7px 1fr;
+    grid-template-areas:
+      "rail anchor"
+      "rail main"
+      "rail side";
+  }
+  .sleflac-anchor {
+    grid-area: anchor;
+    text-align: left;
+    border-right: none;
+    border-bottom: 1px solid var(--gray-100);
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding-bottom: 8px;
+  }
+  .sleflac-state-code { margin-top: 0; }
+  .sleflac-main { grid-area: main; padding-top: 10px; }
+  .sleflac-side {
+    grid-area: side;
+    text-align: left;
+    align-items: flex-start;
+    padding-top: 0;
+  }
+}
+</style>
+
+<script>
+(function () {
+  var DATA_URL = 'https://slefmoaa.github.io/SLAC/bills.json';
+  var COUNTS_URL = 'https://slac-legislator-lookup.team-86d.workers.dev/counts';
+  var SUGGEST_FORM_URL = 'https://forms.gle/kFd8oKXxBBZGjef87';
+  var STATE_NAMES = {
+    AL:'Alabama', AK:'Alaska', AZ:'Arizona', AR:'Arkansas', CA:'California',
+    CO:'Colorado', CT:'Connecticut', DE:'Delaware', FL:'Florida', GA:'Georgia',
+    HI:'Hawaii', ID:'Idaho', IL:'Illinois', IN:'Indiana', IA:'Iowa',
+    KS:'Kansas', KY:'Kentucky', LA:'Louisiana', ME:'Maine', MD:'Maryland',
+    MA:'Massachusetts', MI:'Michigan', MN:'Minnesota', MS:'Mississippi', MO:'Missouri',
+    MT:'Montana', NE:'Nebraska', NV:'Nevada', NH:'New Hampshire', NJ:'New Jersey',
+    NM:'New Mexico', NY:'New York', NC:'North Carolina', ND:'North Dakota', OH:'Ohio',
+    OK:'Oklahoma', OR:'Oregon', PA:'Pennsylvania', RI:'Rhode Island', SC:'South Carolina',
+    SD:'South Dakota', TN:'Tennessee', TX:'Texas', UT:'Utah', VT:'Vermont',
+    VA:'Virginia', WA:'Washington', WV:'West Virginia', WI:'Wisconsin', WY:'Wyoming',
+    DC:'District of Columbia'
+  };
+
+  var STATUS_COLORS = {
+    'Pending': '#8a8880',
+    'Introduced': '#3c6fb0',
+    'In Committee': '#3c6fb0',
+    'Engrossed': '#b8912a',
+    'Enrolled': '#6a4fb0',
+    'Passed': '#1a5c3a',
+    'Vetoed': '#8b1a1a',
+    'Failed / Dead': '#8a8880',
+    'Not found': '#c8c6bf',
+    'Error': '#c8c6bf',
+    'Unknown': '#c8c6bf'
+  };
+
+  function escapeHtml(v) {
+    if (v == null || v === 'undefined' || v === 'null') return '';
+    return String(v)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  // Click counts are keyed "STATE:BILLNUMBER" (no spaces, uppercase) â€”
+  // must match the key format worker.js writes in clickKey().
+  function countFor(bill, counts) {
+    if (!counts || !bill.bill_number) return 0;
+    var key = (bill.state + ':' + bill.bill_number).replace(/\s+/g, '').toUpperCase();
+    return counts[key] || 0;
+  }
+
+  function renderRow(bill, counts) {
+    var color = STATUS_COLORS[bill.status_label] || '#8a8880';
+    var rowClass = 'sleflac-row' + (bill.priority ? ' priority' : '');
+
+    var lastAction = bill.last_action
+      ? escapeHtml(bill.last_action_date) + ' &mdash; ' + escapeHtml(bill.last_action)
+      : '';
+
+    var billLink = bill.state_link || bill.legiscan_url;
+    var billLinkHtml = billLink
+      ? '<a href="' + escapeHtml(billLink) + '" target="_blank" rel="noopener">View bill text &#8599;</a>'
+      : '';
+
+    var metaLine = '';
+    var metaParts = [];
+    if (bill.priority) metaParts.push('<span class="sleflac-priority-tag">&#9733; Priority</span>');
+    if (lastAction) metaParts.push('<span>' + lastAction + '</span>');
+    if (billLinkHtml) metaParts.push('<span>' + billLinkHtml + '</span>');
+    if (metaParts.length) metaLine = '<div class="sleflac-bill-meta-line">' + metaParts.join('') + '</div>';
+
+    var TAKE_ACTION_BASE = 'https://slefmoaa.github.io/SLAC/take-action.html';
+    var actionUrl = bill.email_template
+      ? TAKE_ACTION_BASE + '?bill=' + encodeURIComponent(bill.bill_number || '') + '&state=' + encodeURIComponent(bill.state || '')
+      : bill.advocacy_url;
+    var actionBtn = actionUrl
+      ? '<a class="sleflac-take-action" href="' + escapeHtml(actionUrl) + '" target="_blank" rel="noopener">Take action &rarr;</a>'
+      : '';
+
+    // Only show the count when it's > 0 â€” an empty/zero badge next to a
+    // brand-new bill reads as "nobody cares" rather than "be the first."
+    var clicks = countFor(bill, counts);
+    var actionCountHtml = clicks > 0
+      ? '<span class="sleflac-action-count">' + clicks + (clicks === 1 ? ' member took action' : ' members took action') + '</span>'
+      : '';
+
+    var stateCode = bill.state ? escapeHtml(bill.state) : '';
+    var billCode = escapeHtml(bill.bill_number || '');
+
+    return '' +
+      '<div class="' + rowClass + '">' +
+        '<div class="sleflac-rail" style="background:' + color + '"></div>' +
+        '<div class="sleflac-anchor">' +
+          '<div class="sleflac-bill-code">' + billCode + '</div>' +
+          (stateCode ? '<span class="sleflac-state-code">' + stateCode + '</span>' : '') +
+        '</div>' +
+        '<div class="sleflac-main">' +
+          '<div class="sleflac-bill-label">' + escapeHtml(bill.label || bill.title || '') + '</div>' +
+          '<div class="sleflac-bill-summary">' + escapeHtml(bill.summary || '') + '</div>' +
+          metaLine +
+        '</div>' +
+        '<div class="sleflac-side">' +
+          '<span class="sleflac-status-badge" style="background:' + color + '">' + escapeHtml(bill.status_label || 'Unknown') + '</span>' +
+          (bill.position === 'oppose'
+            ? '<span class="sleflac-position-badge oppose">&#9660; Opposed</span>'
+            : '<span class="sleflac-position-badge support">&#9650; Supported</span>') +
+          actionBtn +
+          actionCountHtml +
+        '</div>' +
+      '</div>';
+  }
+
+  var allBills = [];
+  var allCounts = {};
+  var generatedStr = '';
+
+  function renderForState(selectedState) {
+    var container = document.getElementById('sleflac-tracker');
+    var bills = allBills.filter(function (b) {
+      return !selectedState || b.state === selectedState;
+    });
+
+    var byCategory = {};
+    var order = [];
+    bills.forEach(function (bill) {
+      var cat = bill.category || 'Other';
+      if (!byCategory[cat]) { byCategory[cat] = []; order.push(cat); }
+      byCategory[cat].push(bill);
+    });
+
+    // Build state selector from the full unfiltered list
+    var states = [];
+    allBills.forEach(function (b) {
+      if (b.state && states.indexOf(b.state) === -1) states.push(b.state);
+    });
+    states.sort(function (a, b) {
+      return (STATE_NAMES[a] || a).localeCompare(STATE_NAMES[b] || b);
+    });
+
+    var selectorHtml = '';
+    if (states.length) {
+      selectorHtml = '<div class="sleflac-state-selector">';
+      states.forEach(function (st) {
+        var active = st === selectedState ? ' active' : '';
+        selectorHtml += '<button type="button" class="sleflac-state-pill' + active + '" data-state="' + escapeHtml(st) + '">' + escapeHtml(STATE_NAMES[st] || st) + '</button>';
+      });
+      selectorHtml += '</div>';
+    }
+
+    var rowsHtml = '';
+    if (!bills.length) {
+      rowsHtml = '<div class="sleflac-error">No tracked bills for this state yet.</div>';
+    } else {
+      order.forEach(function (cat) {
+        rowsHtml += '<div class="sleflac-category-title">' + escapeHtml(cat) + '</div>';
+        byCategory[cat].forEach(function (bill) {
+          rowsHtml += renderRow(bill, allCounts);
+        });
+      });
+    }
+
+    var footerHtml =
+      '<div class="sleflac-footer">' +
+        'Know of a veteran-related bill we should track? ' +
+        '<a href="' + SUGGEST_FORM_URL + '" target="_blank" rel="noopener">Suggest a bill &rarr;</a>' +
+        '<div class="sleflac-attribution">' +
+          'Bill status data provided by <a href="https://legiscan.com" target="_blank" rel="noopener">LegiScan</a>, ' +
+          'used under <a href="https://creativecommons.org/licenses/by/4.0" target="_blank" rel="noopener">CC BY 4.0</a>.' +
+        '</div>' +
+      '</div>';
+
+    var introHtml =
+      '<div class="sleflac-intro">' +
+        'Select your state below to view veteran-related bills currently moving through your state legislature. ' +
+        'Each bill includes a live status update and a &ldquo;Take action&rdquo; button to contact your state representative directly. ' +
+        'Don&rsquo;t see a bill that should be here? Use the link at the bottom to suggest one.' +
+      '</div>';
+
+    var disclaimerHtml =
+      '<div class="sleflac-disclaimer">' +
+        'This Legislative Action Center is a service provided by the State Legislative Exchange Forum (SLEF) ' +
+        'to support member advocacy. Listing a bill does not constitute an endorsement of any particular ' +
+        'legislative outcome. Positions shown reflect the views of the submitting MOAA chapter or council, ' +
+        'not those of SLEF or MOAA.' +
+      '</div>';
+
+    var html = '' +
+      '<div class="sleflac-header">' +
+        '<div class="sleflac-header-title">State Legislative Action Center</div>' +
+        '<div class="sleflac-header-meta">Live via LegiScan &middot; updated ' + escapeHtml(generatedStr) + '</div>' +
+      '</div>' +
+      introHtml +
+      disclaimerHtml +
+      selectorHtml +
+      rowsHtml +
+      footerHtml;
+
+    container.innerHTML = html;
+
+    container.querySelectorAll('.sleflac-state-pill').forEach(function (pill) {
+      pill.addEventListener('click', function () {
+        renderForState(pill.getAttribute('data-state'));
+      });
+    });
+  }
+
+  function render(data) {
+    var container = document.getElementById('sleflac-tracker');
+    allBills = (data && data.bills) || [];
+
+    if (!allBills.length) {
+      container.innerHTML = '<div class="sleflac-error">No tracked bills found.</div>';
+      return;
+    }
+
+    var generated = data.generated ? new Date(data.generated) : null;
+    generatedStr = generated ? generated.toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' }) : 'recently';
+
+    // Default to the first state alphabetically (or the only one)
+    var firstState = null;
+    allBills.forEach(function (b) {
+      if (b.state && (!firstState || (STATE_NAMES[b.state] || b.state).localeCompare(STATE_NAMES[firstState] || firstState) < 0)) {
+        firstState = b.state;
+      }
+    });
+
+    renderForState(firstState);
+  }
+
+  // Bills are required for the tracker to render at all. Click counts are
+  // a nice-to-have enhancement â€” if the Worker is down or /counts errors,
+  // fail silently and just show the tracker without counts (same as
+  // before this feature existed).
+  Promise.all([
+    fetch(DATA_URL, { cache: 'no-store' }).then(function (res) {
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      return res.json();
+    }),
+    fetch(COUNTS_URL, { cache: 'no-store' })
+      .then(function (res) { return res.ok ? res.json() : null; })
+      .catch(function () { return null; })
+  ]).then(function (results) {
+    var billsData = results[0];
+    var countsData = results[1];
+    allCounts = (countsData && countsData.counts) || {};
+    render(billsData);
+  }).catch(function (err) {
+    var container = document.getElementById('sleflac-tracker');
+    container.innerHTML = '<div class="sleflac-error">Bill tracker is temporarily unavailable. Please check back later.</div>';
+    console.warn('SLEFLAC tracker: failed to load bills.json', err);
+  });
+})();
+</script>
