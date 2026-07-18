@@ -283,28 +283,23 @@ tr.gridjs-tr:hover td { background: #faf9f5 !important; }
 
 <script>
 (function () {
-  var BILLS_URL  = 'https://resolute1950.github.io/SLEFLAC/bills.json';
-  var COUNTS_URL = 'https://sleflac-legislator-lookup.rlhigginsjr.workers.dev/counts';
+  var BILLS_URL  = 'https://slefmoaa.github.io/SLAC/bills.json';
+  var COUNTS_URL = 'https://slac-legislator-lookup.team-86d.workers.dev/counts';
 
   var grid = null;
   var allRows = [];
   var activeState = 'ALL';
 
-  // ── Fetch helpers ─────────────────────────────────────
-  function extractJson(raw) {
-    // web_fetch prepends URL + headers; JSON starts at first { or [
-    var idx = raw.search(/[{[]/);
-    if (idx < 0) throw new Error('No JSON found in response');
-    return JSON.parse(raw.slice(idx));
-  }
-
-  async function fetchUrl(url) {
-    var r = await window.cowork.callMcpTool('mcp__workspace__web_fetch', { url: url });
-    if (r.isError) throw new Error('Fetch error for ' + url);
-    var text = r.structuredContent != null
-      ? (typeof r.structuredContent === 'string' ? r.structuredContent : JSON.stringify(r.structuredContent))
-      : (r.content && r.content[0] ? r.content[0].text : '');
-    return text;
+  // ── Fetch helper ───────────────────────────────────────
+  // Plain client-side fetch — this page is a standalone static file served
+  // via GitHub Pages, not a Cowork artifact, so it cannot use
+  // window.cowork.callMcpTool. Both BILLS_URL and COUNTS_URL must serve
+  // permissive CORS headers for this to work (GitHub Pages does by default;
+  // worker.js already sets Access-Control-Allow-Origin: *).
+  async function fetchJson(url) {
+    var res = await fetch(url, { cache: 'no-store' });
+    if (!res.ok) throw new Error('HTTP ' + res.status + ' fetching ' + url);
+    return res.json();
   }
 
   // ── UI helpers ────────────────────────────────────────
@@ -474,22 +469,22 @@ tr.gridjs-tr:hover td { background: #faf9f5 !important; }
 
     try {
       // Fetch bills (required) and counts (optional) in parallel
-      var [billsText, countsText] = await Promise.all([
-        fetchUrl(BILLS_URL),
-        fetchUrl(COUNTS_URL).catch(function () { return ''; }),
+      var results = await Promise.allSettled([
+        fetchJson(BILLS_URL),
+        fetchJson(COUNTS_URL),
       ]);
 
-      var billsData = extractJson(billsText);
+      if (results[0].status !== 'fulfilled') {
+        throw results[0].reason;
+      }
+      var billsData = results[0].value;
       var bills = billsData.bills || [];
 
       var counts = {};
       var countsAvailable = false;
-      if (countsText && countsText.trim().length > 0) {
-        try {
-          var countsData = extractJson(countsText);
-          counts = countsData.counts || {};
-          countsAvailable = true;
-        } catch (_) { /* counts not yet available */ }
+      if (results[1].status === 'fulfilled' && results[1].value && results[1].value.counts) {
+        counts = results[1].value.counts;
+        countsAvailable = true;
       }
 
       if (!bills.length) {
