@@ -158,6 +158,22 @@
       "chamber_target": "upper",
       "position": "support",
       "position_notes": "Subtraction modification covering all Uniformed Services, including NOAA and USPHS commissioned corps. Phases in from $12,500 to $25,000 by tax year 2029. Per Senate Amendment 1, individuals age 60 or older must meet a domicile-duration requirement to qualify: 3 years if domiciled in DE before 1/1/2027, or 5 years if domiciled on/after 1/1/2027 (no such requirement for those under 60). The subtraction limit applies individually to each spouse receiving a military pension on a joint return. Fiscal note estimates General Fund revenue impact of $0.4M (FY27), $1.5M (FY28), and $2.8M (FY29)."
+    },
+    {
+      "state": "MI",
+      "bill_number": "HB5456",
+      "bill_url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5456",
+      "label": "Hyperbaric Oxygen Treatment Pilot Program",
+      "category": "Health",
+      "chapter": "SE Michigan Chapter, MOAA",
+      "summary": "Establishes a hyperbaric oxygen therapy (HBOT) grant and pilot program to provide treatment to veterans with traumatic brain injuries or post-traumatic stress disorder.",
+      "priority": true,
+      "advocacy_url": "https://moaa-mcoc.github.io/LAC/?bill=HB5456",
+      "chamber_target": "upper",
+      "email_subject": "Support for HB 5456 — Hyperbaric Oxygen Treatment Pilot Program for Veterans",
+      "email_template": "Dear [LEGISLATOR_NAME],\n\nI am writing to urge your support for HB 5456, which would establish a hyperbaric oxygen therapy (HBOT) grant and pilot program to provide treatment to veterans with traumatic brain injuries (TBI) or post-traumatic stress disorder (PTSD).\n\nHBOT shows significant promise in suicide prevention, particularly for veterans with TBI or PTSD, by delivering concentrated oxygen to heal brain wounds, reduce inflammation, and improve neuroplasticity, leading to decreased suicidal ideation, anxiety, and depression. Post-treatment studies point to a vital, drug-free pathway to recovery when standard treatments have failed.\n\nThirteen states (AZ, OK, TN, TX, VA, WY, MO, ND, NC, KY, FL, IN, and MD) have already enacted HBOT treatment legislation, and nine more (MI, IA, OH, PA, OR, NY, NJ, KS, NE) are currently drafting or advancing similar bills. Michigan has an opportunity to join this growing, bipartisan effort to give veterans a proven, non-pharmaceutical treatment option.\n\nI respectfully ask for your support in advancing HB 5456 through the Senate.\n\nThank you for your service to the veterans of Michigan.\n\nRespectfully,\n[FULL_NAME]\n[CITY], [STATE]\nMember, [CHAPTER]",
+      "position": "support",
+      "position_notes": "Submitted by Rich Higgins, SE Michigan Chapter. 13 states have enacted HBOT legislation (AZ, OK, TN, TX, VA, WY, MO, ND, NC, KY, FL, IN, MD); 9 more states (MI, IA, OH, PA, OR, NY, NJ, KS, NE) are drafting/introducing similar bills. Chamber target set to Senate (upper) per submitter's request even though it's a House bill."
     }
   ]
 }
