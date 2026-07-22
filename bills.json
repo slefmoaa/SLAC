@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-22T17:00:38.131Z",
+  "generated": "2026-07-22T18:33:53.258Z",
   "bills": [
     {
       "state": "MI",
@@ -24,7 +24,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5262",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5262/2025",
       "final_date": null,
-      "updated": "2026-07-22T17:00:32.885Z"
+      "updated": "2026-07-22T18:33:47.744Z"
     },
     {
       "state": "MI",
@@ -49,7 +49,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5278",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5278/2025",
       "final_date": null,
-      "updated": "2026-07-22T17:00:33.354Z"
+      "updated": "2026-07-22T18:33:48.197Z"
     },
     {
       "state": "MI",
@@ -74,7 +74,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5279",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5279/2025",
       "final_date": null,
-      "updated": "2026-07-22T17:00:33.793Z"
+      "updated": "2026-07-22T18:33:48.641Z"
     },
     {
       "state": "MI",
@@ -99,7 +99,32 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5280",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5280/2025",
       "final_date": null,
-      "updated": "2026-07-22T17:00:34.251Z"
+      "updated": "2026-07-22T18:33:49.085Z"
+    },
+    {
+      "state": "MI",
+      "bill_number": "HB5456",
+      "label": "Hyperbaric Oxygen Treatment Pilot Program",
+      "category": "Health",
+      "chapter": "SE Michigan Chapter, MOAA",
+      "summary": "Establishes a hyperbaric oxygen therapy (HBOT) grant and pilot program to provide treatment to veterans with traumatic brain injuries or post-traumatic stress disorder.",
+      "priority": true,
+      "advocacy_url": "https://moaa-mcoc.github.io/LAC/?bill=HB5456",
+      "chamber_target": "upper",
+      "position": "support",
+      "position_notes": "Submitted by Rich Higgins, SE Michigan Chapter. 13 states have enacted HBOT legislation (AZ, OK, TN, TX, VA, WY, MO, ND, NC, KY, FL, IN, MD); 9 more states (MI, IA, OH, PA, OR, NY, NJ, KS, NE) are drafting/introducing similar bills. Chamber target set to Senate (upper) per submitter's request even though it's a House bill.",
+      "email_subject": "Support for HB 5456 — Hyperbaric Oxygen Treatment Pilot Program for Veterans",
+      "email_template": "Dear [LEGISLATOR_NAME],\n\nI am writing to urge your support for HB 5456, which would establish a hyperbaric oxygen therapy (HBOT) grant and pilot program to provide treatment to veterans with traumatic brain injuries (TBI) or post-traumatic stress disorder (PTSD).\n\nHBOT shows significant promise in suicide prevention, particularly for veterans with TBI or PTSD, by delivering concentrated oxygen to heal brain wounds, reduce inflammation, and improve neuroplasticity, leading to decreased suicidal ideation, anxiety, and depression. Post-treatment studies point to a vital, drug-free pathway to recovery when standard treatments have failed.\n\nThirteen states (AZ, OK, TN, TX, VA, WY, MO, ND, NC, KY, FL, IN, and MD) have already enacted HBOT treatment legislation, and nine more (MI, IA, OH, PA, OR, NY, NJ, KS, NE) are currently drafting or advancing similar bills. Michigan has an opportunity to join this growing, bipartisan effort to give veterans a proven, non-pharmaceutical treatment option.\n\nI respectfully ask for your support in advancing HB 5456 through the Senate.\n\nThank you for your service to the veterans of Michigan.\n\nRespectfully,\n[FULL_NAME]\n[CITY], [STATE]\nMember, [CHAPTER]",
+      "title": "Military affairs: other; hyperbaric oxygen treatment pilot program; establish. Creates new act. TIE BAR WITH: HB 5457'26",
+      "status": 2,
+      "status_label": "Engrossed",
+      "last_action_date": "2026-06-23",
+      "last_action": "Referred To Committee On Health Policy",
+      "committee": "Health Policy",
+      "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5456",
+      "legiscan_url": "https://legiscan.com/MI/bill/HB5456/2025",
+      "final_date": null,
+      "updated": "2026-07-22T18:33:49.560Z"
     },
     {
       "state": "MN",
@@ -124,7 +149,7 @@
       "state_link": "https://www.revisor.mn.gov/bills/94/2026/0/HF/3911/",
       "legiscan_url": "https://legiscan.com/MN/bill/HF3911/2025",
       "final_date": null,
-      "updated": "2026-07-22T17:00:34.971Z"
+      "updated": "2026-07-22T18:33:50.311Z"
     },
     {
       "state": "PA",
@@ -149,7 +174,7 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/sb1209",
       "legiscan_url": "https://legiscan.com/PA/bill/SB1209/2025",
       "final_date": null,
-      "updated": "2026-07-22T17:00:35.568Z"
+      "updated": "2026-07-22T18:33:50.830Z"
     },
     {
       "state": "PA",
@@ -174,7 +199,7 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/hb1918",
       "legiscan_url": "https://legiscan.com/PA/bill/HB1918/2025",
       "final_date": null,
-      "updated": "2026-07-22T17:00:36.021Z"
+      "updated": "2026-07-22T18:33:51.278Z"
     },
     {
       "state": "PA",
@@ -199,7 +224,7 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/hb1177",
       "legiscan_url": "https://legiscan.com/PA/bill/HB1177/2025",
       "final_date": null,
-      "updated": "2026-07-22T17:00:36.489Z"
+      "updated": "2026-07-22T18:33:51.739Z"
     },
     {
       "state": "NJ",
@@ -224,7 +249,7 @@
       "state_link": "https://www.njleg.state.nj.us/bill-search/2026/S1194",
       "legiscan_url": "https://legiscan.com/NJ/bill/S1194/2026",
       "final_date": null,
-      "updated": "2026-07-22T17:00:37.180Z"
+      "updated": "2026-07-22T18:33:52.342Z"
     },
     {
       "state": "DE",
@@ -248,7 +273,7 @@
       "state_link": "https://legis.delaware.gov/BillDetail?LegislationId=142742",
       "legiscan_url": "https://legiscan.com/DE/bill/SB219/2025",
       "final_date": null,
-      "updated": "2026-07-22T17:00:37.731Z"
+      "updated": "2026-07-22T18:33:52.857Z"
     }
   ]
 }
