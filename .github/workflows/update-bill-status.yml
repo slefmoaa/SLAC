@@ -2,7 +2,7 @@ name: Update Bill Status
 
 on:
   schedule:
-    # Runs daily at 12:00 UTC (8am ET)
+    # Runs daily at 12:00 UTC (8am ET) — re-registered 7/22
     - cron: '0 12 * * *'
   workflow_dispatch: {}  # allows manual run from the Actions tab
   push:
