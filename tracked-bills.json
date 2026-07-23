@@ -174,6 +174,22 @@
       "email_template": "Dear [LEGISLATOR_NAME],\n\nI am writing to urge your support for HB 5456, which would establish a hyperbaric oxygen therapy (HBOT) grant and pilot program to provide treatment to veterans with traumatic brain injuries (TBI) or post-traumatic stress disorder (PTSD).\n\nHBOT shows significant promise in suicide prevention, particularly for veterans with TBI or PTSD, by delivering concentrated oxygen to heal brain wounds, reduce inflammation, and improve neuroplasticity, leading to decreased suicidal ideation, anxiety, and depression. Post-treatment studies point to a vital, drug-free pathway to recovery when standard treatments have failed.\n\nThirteen states (AZ, OK, TN, TX, VA, WY, MO, ND, NC, KY, FL, IN, and MD) have already enacted HBOT treatment legislation, and nine more (MI, IA, OH, PA, OR, NY, NJ, KS, NE) are currently drafting or advancing similar bills. Michigan has an opportunity to join this growing, bipartisan effort to give veterans a proven, non-pharmaceutical treatment option.\n\nI respectfully ask for your support in advancing HB 5456 through the Senate.\n\nThank you for your service to the veterans of Michigan.\n\nRespectfully,\n[FULL_NAME]\n[CITY], [STATE]\nMember, [CHAPTER]",
       "position": "support",
       "position_notes": "Submitted by Rich Higgins, SE Michigan Chapter. 13 states have enacted HBOT legislation (AZ, OK, TN, TX, VA, WY, MO, ND, NC, KY, FL, IN, MD); 9 more states (MI, IA, OH, PA, OR, NY, NJ, KS, NE) are drafting/introducing similar bills. Chamber target set to Senate (upper) per submitter's request even though it's a House bill."
+    },
+    {
+      "state": "MI",
+      "bill_number": "HB5457",
+      "bill_url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5457",
+      "label": "Hyperbaric Oxygen Therapy Pilot Program — Appropriations Funding",
+      "category": "Health",
+      "chapter": "SE Michigan Chapter, MOAA",
+      "summary": "Creates a hyperbaric oxygen therapy (HBOT) fund and provides for the administration of and distributions from the fund, appropriating the funding needed to operate the HBOT pilot program established under HB 5456.",
+      "priority": true,
+      "advocacy_url": "https://moaa-mcoc.github.io/LAC/?bill=HB5457",
+      "chamber_target": "upper",
+      "email_subject": "Support for HB 5457 — Funding for the Hyperbaric Oxygen Treatment Pilot Program",
+      "email_template": "Dear [LEGISLATOR_NAME],\n\nI am writing to urge your support for HB 5457, which would create a hyperbaric oxygen therapy (HBOT) fund and provide for the administration of and distributions from that fund, appropriating the funding needed to operate the HBOT pilot program for veterans established under HB 5456.\n\nHBOT shows significant promise in suicide prevention, particularly for veterans with traumatic brain injuries (TBI) or post-traumatic stress disorder (PTSD), by delivering concentrated oxygen to heal brain wounds, reduce inflammation, and improve neuroplasticity, leading to decreased suicidal ideation, anxiety, and depression. Without dedicated funding, the pilot program authorized under HB 5456 cannot move forward.\n\nThirteen states (AZ, OK, TN, TX, VA, WY, MO, ND, NC, KY, FL, IN, and MD) have already enacted HBOT treatment legislation, and nine more (MI, IA, OH, PA, OR, NY, NJ, KS, NE) are currently drafting or advancing similar bills. I respectfully ask for your support in advancing HB 5457 through the Senate.\n\nThank you for your service to the veterans of Michigan.\n\nRespectfully,\n[FULL_NAME]\n[CITY], [STATE]\nMember, [CHAPTER]",
+      "position": "support",
+      "position_notes": "Submitted by Rich Higgins, SE Michigan Chapter (rlhigginsjr@yahoo.com). Companion appropriations bill to HB 5456 — creates the HBOT fund and funds distributions from it. Same 13 states enacted / 9 states drafting HBOT legislation cited as HB 5456. Chamber target set to Senate (upper) per submitter's request."
     }
   ]
 }
