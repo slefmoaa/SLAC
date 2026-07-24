@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-24T17:15:13.169Z",
+  "generated": "2026-07-24T19:54:21.503Z",
   "bills": [
     {
       "state": "MI",
@@ -24,7 +24,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5262",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5262/2025",
       "final_date": null,
-      "updated": "2026-07-24T17:15:06.568Z"
+      "updated": "2026-07-24T19:54:14.424Z"
     },
     {
       "state": "MI",
@@ -49,7 +49,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5278",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5278/2025",
       "final_date": null,
-      "updated": "2026-07-24T17:15:07.055Z"
+      "updated": "2026-07-24T19:54:14.911Z"
     },
     {
       "state": "MI",
@@ -74,7 +74,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5279",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5279/2025",
       "final_date": null,
-      "updated": "2026-07-24T17:15:07.555Z"
+      "updated": "2026-07-24T19:54:15.411Z"
     },
     {
       "state": "MI",
@@ -99,7 +99,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5280",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5280/2025",
       "final_date": null,
-      "updated": "2026-07-24T17:15:08.051Z"
+      "updated": "2026-07-24T19:54:15.910Z"
     },
     {
       "state": "MI",
@@ -124,7 +124,32 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5456",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5456/2025",
       "final_date": null,
-      "updated": "2026-07-24T17:15:08.561Z"
+      "updated": "2026-07-24T19:54:16.409Z"
+    },
+    {
+      "state": "MI",
+      "bill_number": "HB5457",
+      "label": "Hyperbaric Oxygen Therapy Pilot Program, Appropriations Funding Request",
+      "category": "Health",
+      "chapter": "SE Michigan Chapter, MOAA",
+      "summary": "Creates a hyperbaric oxygen therapy fund and provides for the administration of and distributions from the fund, appropriating the funding needed for HB 5456's HBOT pilot program.",
+      "priority": true,
+      "advocacy_url": "https://moaa-mcoc.github.io/LAC/?bill=HB5457",
+      "chamber_target": "upper",
+      "position": "support",
+      "position_notes": "Submitted by Rich Higgins, SE Michigan Chapter. Companion appropriations/funding bill to HB 5456 (creates the HBOT fund and provides for its administration and distributions). Same 13 states enacted / 9 states drafting context as HB 5456. Chamber target set to Senate (upper) per submitter's request.",
+      "email_subject": "Support for HB 5457 — Funding for the Hyperbaric Oxygen Treatment Pilot Program",
+      "email_template": "Dear [LEGISLATOR_NAME],\n\nI am writing to urge your support for HB 5457, which would create a hyperbaric oxygen therapy (HBOT) fund and provide for the administration of and distributions from that fund, appropriating the funding needed to carry out Michigan's HBOT pilot program for veterans.\n\nHBOT shows significant promise in suicide prevention, particularly for veterans with traumatic brain injury (TBI) or post-traumatic stress disorder (PTSD), by delivering concentrated oxygen to heal brain wounds, reduce inflammation, and improve neuroplasticity, leading to decreased suicidal ideation, anxiety, and depression. Without dedicated funding, the pilot program authorized elsewhere in statute cannot be carried out.\n\nThirteen states (AZ, OK, TN, TX, VA, WY, MO, ND, NC, KY, FL, IN, and MD) have already enacted HBOT treatment legislation, and nine more (MI, IA, OH, PA, OR, NY, NJ, KS, NE) are currently drafting or advancing similar bills. I respectfully ask for your support in advancing HB 5457 through the Senate.\n\nThank you for your service to the veterans of Michigan.\n\nRespectfully,\n[FULL_NAME]\n[CITY], [STATE]\nMember, [CHAPTER]",
+      "title": "Military affairs: other; hyperbaric oxygen therapy pilot program; establish. Creates new act. TIE BAR WITH: HB 5456'26",
+      "status": 2,
+      "status_label": "Engrossed",
+      "last_action_date": "2026-06-23",
+      "last_action": "Referred To Committee On Health Policy",
+      "committee": "Health Policy",
+      "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5457",
+      "legiscan_url": "https://legiscan.com/MI/bill/HB5457/2025",
+      "final_date": null,
+      "updated": "2026-07-24T19:54:16.897Z"
     },
     {
       "state": "MN",
@@ -149,7 +174,7 @@
       "state_link": "https://www.revisor.mn.gov/bills/94/2026/0/HF/3911/",
       "legiscan_url": "https://legiscan.com/MN/bill/HF3911/2025",
       "final_date": null,
-      "updated": "2026-07-24T17:15:09.543Z"
+      "updated": "2026-07-24T19:54:17.844Z"
     },
     {
       "state": "PA",
@@ -174,7 +199,7 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/sb1209",
       "legiscan_url": "https://legiscan.com/PA/bill/SB1209/2025",
       "final_date": null,
-      "updated": "2026-07-24T17:15:10.261Z"
+      "updated": "2026-07-24T19:54:18.570Z"
     },
     {
       "state": "PA",
@@ -199,7 +224,7 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/hb1918",
       "legiscan_url": "https://legiscan.com/PA/bill/HB1918/2025",
       "final_date": null,
-      "updated": "2026-07-24T17:15:10.757Z"
+      "updated": "2026-07-24T19:54:19.074Z"
     },
     {
       "state": "PA",
@@ -224,7 +249,7 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/hb1177",
       "legiscan_url": "https://legiscan.com/PA/bill/HB1177/2025",
       "final_date": null,
-      "updated": "2026-07-24T17:15:11.245Z"
+      "updated": "2026-07-24T19:54:19.563Z"
     },
     {
       "state": "NJ",
@@ -249,7 +274,7 @@
       "state_link": "https://www.njleg.state.nj.us/bill-search/2026/S1194",
       "legiscan_url": "https://legiscan.com/NJ/bill/S1194/2026",
       "final_date": null,
-      "updated": "2026-07-24T17:15:12.106Z"
+      "updated": "2026-07-24T19:54:20.443Z"
     },
     {
       "state": "DE",
@@ -273,7 +298,7 @@
       "state_link": "https://legis.delaware.gov/BillDetail?LegislationId=142742",
       "legiscan_url": "https://legiscan.com/DE/bill/SB219/2025",
       "final_date": null,
-      "updated": "2026-07-24T17:15:12.770Z"
+      "updated": "2026-07-24T19:54:21.103Z"
     }
   ]
 }
