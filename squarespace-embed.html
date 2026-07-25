@@ -254,6 +254,20 @@
   font-weight: 700;
 }
 
+.sleflac-dead-note {
+  font-size: 12px;
+  color: #8b1a1a;
+  line-height: 1.5;
+  margin-top: 8px;
+  padding: 7px 10px;
+  background: #faeaea;
+  border-left: 3px solid #d98080;
+  border-radius: var(--radius);
+}
+.sleflac-dead-note strong {
+  font-weight: 700;
+}
+
 .sleflac-side {
   padding: 10px 14px;
   text-align: right;
@@ -396,8 +410,21 @@
       .replace(/'/g, '&#39;');
   }
 
+  // Succinct, human-readable reason a bill is no longer active. Prefers
+  // the status_note stamped by fetch-bill-status.mjs when a bill died by
+  // inaction at session adjournment (sine die); falls back to the most
+  // recent recorded legislative action, then a generic message.
+  function deathReason(bill) {
+    if (bill.status_note && bill.status_note.trim()) return bill.status_note.trim();
+    if (bill.last_action) {
+      return (bill.last_action_date ? bill.last_action_date + ' â€” ' : '') + bill.last_action;
+    }
+    return 'This bill did not pass and is no longer active this session.';
+  }
+
   function renderRow(bill) {
     var color = STATUS_COLORS[bill.status_label] || '#8a8880';
+    var isDead = bill.status_label === 'Failed / Dead';
     var rowClass = 'sleflac-row' + (bill.priority ? ' priority' : '');
 
     var lastAction = bill.last_action
@@ -416,11 +443,17 @@
     if (billLinkHtml) metaParts.push('<span>' + billLinkHtml + '</span>');
     if (metaParts.length) metaLine = '<div class="sleflac-bill-meta-line">' + metaParts.join('') + '</div>';
 
+    // Once a bill is dead, there's no legislator left to lobby this
+    // session â€” drop the Take Action button and explain why instead.
+    var deadNoteHtml = isDead
+      ? '<div class="sleflac-dead-note"><strong>Why it died:</strong> ' + escapeHtml(deathReason(bill)) + '</div>'
+      : '';
+
     var TAKE_ACTION_BASE = 'https://slefmoaa.github.io/SLAC/take-action.html';
     var actionUrl = bill.email_template
       ? TAKE_ACTION_BASE + '?bill=' + encodeURIComponent(bill.bill_number || '') + '&state=' + encodeURIComponent(bill.state || '')
       : bill.advocacy_url;
-    var actionBtn = actionUrl
+    var actionBtn = (!isDead && actionUrl)
       ? '<a class="sleflac-take-action" href="' + escapeHtml(actionUrl) + '" target="_blank" rel="noopener">Take action &rarr;</a>'
       : '';
 
@@ -438,6 +471,7 @@
           '<div class="sleflac-bill-label">' + escapeHtml(bill.label || bill.title || '') + '</div>' +
           '<div class="sleflac-bill-summary">' + escapeHtml(bill.summary || '') + '</div>' +
           metaLine +
+          deadNoteHtml +
         '</div>' +
         '<div class="sleflac-side">' +
           '<span class="sleflac-status-badge" style="background:' + color + '">' + escapeHtml(bill.status_label || 'Unknown') + '</span>' +
