@@ -55,7 +55,13 @@ async function legiscanGet(op, params, retries = 3) {
 }
 
 // Build a map of normalized bill_number -> bill_id for a given state's
-// current session, via getSessionList + getMasterListRaw.
+// current session, via getSessionList + getMasterListRaw. Also returns
+// whether that session has formally adjourned (sine_die), which LegiScan
+// reports as a first-class field on the session object — this is what
+// lets us catch bills that die by inaction (no floor vote before
+// adjournment) even though LegiScan may not have re-coded their numeric
+// `status` to 6 ("Failed / Dead") yet. See "Bill status vs. session
+// adjournment" note below simplifyBill().
 async function buildBillIdMap(state) {
   const sessionData = await legiscanGet("getSessionList", { state });
   const sessions = sessionData.sessions || [];
@@ -70,7 +76,9 @@ async function buildBillIdMap(state) {
     throw new Error(`No session found for state ${state}`);
   }
 
-  console.log(`  [${state}] Using session: ${session.session_name} (id ${session.session_id})`);
+  console.log(
+    `  [${state}] Using session: ${session.session_name} (id ${session.session_id}, sine_die=${session.sine_die})`
+  );
 
   const masterData = await legiscanGet("getMasterListRaw", { id: session.session_id });
   const masterList = masterData.masterlist || {};
@@ -83,7 +91,8 @@ async function buildBillIdMap(state) {
     const normalized = entry.number.replace(/\s+/g, "").toUpperCase();
     map[normalized] = entry.bill_id;
   }
-  return map;
+
+  return { map, sineDie: !!session.sine_die, sessionName: session.session_name };
 }
 
 async function fetchBillDetail(billId) {
@@ -102,15 +111,44 @@ const STATUS_LABELS = {
   6: "Failed / Dead",
 };
 
+// Status codes that represent a bill still actively moving (i.e. not yet
+// passed, vetoed, enrolled, or already marked dead). If the legislature's
+// session has adjourned sine die while a bill is stuck in one of these
+// states, the bill cannot proceed until it is reintroduced next session —
+// it is functionally dead even though LegiScan hasn't recoded `status` to
+// 6 yet. (3 "Enrolled" is deliberately excluded: an enrolled bill has
+// already passed both chambers and is only awaiting gubernatorial action,
+// which can still happen after sine die, so it is not dead.)
+const NON_TERMINAL_IN_PROGRESS = new Set([0, 1, 2]);
+
 // Status labels considered terminal — bill will be removed from bills.json
 // 30 days after first reaching one of these states.
 const FINAL_STATUSES = new Set(["Passed", "Vetoed", "Failed / Dead"]);
 const EXPIRY_DAYS = 30;
 
-function simplifyBill(bill, meta) {
+function simplifyBill(bill, meta, sessionInfo) {
   const history = bill.history || [];
   const lastAction = history.length ? history[history.length - 1] : null;
-  const statusLabel = STATUS_LABELS[bill.status] || "Unknown";
+  let statusLabel = STATUS_LABELS[bill.status] || "Unknown";
+  let statusNote = null;
+
+  // Bill status vs. session adjournment
+  // --------------------------------------
+  // LegiScan's numeric `status` code only changes when LegiScan's editors
+  // (or the state's own data feed) explicitly recode a bill. Bills that
+  // die quietly by inaction — never getting a committee hearing or floor
+  // vote before the legislature adjourns sine die — often keep a stale
+  // "Introduced"/"Engrossed" status code for a long time after they are,
+  // in practice, dead for the biennium. `getSessionList` exposes a
+  // `sine_die` flag on the session itself, so we use that (rather than
+  // trying to scrape/parse LegiScan's free-text status descriptions,
+  // which aren't part of the structured API response) to catch this case
+  // and correct the label ourselves.
+  if (sessionInfo?.sineDie && NON_TERMINAL_IN_PROGRESS.has(bill.status)) {
+    statusNote = `Session adjourned sine die with bill still at "${statusLabel}" — treated as dead; must be reintroduced next session.`;
+    console.log(`  [${meta.state}] ${bill.bill_number} — ${statusNote}`);
+    statusLabel = "Failed / Dead";
+  }
 
   // Stamp final_date the first time a bill reaches a terminal status.
   // Once set, never overwrite it — the 30-day expiry clock starts here.
@@ -137,6 +175,7 @@ function simplifyBill(bill, meta) {
     title: bill.title,
     status: bill.status,
     status_label: statusLabel,
+    status_note: statusNote,
     last_action_date: lastAction ? lastAction.date : null,
     last_action: lastAction ? lastAction.action : null,
     committee: bill.committee ? bill.committee.name : null,
@@ -163,6 +202,7 @@ function errorEntry(state, entry, statusLabel, errorMsg) {
     email_subject: entry.email_subject || null,
     email_template: entry.email_template || null,
     status_label: statusLabel,
+    status_note: null,
     // Hardwired fallback link — even when the LegiScan API call fails
     // (rate limit, outage, session lookup error), users can still read
     // the bill text via the manually-curated bill_url.
@@ -191,8 +231,11 @@ async function main() {
   for (const [state, entries] of Object.entries(byState)) {
     console.log(`Processing state: ${state} (${entries.length} bill(s))`);
     let billIdMap = {};
+    let sessionInfo = null;
     try {
-      billIdMap = await buildBillIdMap(state);
+      const built = await buildBillIdMap(state);
+      billIdMap = built.map;
+      sessionInfo = { sineDie: built.sineDie, sessionName: built.sessionName };
     } catch (err) {
       console.error(`  [${state}] Failed to build bill ID map: ${err.message}`);
       for (const entry of entries) {
@@ -213,7 +256,7 @@ async function main() {
       try {
         console.log(`  [${state}] Fetching detail for ${entry.bill_number} (id ${billId})...`);
         const bill = await fetchBillDetail(billId);
-        results.push(simplifyBill(bill, entry));
+        results.push(simplifyBill(bill, entry, sessionInfo));
         await new Promise((r) => setTimeout(r, 400)); // be polite to the API
       } catch (err) {
         console.error(`  [${state}] Error fetching ${entry.bill_number}: ${err.message}`);
