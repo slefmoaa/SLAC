@@ -84,6 +84,14 @@ body {
 .position-notes.oppose { border-left-color: var(--oppose-border); background: var(--oppose-bg); color: var(--oppose); }
 .position-notes.support { border-left-color: var(--support-border); background: var(--support-bg); color: var(--support); }
 
+.dead-note {
+  font-size: 13px; color: var(--oppose); line-height: 1.5;
+  margin-top: 10px; padding: 10px 12px;
+  background: var(--oppose-bg); border-radius: var(--radius);
+  border-left: 3px solid var(--oppose-border);
+}
+.dead-note strong { font-weight: 700; }
+
 .letter-context {
   font-size: 13px; padding: 10px 12px; border-radius: var(--radius);
   margin-bottom: 10px; font-weight: 600; line-height: 1.4;
@@ -156,7 +164,7 @@ textarea {
     <div class="status-msg">Loading bill details&hellip;</div>
   </div>
 
-  <div class="step">
+  <div class="step" id="address-step">
     <div class="step-title">1. Enter your address</div>
     <div class="field-row">
       <div class="field" style="flex:2;">
@@ -248,6 +256,18 @@ textarea {
   var currentBill = null;
   var selectedLegislator = null;
 
+  // Succinct, human-readable reason a bill is no longer active. Mirrors
+  // the logic in squarespace-embed.html: prefer the status_note stamped
+  // by fetch-bill-status.mjs (e.g. died via session adjournment), then
+  // fall back to the last recorded action, then a generic message.
+  function deathReason(bill) {
+    if (bill.status_note && bill.status_note.trim()) return bill.status_note.trim();
+    if (bill.last_action) {
+      return (bill.last_action_date ? bill.last_action_date + ' — ' : '') + bill.last_action;
+    }
+    return 'This bill did not pass and is no longer active this session.';
+  }
+
   // ---- Step 0: load bill details ----
   function renderBillCard(bill) {
     var container = document.getElementById('bill-card');
@@ -268,13 +288,30 @@ textarea {
     var billLinkHtml = billLink
       ? '<a class="bill-card-link" href="' + escapeHtml(billLink) + '" target="_blank" rel="noopener">Read the Bill &#8599;</a>'
       : '';
+
+    var isDead = bill.status_label === 'Failed / Dead';
+    var deadNoteHtml = isDead
+      ? '<div class="dead-note"><strong>This bill is no longer active.</strong> ' + escapeHtml(deathReason(bill)) + '</div>'
+      : '';
+
     container.innerHTML =
       '<div class="bill-card-code">' + escapeHtml((bill.state || '') + ' ' + bill.bill_number) + '</div>' +
       '<div class="bill-card-label">' + escapeHtml(bill.label || bill.title || '') + '</div>' +
       '<div class="bill-card-summary">' + escapeHtml(bill.summary || '') + '</div>' +
       billLinkHtml +
       '<div class="position-badge ' + position + '">' + badgeLabel + '</div>' +
-      notesHtml;
+      notesHtml +
+      deadNoteHtml;
+
+    // A dead bill has no one left to lobby this session — hide the
+    // address-lookup flow entirely rather than let someone draft and
+    // send a letter about a bill that can no longer move.
+    var addressStep = document.getElementById('address-step');
+    if (isDead) {
+      addressStep.classList.add('hidden');
+    } else {
+      addressStep.classList.remove('hidden');
+    }
   }
 
   function loadBill() {
@@ -327,7 +364,7 @@ textarea {
     }
 
     statusEl.className = 'status-msg';
-    statusEl.textContent = 'Looking up your legislators\u2026';
+    statusEl.textContent = 'Looking up your legislators…';
     legStep.classList.add('hidden');
     listEl.innerHTML = '';
 
@@ -366,8 +403,8 @@ textarea {
         filtered.forEach(function (leg, idx) {
           var chamberLabel = leg.chamber === 'upper' ? 'Senate' : (leg.chamber === 'lower' ? 'House' : (leg.title || ''));
           var district = leg.district ? 'District ' + escapeHtml(leg.district) : '';
-          var meta = [chamberLabel, district].filter(Boolean).join(' \u00b7 ');
-          var noEmail = !leg.email ? '<div class="legislator-noemail">No email on file \u2014 use contact form</div>' : '';
+          var meta = [chamberLabel, district].filter(Boolean).join(' · ');
+          var noEmail = !leg.email ? '<div class="legislator-noemail">No email on file — use contact form</div>' : '';
 
           var opt = document.createElement('div');
           opt.className = 'legislator-option';
@@ -431,12 +468,12 @@ textarea {
     var sendBtn = document.getElementById('send-btn');
     sendBtn.href = mailto;
     if (!to) {
-      sendBtn.textContent = 'No email on file \u2014 use contact form';
+      sendBtn.textContent = 'No email on file — use contact form';
       if (selectedLegislator && selectedLegislator.contact_url) {
         sendBtn.href = selectedLegislator.contact_url;
       }
     } else {
-      sendBtn.textContent = 'Open in email app \u2192';
+      sendBtn.textContent = 'Open in email app →';
     }
   }
 
