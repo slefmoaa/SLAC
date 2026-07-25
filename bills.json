@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-25T15:47:07.813Z",
+  "generated": "2026-07-25T17:16:13.465Z",
   "bills": [
     {
       "state": "MI",
@@ -18,13 +18,14 @@
       "title": "Veterans: other; definition for veteran of the uniformed services; create. Amends sec. 1 of 1965 PA 190 (MCL 35.61).",
       "status": 1,
       "status_label": "Introduced",
+      "status_note": null,
       "last_action_date": "2025-11-13",
       "last_action": "Bill Electronically Reproduced 11/12/2025",
       "committee": "Government Operations",
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5262",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5262/2025",
       "final_date": null,
-      "updated": "2026-07-25T15:47:01.739Z"
+      "updated": "2026-07-25T17:16:08.141Z"
     },
     {
       "state": "MI",
@@ -43,13 +44,14 @@
       "title": "State: identification cards; individuals who served in the NOAACOC or USPHSCC; include in the definition of veteran. Amends sec. 2 of 1972 PA 222 (MCL 28.292).",
       "status": 1,
       "status_label": "Introduced",
+      "status_note": null,
       "last_action_date": "2025-11-13",
       "last_action": "Bill Electronically Reproduced 11/12/2025",
       "committee": "Government Operations",
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5278",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5278/2025",
       "final_date": null,
-      "updated": "2026-07-25T15:47:02.264Z"
+      "updated": "2026-07-25T17:16:08.569Z"
     },
     {
       "state": "MI",
@@ -68,13 +70,14 @@
       "title": "Vehicles: registration plates; individuals who served in the NOAACOC or USPHSCC; include in the definition of veteran and provide special registration plates for. Amends sec. 310 of 1949 PA 300 (MCL 257.310) & adds secs. 803v & 803w.",
       "status": 1,
       "status_label": "Introduced",
+      "status_note": null,
       "last_action_date": "2025-11-13",
       "last_action": "Bill Electronically Reproduced 11/12/2025",
       "committee": "Government Operations",
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5279",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5279/2025",
       "final_date": null,
-      "updated": "2026-07-25T15:47:02.721Z"
+      "updated": "2026-07-25T17:16:08.984Z"
     },
     {
       "state": "MI",
@@ -93,13 +96,14 @@
       "title": "Individual income tax: deductions; retirement and pension benefits and student loan forgiveness deductions for certain commissioned officers; provide for. Amends sec. 30 of 1967 PA 281 (MCL 206.30).",
       "status": 1,
       "status_label": "Introduced",
+      "status_note": null,
       "last_action_date": "2025-11-13",
       "last_action": "Bill Electronically Reproduced 11/12/2025",
       "committee": "Government Operations",
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5280",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5280/2025",
       "final_date": null,
-      "updated": "2026-07-25T15:47:03.166Z"
+      "updated": "2026-07-25T17:16:09.402Z"
     },
     {
       "state": "MI",
@@ -118,13 +122,14 @@
       "title": "Military affairs: other; hyperbaric oxygen treatment pilot program; establish. Creates new act. TIE BAR WITH: HB 5457'26",
       "status": 2,
       "status_label": "Engrossed",
+      "status_note": null,
       "last_action_date": "2026-06-23",
       "last_action": "Referred To Committee On Health Policy",
       "committee": "Health Policy",
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5456",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5456/2025",
       "final_date": null,
-      "updated": "2026-07-25T15:47:03.628Z"
+      "updated": "2026-07-25T17:16:09.819Z"
     },
     {
       "state": "MI",
@@ -143,13 +148,14 @@
       "title": "Military affairs: other; hyperbaric oxygen therapy pilot program; establish. Creates new act. TIE BAR WITH: HB 5456'26",
       "status": 2,
       "status_label": "Engrossed",
+      "status_note": null,
       "last_action_date": "2026-06-23",
       "last_action": "Referred To Committee On Health Policy",
       "committee": "Health Policy",
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5457",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5457/2025",
       "final_date": null,
-      "updated": "2026-07-25T15:47:04.074Z"
+      "updated": "2026-07-25T17:16:10.233Z"
     },
     {
       "state": "MN",
@@ -167,14 +173,15 @@
       "email_template": "Dear [LEGISLATOR_NAME],\n\nI am writing to urge your support for HF 3911, which would authorize certain former commissioned officers of the United States Public Health Service (USPHS) and the National Oceanic and Atmospheric Administration (NOAA) Commissioned Corps to reside in Minnesota veterans homes, provided they meet honorable service and active duty requirements.\n\nUnder federal law (Title 38 USC), commissioned officers of the USPHS and NOAA are recognized as veterans by the Department of Veterans Affairs. Minnesota's veterans home eligibility rules currently do not reflect this recognition, leaving these veterans without access to a benefit available to their peers in other uniformed services.\n\nHF 3911 is a narrow, common-sense fix that aligns Minnesota law with the federal definition of veteran. I respectfully ask for your support in advancing this bill.\n\nThank you for your service to the people of Minnesota.\n\nRespectfully,\n[FULL_NAME]\n[CITY], [STATE]\nMember, [CHAPTER]",
       "title": "Former officers of the Public Health Service and the National Oceanic and Atmospheric Administration authorized to reside in state veterans homes.",
       "status": 1,
-      "status_label": "Introduced",
+      "status_label": "Failed / Dead",
+      "status_note": "Session adjourned sine die with bill still at \"Introduced\" — treated as dead; must be reintroduced next session.",
       "last_action_date": "2026-03-05",
       "last_action": "Author added Hansen, R.",
       "committee": "Veterans and Military Affairs",
       "state_link": "https://www.revisor.mn.gov/bills/94/2026/0/HF/3911/",
       "legiscan_url": "https://legiscan.com/MN/bill/HF3911/2025",
-      "final_date": null,
-      "updated": "2026-07-25T15:47:04.764Z"
+      "final_date": "2026-07-25",
+      "updated": "2026-07-25T17:16:10.781Z"
     },
     {
       "state": "PA",
@@ -193,13 +200,14 @@
       "title": "In State Veterans' Commission and Deputy Adjutant General for Veterans' Affairs, further providing for Veterans' Trust Fund; in veterans' organizations, further providing for grants to veterans' service officer programs and providing for veterans' claims assistance standards; and imposing penalties.",
       "status": 1,
       "status_label": "Introduced",
+      "status_note": null,
       "last_action_date": "2026-03-18",
       "last_action": "Re-referred to Appropriations",
       "committee": "Appropriations",
       "state_link": "https://www.palegis.us/legislation/bills/2025/sb1209",
       "legiscan_url": "https://legiscan.com/PA/bill/SB1209/2025",
       "final_date": null,
-      "updated": "2026-07-25T15:47:05.330Z"
+      "updated": "2026-07-25T17:16:11.259Z"
     },
     {
       "state": "PA",
@@ -218,13 +226,14 @@
       "title": "In general provisions, providing for prohibiting the receipt of compensation with regard to veterans' benefits.",
       "status": 1,
       "status_label": "Introduced",
+      "status_note": null,
       "last_action_date": "2025-10-06",
       "last_action": "Referred to Veterans Affairs & Emergency Preparedness",
       "committee": "Veterans Affairs & Emergency Preparedness",
       "state_link": "https://www.palegis.us/legislation/bills/2025/hb1918",
       "legiscan_url": "https://legiscan.com/PA/bill/HB1918/2025",
       "final_date": null,
-      "updated": "2026-07-25T15:47:05.775Z"
+      "updated": "2026-07-25T17:16:11.674Z"
     },
     {
       "state": "PA",
@@ -243,13 +252,14 @@
       "title": "In personal income tax, further providing for classes of income.",
       "status": 1,
       "status_label": "Introduced",
+      "status_note": null,
       "last_action_date": "2025-04-09",
       "last_action": "Referred to Finance",
       "committee": "Finance",
       "state_link": "https://www.palegis.us/legislation/bills/2025/hb1177",
       "legiscan_url": "https://legiscan.com/PA/bill/HB1177/2025",
       "final_date": null,
-      "updated": "2026-07-25T15:47:06.240Z"
+      "updated": "2026-07-25T17:16:12.088Z"
     },
     {
       "state": "NJ",
@@ -268,13 +278,14 @@
       "title": "Extends eligibility for certain veterans' gross income tax exemptions to include veterans of all Uniformed Services of United States.",
       "status": 1,
       "status_label": "Introduced",
+      "status_note": null,
       "last_action_date": "2026-01-13",
       "last_action": "Introduced in the Senate, Referred to Senate Military and Veterans' Affairs Committee",
       "committee": "Military and Veterans' Affairs",
       "state_link": "https://www.njleg.state.nj.us/bill-search/2026/S1194",
       "legiscan_url": "https://legiscan.com/NJ/bill/S1194/2026",
       "final_date": null,
-      "updated": "2026-07-25T15:47:06.884Z"
+      "updated": "2026-07-25T17:16:12.616Z"
     },
     {
       "state": "DE",
@@ -293,12 +304,13 @@
       "title": "An Act To Amend Title 30 Of The Delaware Code Relating To Exclusion Of Military Pensions From Taxable Income.",
       "status": 3,
       "status_label": "Enrolled",
+      "status_note": null,
       "last_action_date": "2026-07-01",
       "last_action": "Passed By House. Votes: 40 YES 1 ABSENT",
       "state_link": "https://legis.delaware.gov/BillDetail?LegislationId=142742",
       "legiscan_url": "https://legiscan.com/DE/bill/SB219/2025",
       "final_date": null,
-      "updated": "2026-07-25T15:47:07.412Z"
+      "updated": "2026-07-25T17:16:13.063Z"
     }
   ]
 }
