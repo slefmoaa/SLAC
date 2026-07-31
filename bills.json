@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-30T17:09:43.937Z",
+  "generated": "2026-07-31T11:44:44.005Z",
   "bills": [
     {
       "state": "MI",
@@ -25,7 +25,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5262",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5262/2025",
       "final_date": null,
-      "updated": "2026-07-30T17:09:38.062Z"
+      "updated": "2026-07-31T11:44:37.018Z"
     },
     {
       "state": "MI",
@@ -51,7 +51,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5278",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5278/2025",
       "final_date": null,
-      "updated": "2026-07-30T17:09:38.524Z"
+      "updated": "2026-07-31T11:44:37.454Z"
     },
     {
       "state": "MI",
@@ -77,7 +77,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5279",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5279/2025",
       "final_date": null,
-      "updated": "2026-07-30T17:09:38.982Z"
+      "updated": "2026-07-31T11:44:37.887Z"
     },
     {
       "state": "MI",
@@ -103,7 +103,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5280",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5280/2025",
       "final_date": null,
-      "updated": "2026-07-30T17:09:39.427Z"
+      "updated": "2026-07-31T11:44:38.314Z"
     },
     {
       "state": "MI",
@@ -129,7 +129,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5456",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5456/2025",
       "final_date": null,
-      "updated": "2026-07-30T17:09:39.885Z"
+      "updated": "2026-07-31T11:44:38.759Z"
     },
     {
       "state": "MI",
@@ -155,7 +155,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5457",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5457/2025",
       "final_date": null,
-      "updated": "2026-07-30T17:09:40.341Z"
+      "updated": "2026-07-31T11:44:39.186Z"
     },
     {
       "state": "MN",
@@ -181,7 +181,7 @@
       "state_link": "https://www.revisor.mn.gov/bills/94/2026/0/HF/3911/",
       "legiscan_url": "https://legiscan.com/MN/bill/HF3911/2025",
       "final_date": "2026-07-25",
-      "updated": "2026-07-30T17:09:40.962Z"
+      "updated": "2026-07-31T11:44:39.852Z"
     },
     {
       "state": "PA",
@@ -207,7 +207,7 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/sb1209",
       "legiscan_url": "https://legiscan.com/PA/bill/SB1209/2025",
       "final_date": null,
-      "updated": "2026-07-30T17:09:41.518Z"
+      "updated": "2026-07-31T11:44:40.417Z"
     },
     {
       "state": "PA",
@@ -233,7 +233,7 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/hb1918",
       "legiscan_url": "https://legiscan.com/PA/bill/HB1918/2025",
       "final_date": null,
-      "updated": "2026-07-30T17:09:41.960Z"
+      "updated": "2026-07-31T11:44:40.845Z"
     },
     {
       "state": "PA",
@@ -259,7 +259,84 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/hb1177",
       "legiscan_url": "https://legiscan.com/PA/bill/HB1177/2025",
       "final_date": null,
-      "updated": "2026-07-30T17:09:42.406Z"
+      "updated": "2026-07-31T11:44:41.276Z"
+    },
+    {
+      "state": "PA",
+      "bill_number": "HB2439",
+      "label": "Aligning the Veterans Service Officer Grant Program to the Calendar Year",
+      "category": "Budget",
+      "chapter": "Pennsylvania Council of Chapters",
+      "summary": "Aligns the disbursement schedule of the Veterans Service Officer Grant Program to the calendar year, so that veterans service organizations receive their January funding on time instead of waiting two months or longer for processing, especially when the state budget is late.",
+      "priority": true,
+      "advocacy_url": "https://moaa-mcoc.github.io/LAC/?bill=HB2439",
+      "chamber_target": "both",
+      "position": "support",
+      "position_notes": "Submitted by Robert Gray, PA Council of Chapters. Prevents veterans service organizations from having to front money to pay service officers while waiting two months or longer, if a budget is not passed on time, for the grant to be processed and paid.",
+      "email_subject": "Support for HB 2439 — Aligning Veterans Service Officer Grant Payments to the Calendar Year",
+      "email_template": "Dear [LEGISLATOR_NAME],\n\nI am writing to urge your support for HB 2439, which would align the disbursement schedule of the Veterans Service Officer Grant Program to the calendar year.\n\nState veterans organizations rely on this grant program to employ service officers who help veterans across Pennsylvania file VA claims and apply for other state and federal benefits. Under current law, the payment schedule can delay funding for the January cycle by two months or longer — especially when the state budget is late — forcing these organizations to front their own money just to keep service officers on the job.\n\nHB 2439 is a simple, low-cost fix that ensures veterans service organizations receive their funding on time, without interruption to the critical claims assistance they provide. I respectfully ask for your support in advancing this bill.\n\nThank you for your service to the veterans of Pennsylvania.\n\nRespectfully,\n[FULL_NAME]\n[CITY], [STATE]\nMember, [CHAPTER]",
+      "title": "In veterans' organizations, further providing for grants to veterans' service officer programs.",
+      "status": 1,
+      "status_label": "Introduced",
+      "status_note": null,
+      "last_action_date": "2026-04-27",
+      "last_action": "Laid on the table",
+      "state_link": "https://www.palegis.us/legislation/bills/2025/hb2439",
+      "legiscan_url": "https://legiscan.com/PA/bill/HB2439/2025",
+      "final_date": null,
+      "updated": "2026-07-31T11:44:41.707Z"
+    },
+    {
+      "state": "PA",
+      "bill_number": "HB1144",
+      "label": "Pension Increase for Blind, Amputee, and Paralyzed Veterans",
+      "category": "Benefits",
+      "chapter": "Pennsylvania Council of Chapters",
+      "summary": "Increases the Pennsylvania Blind, Amputee, and Paralyzed Veterans Pension, which has remained at $150 per month for more than twenty years and has lost significant purchasing power to inflation.",
+      "priority": true,
+      "advocacy_url": "https://moaa-mcoc.github.io/LAC/?bill=HB1144",
+      "chamber_target": "both",
+      "position": "support",
+      "position_notes": "Submitted by Robert Gray, PA Council of Chapters. These disabled veterans are elderly and need the increase in income to provide a better standard of living.",
+      "email_subject": "Support for HB 1144 — Pension Increase for Blind, Amputee, and Paralyzed Veterans",
+      "email_template": "Dear [LEGISLATOR_NAME],\n\nI am writing to urge your support for HB 1144, which would increase the Pennsylvania Blind, Amputee, and Paralyzed Veterans Pension.\n\nThis pension has remained at $150 per month for more than twenty years. Over that time, inflation has significantly eroded its purchasing power, leaving many of our state's most severely disabled veterans — who are now elderly — without adequate support to maintain a decent standard of living.\n\nHB 1144 would restore meaningful value to this benefit for veterans who have given so much in service to our country. I respectfully ask for your support in advancing this bill.\n\nThank you for your service to the veterans of Pennsylvania.\n\nRespectfully,\n[FULL_NAME]\n[CITY], [STATE]\nMember, [CHAPTER]",
+      "title": "In veterans' pensions and benefits, further providing for blind veteran's pension and for amputee and paralyzed veteran's pension.",
+      "status": 2,
+      "status_label": "Engrossed",
+      "status_note": null,
+      "last_action_date": "2025-05-22",
+      "last_action": "Referred to Veterans Affairs & Emergency Preparedness",
+      "committee": "Veterans Affairs & Emergency Preparedness",
+      "state_link": "https://www.palegis.us/legislation/bills/2025/hb1144",
+      "legiscan_url": "https://legiscan.com/PA/bill/HB1144/2025",
+      "final_date": null,
+      "updated": "2026-07-31T11:44:42.146Z"
+    },
+    {
+      "state": "PA",
+      "bill_number": "HB1257",
+      "label": "Expanding the Disabled Veterans Real Estate Tax Exemption Program",
+      "category": "Taxes",
+      "chapter": "Pennsylvania Council of Chapters",
+      "summary": "Expands eligibility for the 100% disabled veterans real estate tax exemption to veterans disabled outside of an armed conflict, and extends eligibility to surviving spouses of servicemembers killed on active duty or listed as missing in action or prisoner of war.",
+      "priority": true,
+      "advocacy_url": "https://moaa-mcoc.github.io/LAC/?bill=HB1257",
+      "chamber_target": "both",
+      "position": "support",
+      "position_notes": "Submitted by Robert Gray, PA Council of Chapters. Removes the war-service requirement to include peacetime deaths, and adds eligibility for spouses of servicemembers killed on active duty or who die of active-duty injuries, and spouses of servicemembers declared missing in action or prisoner of war.",
+      "email_subject": "Support for HB 1257 — Expanding the Disabled Veterans Real Estate Tax Exemption",
+      "email_template": "Dear [LEGISLATOR_NAME],\n\nI am writing to urge your support for HB 1257, which would expand Pennsylvania's Disabled Veterans Real Estate Tax Exemption Program.\n\nThis program currently exempts 100% disabled veterans from property taxes for life, with the exemption reverting to a surviving spouse upon the veteran's death. HB 1257 would remove the requirement that the disability have occurred during an armed conflict, and would extend eligibility to surviving spouses of servicemembers killed on active duty or listed as missing in action or prisoner of war.\n\nThis expansion ensures that severely disabled veterans and the families of those who gave their lives in service receive the same recognition and relief, regardless of whether their injury or loss occurred during wartime. I respectfully ask for your support in advancing this bill.\n\nThank you for your service to the veterans of Pennsylvania.\n\nRespectfully,\n[FULL_NAME]\n[CITY], [STATE]\nMember, [CHAPTER]",
+      "title": "A Joint Resolution proposing an amendment to the Constitution of the Commonwealth of Pennsylvania, further providing for exemptions and special provisions.",
+      "status": 2,
+      "status_label": "Engrossed",
+      "status_note": null,
+      "last_action_date": "2026-03-30",
+      "last_action": "Referred to State Government",
+      "committee": "State Government",
+      "state_link": "https://www.palegis.us/legislation/bills/2025/hb1257",
+      "legiscan_url": "https://legiscan.com/PA/bill/HB1257/2025",
+      "final_date": null,
+      "updated": "2026-07-31T11:44:42.591Z"
     },
     {
       "state": "NJ",
@@ -285,7 +362,7 @@
       "state_link": "https://www.njleg.state.nj.us/bill-search/2026/S1194",
       "legiscan_url": "https://legiscan.com/NJ/bill/S1194/2026",
       "final_date": null,
-      "updated": "2026-07-30T17:09:43.001Z"
+      "updated": "2026-07-31T11:44:43.122Z"
     },
     {
       "state": "DE",
@@ -310,7 +387,7 @@
       "state_link": "https://legis.delaware.gov/BillDetail?LegislationId=142742",
       "legiscan_url": "https://legiscan.com/DE/bill/SB219/2025",
       "final_date": null,
-      "updated": "2026-07-30T17:09:43.536Z"
+      "updated": "2026-07-31T11:44:43.603Z"
     }
   ]
 }
