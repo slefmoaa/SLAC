@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-19T12:40:19.843Z",
+  "generated": "2026-08-25T15:27:24.149Z",
   "bills": [
     {
       "state": "MI",
@@ -25,7 +25,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5262",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5262/2025",
       "final_date": null,
-      "updated": "2026-08-19T12:40:11.614Z"
+      "updated": "2026-08-25T15:27:16.761Z"
     },
     {
       "state": "MI",
@@ -51,7 +51,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5278",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5278/2025",
       "final_date": null,
-      "updated": "2026-08-19T12:40:12.100Z"
+      "updated": "2026-08-25T15:27:17.210Z"
     },
     {
       "state": "MI",
@@ -77,7 +77,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5279",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5279/2025",
       "final_date": null,
-      "updated": "2026-08-19T12:40:12.583Z"
+      "updated": "2026-08-25T15:27:17.673Z"
     },
     {
       "state": "MI",
@@ -103,7 +103,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5280",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5280/2025",
       "final_date": null,
-      "updated": "2026-08-19T12:40:13.058Z"
+      "updated": "2026-08-25T15:27:18.117Z"
     },
     {
       "state": "MI",
@@ -129,7 +129,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5456",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5456/2025",
       "final_date": null,
-      "updated": "2026-08-19T12:40:13.567Z"
+      "updated": "2026-08-25T15:27:18.584Z"
     },
     {
       "state": "MI",
@@ -155,33 +155,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5457",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5457/2025",
       "final_date": null,
-      "updated": "2026-08-19T12:40:14.059Z"
-    },
-    {
-      "state": "MN",
-      "bill_number": "HF3911",
-      "label": "Veterans Home Eligibility for NOAA & USPHS Officers",
-      "category": "Veteran Recognition (NOAA/USPHS)",
-      "chapter": "Minnesota Council of Chapters",
-      "summary": "This bill expands eligibility for state veterans homes by allowing certain former commissioned officers from the USPHS and the NOAA to live there, as long as they meet honorable service and active duty requirements.",
-      "priority": true,
-      "advocacy_url": "https://moaa-mcoc.github.io/LAC/?bill=HF3911",
-      "chamber_target": "lower",
-      "position": "support",
-      "position_notes": "",
-      "email_subject": "Support for HF 3911 — Veterans Home Eligibility for NOAA & USPHS Officers",
-      "email_template": "Dear [LEGISLATOR_NAME],\n\nI am writing to urge your support for HF 3911, which would authorize certain former commissioned officers of the United States Public Health Service (USPHS) and the National Oceanic and Atmospheric Administration (NOAA) Commissioned Corps to reside in Minnesota veterans homes, provided they meet honorable service and active duty requirements.\n\nUnder federal law (Title 38 USC), commissioned officers of the USPHS and NOAA are recognized as veterans by the Department of Veterans Affairs. Minnesota's veterans home eligibility rules currently do not reflect this recognition, leaving these veterans without access to a benefit available to their peers in other uniformed services.\n\nHF 3911 is a narrow, common-sense fix that aligns Minnesota law with the federal definition of veteran. I respectfully ask for your support in advancing this bill.\n\nThank you for your service to the people of Minnesota.\n\nRespectfully,\n[FULL_NAME]\n[CITY], [STATE]\nMember, [CHAPTER]",
-      "title": "Former officers of the Public Health Service and the National Oceanic and Atmospheric Administration authorized to reside in state veterans homes.",
-      "status": 1,
-      "status_label": "Failed / Dead",
-      "status_note": "Session adjourned sine die with bill still at \"Introduced\" — treated as dead; must be reintroduced next session.",
-      "last_action_date": "2026-03-05",
-      "last_action": "Author added Hansen, R.",
-      "committee": "Veterans and Military Affairs",
-      "state_link": "https://www.revisor.mn.gov/bills/94/2026/0/HF/3911/",
-      "legiscan_url": "https://legiscan.com/MN/bill/HF3911/2025",
-      "final_date": "2026-07-25",
-      "updated": "2026-08-19T12:40:14.903Z"
+      "updated": "2026-08-25T15:27:19.028Z"
     },
     {
       "state": "PA",
@@ -207,7 +181,7 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/sb1209",
       "legiscan_url": "https://legiscan.com/PA/bill/SB1209/2025",
       "final_date": null,
-      "updated": "2026-08-19T12:40:15.562Z"
+      "updated": "2026-08-25T15:27:20.292Z"
     },
     {
       "state": "PA",
@@ -233,7 +207,7 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/hb1918",
       "legiscan_url": "https://legiscan.com/PA/bill/HB1918/2025",
       "final_date": null,
-      "updated": "2026-08-19T12:40:16.046Z"
+      "updated": "2026-08-25T15:27:20.735Z"
     },
     {
       "state": "PA",
@@ -259,7 +233,7 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/hb1177",
       "legiscan_url": "https://legiscan.com/PA/bill/HB1177/2025",
       "final_date": null,
-      "updated": "2026-08-19T12:40:16.528Z"
+      "updated": "2026-08-25T15:27:21.183Z"
     },
     {
       "state": "PA",
@@ -284,7 +258,7 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/hb2439",
       "legiscan_url": "https://legiscan.com/PA/bill/HB2439/2025",
       "final_date": null,
-      "updated": "2026-08-19T12:40:17.006Z"
+      "updated": "2026-08-25T15:27:21.643Z"
     },
     {
       "state": "PA",
@@ -310,7 +284,7 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/hb1144",
       "legiscan_url": "https://legiscan.com/PA/bill/HB1144/2025",
       "final_date": null,
-      "updated": "2026-08-19T12:40:17.497Z"
+      "updated": "2026-08-25T15:27:22.095Z"
     },
     {
       "state": "PA",
@@ -336,7 +310,7 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/hb1257",
       "legiscan_url": "https://legiscan.com/PA/bill/HB1257/2025",
       "final_date": null,
-      "updated": "2026-08-19T12:40:17.980Z"
+      "updated": "2026-08-25T15:27:22.562Z"
     },
     {
       "state": "NJ",
@@ -362,7 +336,7 @@
       "state_link": "https://www.njleg.state.nj.us/bill-search/2026/S1194",
       "legiscan_url": "https://legiscan.com/NJ/bill/S1194/2026",
       "final_date": null,
-      "updated": "2026-08-19T12:40:18.812Z"
+      "updated": "2026-08-25T15:27:23.210Z"
     },
     {
       "state": "DE",
@@ -379,15 +353,15 @@
       "email_subject": null,
       "email_template": null,
       "title": "An Act To Amend Title 30 Of The Delaware Code Relating To Exclusion Of Military Pensions From Taxable Income.",
-      "status": 3,
-      "status_label": "Enrolled",
+      "status": 4,
+      "status_label": "Passed",
       "status_note": null,
-      "last_action_date": "2026-07-01",
-      "last_action": "Passed By House. Votes: 40 YES 1 ABSENT",
+      "last_action_date": "2026-08-17",
+      "last_action": "Signed by Governor",
       "state_link": "https://legis.delaware.gov/BillDetail?LegislationId=142742",
       "legiscan_url": "https://legiscan.com/DE/bill/SB219/2025",
-      "final_date": null,
-      "updated": "2026-08-19T12:40:19.442Z"
+      "final_date": "2026-08-25",
+      "updated": "2026-08-25T15:27:23.749Z"
     }
   ]
 }

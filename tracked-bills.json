@@ -66,23 +66,6 @@
       "position_notes": ""
     },
     {
-      "state": "MN",
-      "bill_number": "HF3911",
-      "bill_url": "https://www.revisor.mn.gov/bills/94/2026/0/HF/3911/",
-      "label": "Veterans Home Eligibility for NOAA & USPHS Officers",
-      "category": "Veteran Recognition (NOAA/USPHS)",
-      "chapter": "Minnesota Council of Chapters",
-      "summary": "This bill expands eligibility for state veterans homes by allowing certain former commissioned officers from the USPHS and the NOAA to live there, as long as they meet honorable service and active duty requirements.",
-      "priority": true,
-      "advocacy_url": "https://moaa-mcoc.github.io/LAC/?bill=HF3911",
-      "chamber_target": "lower",
-      "email_subject": "Support for HF 3911 — Veterans Home Eligibility for NOAA & USPHS Officers",
-      "email_template": "Dear [LEGISLATOR_NAME],\n\nI am writing to urge your support for HF 3911, which would authorize certain former commissioned officers of the United States Public Health Service (USPHS) and the National Oceanic and Atmospheric Administration (NOAA) Commissioned Corps to reside in Minnesota veterans homes, provided they meet honorable service and active duty requirements.\n\nUnder federal law (Title 38 USC), commissioned officers of the USPHS and NOAA are recognized as veterans by the Department of Veterans Affairs. Minnesota's veterans home eligibility rules currently do not reflect this recognition, leaving these veterans without access to a benefit available to their peers in other uniformed services.\n\nHF 3911 is a narrow, common-sense fix that aligns Minnesota law with the federal definition of veteran. I respectfully ask for your support in advancing this bill.\n\nThank you for your service to the people of Minnesota.\n\nRespectfully,\n[FULL_NAME]\n[CITY], [STATE]\nMember, [CHAPTER]",
-      "position": "support",
-      "position_notes": "",
-      "final_date": "2026-07-25"
-    },
-    {
       "state": "PA",
       "bill_number": "SB1209",
       "bill_url": "https://www.palegis.us/legislation/bills/2025/sb1209",
@@ -158,7 +141,8 @@
       "advocacy_url": "",
       "chamber_target": "upper",
       "position": "support",
-      "position_notes": "Subtraction modification covering all Uniformed Services, including NOAA and USPHS commissioned corps. Phases in from $12,500 to $25,000 by tax year 2029. Per Senate Amendment 1, individuals age 60 or older must meet a domicile-duration requirement to qualify: 3 years if domiciled in DE before 1/1/2027, or 5 years if domiciled on/after 1/1/2027 (no such requirement for those under 60). The subtraction limit applies individually to each spouse receiving a military pension on a joint return. Fiscal note estimates General Fund revenue impact of $0.4M (FY27), $1.5M (FY28), and $2.8M (FY29)."
+      "position_notes": "Subtraction modification covering all Uniformed Services, including NOAA and USPHS commissioned corps. Phases in from $12,500 to $25,000 by tax year 2029. Per Senate Amendment 1, individuals age 60 or older must meet a domicile-duration requirement to qualify: 3 years if domiciled in DE before 1/1/2027, or 5 years if domiciled on/after 1/1/2027 (no such requirement for those under 60). The subtraction limit applies individually to each spouse receiving a military pension on a joint return. Fiscal note estimates General Fund revenue impact of $0.4M (FY27), $1.5M (FY28), and $2.8M (FY29).",
+      "final_date": "2026-08-25"
     },
     {
       "state": "MI",
