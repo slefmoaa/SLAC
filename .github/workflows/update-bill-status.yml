@@ -38,7 +38,11 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add bills.json
+          # fetch-bill-status.mjs writes both bills.json (status cache) and
+          # tracked-bills.json (final_date stamps + expiry pruning) — both
+          # must be staged together or the working tree is left dirty and
+          # `git pull --rebase` below fails with "unstaged changes".
+          git add bills.json tracked-bills.json
           git diff --staged --quiet || git commit -m "Update bill status (automated)"
           git pull --rebase origin main
           git push
