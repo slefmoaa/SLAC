@@ -1,6 +1,35 @@
 {
-  "generated": "2026-08-26T12:45:45.190Z",
+  "generated": "2026-08-27T15:29:12.000Z",
   "bills": [
+    {
+      "state": "",
+      "bill_number": "STARACT-RES",
+      "label": "Richard Star Act — State Resolution",
+      "category": "Priority Campaign",
+      "chapter": "",
+      "summary": "Ask your state legislator to introduce a resolution supporting the Major Richard Star Act — open to every state, not just Michigan.",
+      "priority": true,
+      "badges": [
+        "DISTRICT"
+      ],
+      "advocacy_url": null,
+      "template_url": "https://www.staractalliance.org/media/vsefcjdy/major-richard-star-act-model-state-resolution-template.pdf",
+      "chamber_target": "both",
+      "position": "support",
+      "position_notes": "This is a state resolution ask, not a bill — it would not change state law and requires no funding in any state. It simply urges Congress to pass the Major Richard Star Act (H.R. 2102 / S. 1032), which corrects a 2004 oversight preventing more than 50,000 medically retired combat-wounded veterans nationwide from receiving their full earned DoD retirement pay alongside their VA disability compensation.",
+      "email_subject": "Request for Meeting — Major Richard Star Act State Resolution",
+      "email_template": "Dear [LEGISLATOR_NAME],\n\nMy name is [FULL_NAME], and I am a veteran and member of [CHAPTER] living in [CITY], [STATE]. I'm reaching out to ask for a brief meeting to discuss a state resolution that would support combat-wounded veterans here in [STATE].\n\nThe resolution would not change state law and would not require any funding. It would simply urge Congress to pass the Major Richard Star Act (H.R. 2102 / S. 1032), which corrects a 2004 oversight that leaves more than 50,000 medically retired combat-wounded veterans nationwide unable to receive their full earned DoD retirement pay alongside their VA disability compensation.\n\nFor your reference, here is some background on the legislation along with sample language that could serve as a starting point for a resolution:\nMajor Richard Star Act — Resolution & Fact Sheet: https://www.moaamcoc.com/uploads/1/4/8/4/148483887/star_act_resolution___fact_sheet.pdf\n\nI'm happy to meet in person, by phone, or by video, whatever is easiest for your schedule — please let me know who on your staff I should coordinate with.\n\nThank you for your time and consideration.\n\nRespectfully,\n[FULL_NAME]\n[CITY], [STATE]\nMember, [CHAPTER]",
+      "title": "Richard Star Act — State Resolution",
+      "status_label": "Ongoing",
+      "status_note": null,
+      "last_action_date": null,
+      "last_action": null,
+      "committee": null,
+      "state_link": "https://www.congress.gov/bill/119th-congress/house-bill/2102",
+      "legiscan_url": "https://www.congress.gov/bill/119th-congress/house-bill/2102",
+      "final_date": null,
+      "updated": "2026-08-27T15:29:12.000Z"
+    },
     {
       "state": "MI",
       "bill_number": "HB5262",
