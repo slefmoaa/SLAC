@@ -1,9 +1,9 @@
 Run node scripts/fetch-bill-status.mjs
-file:///home/runner/work/SLAC/SLAC/scripts/fetch-bill-status.mjs:2
-  "generated": "2026-08-27T15:29:12.000Z",
-             ^
+file:///home/runner/work/SLAC/SLAC/scripts/fetch-bill-status.mjs:1
+Run node scripts/fetch-bill-status.mjs
+    ^^^^
 
-SyntaxError: Unexpected token ':'
+SyntaxError: Unexpected identifier 'node'
     at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
     at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:110:18)
     at #translate (node:internal/modules/esm/loader:559:20)
