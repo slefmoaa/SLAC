@@ -200,6 +200,12 @@ textarea {
         <input type="text" id="city" placeholder="Lansing"/>
       </div>
     </div>
+    <div class="field-row">
+      <div class="field">
+        <label for="chapter">MOAA chapter or council</label>
+        <input type="text" id="chapter" placeholder="e.g. SE Michigan Chapter"/>
+      </div>
+    </div>
   </div>
 
   <div class="step hidden" id="email-step">
@@ -255,6 +261,7 @@ textarea {
 
   var currentBill = null;
   var selectedLegislator = null;
+  var userState = '';
 
   // Succinct, human-readable reason a bill is no longer active. Mirrors
   // the logic in squarespace-embed.html: prefer the status_note stamped
@@ -288,6 +295,9 @@ textarea {
     var billLinkHtml = billLink
       ? '<a class="bill-card-link" href="' + escapeHtml(billLink) + '" target="_blank" rel="noopener">Read the Bill &#8599;</a>'
       : '';
+    var templateLinkHtml = bill.template_url
+      ? '<a class="bill-card-link" href="' + escapeHtml(bill.template_url) + '" target="_blank" rel="noopener" style="margin-left:14px;">View Resolution Template &#8599;</a>'
+      : '';
 
     var isDead = bill.status_label === 'Failed / Dead';
     var deadNoteHtml = isDead
@@ -298,7 +308,7 @@ textarea {
       '<div class="bill-card-code">' + escapeHtml((bill.state || '') + ' ' + bill.bill_number) + '</div>' +
       '<div class="bill-card-label">' + escapeHtml(bill.label || bill.title || '') + '</div>' +
       '<div class="bill-card-summary">' + escapeHtml(bill.summary || '') + '</div>' +
-      billLinkHtml +
+      billLinkHtml + templateLinkHtml +
       '<div class="position-badge ' + position + '">' + badgeLabel + '</div>' +
       notesHtml +
       deadNoteHtml;
@@ -375,7 +385,9 @@ textarea {
       .then(function (data) {
         if (data.error) throw new Error(data.error);
 
-        // Validate that the ZIP is in the same state as the bill
+        // Validate that the ZIP is in the same state as the bill — only
+        // applies to state-specific bills. Nationwide campaigns (blank
+        // currentBill.state) accept a ZIP from any state.
         var billStateCode = currentBill ? (currentBill.state || '').toUpperCase() : '';
         var zipState = ((data.location && data.location.state) || '').toUpperCase();
         if (billStateCode && zipState && zipState !== billStateCode) {
@@ -383,6 +395,11 @@ textarea {
           statusEl.textContent = 'This is a ' + billStateCode + ' bill. Please enter a ZIP code in ' + billStateCode + '.';
           return;
         }
+        // Remember the visitor's own state (from the geocoded address) so
+        // the email template's [STATE] placeholder reflects where they
+        // actually live, not just the tracked bill's state — this matters
+        // for nationwide campaigns where currentBill.state is blank.
+        userState = zipState;
 
         var legislators = data.legislators || [];
         var target = currentBill ? currentBill.chamber_target : 'both';
@@ -443,15 +460,22 @@ textarea {
     if (!currentBill) return;
     var fullName = document.getElementById('full-name').value.trim();
     var city = document.getElementById('city').value.trim();
+    var chapter = document.getElementById('chapter').value.trim();
     var legName = selectedLegislator ? selectedLegislator.name : '[LEGISLATOR_NAME]';
     var titlePrefix = selectedLegislator && selectedLegislator.title ? selectedLegislator.title + ' ' : '';
+
+    // Prefer the visitor's own (geocoded) state so the letter reflects
+    // where they actually live. Falls back to the bill's fixed state for
+    // the rare case userState wasn't captured (shouldn't normally happen,
+    // since this step only shows after a successful ZIP lookup).
+    var stateForLetter = userState || currentBill.state || '';
 
     var body = fillTemplate(currentBill.email_template, {
       LEGISLATOR_NAME: titlePrefix + (legName || ''),
       FULL_NAME: fullName,
       CITY: city,
-      STATE: currentBill.state || '',
-      CHAPTER: currentBill.chapter || ''
+      STATE: stateForLetter,
+      CHAPTER: chapter || currentBill.chapter || ''
     });
 
     document.getElementById('email-body').value = body;
@@ -481,6 +505,14 @@ textarea {
     document.getElementById('details-step').classList.remove('hidden');
     document.getElementById('email-step').classList.remove('hidden');
 
+    // Pre-fill the chapter field with the tracked bill's chapter, if any
+    // (state-specific bills usually have one on file). Nationwide
+    // campaigns leave this blank, so we ask the visitor for their own.
+    var chapterField = document.getElementById('chapter');
+    if (currentBill && currentBill.chapter && !chapterField.value) {
+      chapterField.value = currentBill.chapter;
+    }
+
     // Inject position-aware context line above the letter textarea
     var position = currentBill ? (currentBill.position || 'support').toLowerCase() : 'support';
     var isOppose = position === 'oppose';
@@ -501,7 +533,7 @@ textarea {
     updateEmailBody();
   }
 
-  ['full-name', 'city'].forEach(function (id) {
+  ['full-name', 'city', 'chapter'].forEach(function (id) {
     document.getElementById(id).addEventListener('input', updateEmailBody);
   });
   document.getElementById('email-subject').addEventListener('input', updateSendLink);
