@@ -1,343 +1,396 @@
-// scripts/fetch-bill-status.mjs
-//
-// Reads tracked-bills.json (curated list of {state, bill_number, ...}),
-// fetches current status for each from the LegiScan API, and writes
-// bills.json with merged status + the original metadata (label,
-// category, chapter, summary, priority, advocacy_url).
-//
-// Requires env var LEGISCAN_API_KEY (set as a GitHub Actions secret).
-//
-// LegiScan API docs: https://legiscan.com/gaits/documentation/legiscan
-
-import fs from "fs/promises";
-
-const API_KEY = process.env.LEGISCAN_API_KEY;
-
-if (!API_KEY) {
-  console.error("Missing LEGISCAN_API_KEY environment variable.");
-  process.exit(1);
-}
-
-const BASE_URL = "https://api.legiscan.com/";
-const TRACKED_BILLS_FILE = "tracked-bills.json";
-const OUTPUT_FILE = "bills.json";
-
-async function legiscanGet(op, params, retries = 3) {
-  const url = new URL(BASE_URL);
-  url.searchParams.set("key", API_KEY);
-  url.searchParams.set("op", op);
-  for (const [k, v] of Object.entries(params)) {
-    url.searchParams.set(k, v);
-  }
-
-  let lastErr;
-  for (let attempt = 1; attempt <= retries; attempt++) {
-    try {
-      const res = await fetch(url.toString());
-      if (!res.ok) {
-        throw new Error(`LegiScan API error for op=${op}: ${res.status} ${res.statusText}`);
-      }
-      const data = await res.json();
-      if (data.status !== "OK") {
-        throw new Error(`LegiScan API returned non-OK status for op=${op}: ${JSON.stringify(data)}`);
-      }
-      return data;
-    } catch (err) {
-      lastErr = err;
-      if (attempt < retries) {
-        const delay = attempt * 2000; // 2s, 4s, ...
-        console.warn(`  Attempt ${attempt}/${retries} failed for op=${op} (${err.message}). Retrying in ${delay}ms...`);
-        await new Promise((r) => setTimeout(r, delay));
-      }
+{
+  "generated": "2026-08-27T15:29:12.000Z",
+  "bills": [
+    {
+      "state": "",
+      "bill_number": "STARACT-RES",
+      "label": "Richard Star Act — State Resolution",
+      "category": "Priority Campaign",
+      "chapter": "",
+      "summary": "Ask your state legislator to introduce a resolution supporting the Major Richard Star Act — open to every state, not just Michigan.",
+      "priority": true,
+      "badges": [
+        "DISTRICT"
+      ],
+      "advocacy_url": null,
+      "template_url": "https://www.staractalliance.org/media/vsefcjdy/major-richard-star-act-model-state-resolution-template.pdf",
+      "chamber_target": "both",
+      "position": "support",
+      "position_notes": "This is a state resolution ask, not a bill — it would not change state law and requires no funding in any state. It simply urges Congress to pass the Major Richard Star Act (H.R. 2102 / S. 1032), which corrects a 2004 oversight preventing more than 50,000 medically retired combat-wounded veterans nationwide from receiving their full earned DoD retirement pay alongside their VA disability compensation.",
+      "email_subject": "Request for Meeting — Major Richard Star Act State Resolution",
+      "email_template": "Dear [LEGISLATOR_NAME],\n\nMy name is [FULL_NAME], and I am a veteran and member of [CHAPTER] living in [CITY], [STATE]. I'm reaching out to ask for a brief meeting to discuss a state resolution that would support combat-wounded veterans here in [STATE].\n\nThe resolution would not change state law and would not require any funding. It would simply urge Congress to pass the Major Richard Star Act (H.R. 2102 / S. 1032), which corrects a 2004 oversight that leaves more than 50,000 medically retired combat-wounded veterans nationwide unable to receive their full earned DoD retirement pay alongside their VA disability compensation.\n\nFor your reference, here is some background on the legislation along with sample language that could serve as a starting point for a resolution:\nMajor Richard Star Act — Resolution & Fact Sheet: https://www.moaamcoc.com/uploads/1/4/8/4/148483887/star_act_resolution___fact_sheet.pdf\n\nI'm happy to meet in person, by phone, or by video, whatever is easiest for your schedule — please let me know who on your staff I should coordinate with.\n\nThank you for your time and consideration.\n\nRespectfully,\n[FULL_NAME]\n[CITY], [STATE]\nMember, [CHAPTER]",
+      "title": "Richard Star Act — State Resolution",
+      "status_label": "Ongoing",
+      "status_note": null,
+      "last_action_date": null,
+      "last_action": null,
+      "committee": null,
+      "state_link": "https://www.congress.gov/bill/119th-congress/house-bill/2102",
+      "legiscan_url": "https://www.congress.gov/bill/119th-congress/house-bill/2102",
+      "final_date": null,
+      "updated": "2026-08-27T15:29:12.000Z"
+    },
+    {
+      "state": "MI",
+      "bill_number": "HB5262",
+      "label": "Veteran of the Uniformed Services Definition",
+      "category": "Veteran Recognition (NOAA/USPHS)",
+      "chapter": "Michigan Council of Chapters",
+      "summary": "Amends 1965 PA 190 (MCL 35.61) to define 'veteran of the uniformed services' to include NOAA and U.S. Public Health Service commissioned officers, consistent with Title 38 USC.",
+      "priority": false,
+      "advocacy_url": "https://moaa-mcoc.github.io/LAC/?bill=HB5262",
+      "chamber_target": "lower",
+      "position": "support",
+      "position_notes": "",
+      "email_subject": "Support for HB 5262 — Veteran Recognition for NOAA & USPHS Officers",
+      "email_template": "Dear [LEGISLATOR_NAME],\n\nI am writing to urge your support for HB 5262, which would amend Act 190 of 1965 to include commissioned officers of NOAA and the USPHS as a class of veterans, consistent with the federal definition under Title 38 of the United States Code.\n\nUnder federal law, NOAA and USPHS commissioned officers are recognized as veterans by the Department of Veterans Affairs. Michigan law currently fails to extend this same recognition, creating an unjust gap in benefits and honors for individuals who have served in a uniformed capacity.\n\nHB 5262 is a straightforward alignment of Michigan law with existing federal standards. I respectfully ask for your support in advancing this bill through committee.\n\nThank you for your service to the people of Michigan.\n\nRespectfully,\n[FULL_NAME]\n[CITY], [STATE]\nMember, [CHAPTER]",
+      "title": "Veterans: other; definition for veteran of the uniformed services; create. Amends sec. 1 of 1965 PA 190 (MCL 35.61).",
+      "status": 1,
+      "status_label": "Introduced",
+      "status_note": null,
+      "last_action_date": "2025-11-13",
+      "last_action": "Bill Electronically Reproduced 11/12/2025",
+      "committee": "Government Operations",
+      "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5262",
+      "legiscan_url": "https://legiscan.com/MI/bill/HB5262/2025",
+      "final_date": null,
+      "updated": "2026-08-26T12:45:37.669Z"
+    },
+    {
+      "state": "MI",
+      "bill_number": "HB5278",
+      "label": "State ID Card Veteran Designation",
+      "category": "Veteran Recognition (NOAA/USPHS)",
+      "chapter": "Michigan Council of Chapters",
+      "summary": "Amends 1972 PA 222 to extend the veteran designation on Michigan state ID cards to NOAA and USPHS commissioned officers.",
+      "priority": false,
+      "advocacy_url": "https://moaa-mcoc.github.io/LAC/?bill=HB5278",
+      "chamber_target": "lower",
+      "position": "support",
+      "position_notes": "",
+      "email_subject": "Support for HB 5278 — Veteran ID Recognition for NOAA & USPHS Officers",
+      "email_template": "Dear [LEGISLATOR_NAME],\n\nI am writing to ask for your support of HB 5278, which would extend the veteran designation on Michigan state identification cards to commissioned officers of NOAA and the USPHS.\n\nThese uniformed service members are recognized as veterans under federal law (38 USC) but are currently excluded from this recognition on Michigan state IDs. This small change would mean a great deal to the men and women who served in these federal uniformed services and now call Michigan home.\n\nI respectfully request your support in moving HB 5278 forward in the House Government Operations Committee.\n\nRespectfully,\n[FULL_NAME]\n[CITY], [STATE]\nMember, [CHAPTER]",
+      "title": "State: identification cards; individuals who served in the NOAACOC or USPHSCC; include in the definition of veteran. Amends sec. 2 of 1972 PA 222 (MCL 28.292).",
+      "status": 1,
+      "status_label": "Introduced",
+      "status_note": null,
+      "last_action_date": "2025-11-13",
+      "last_action": "Bill Electronically Reproduced 11/12/2025",
+      "committee": "Government Operations",
+      "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5278",
+      "legiscan_url": "https://legiscan.com/MI/bill/HB5278/2025",
+      "final_date": null,
+      "updated": "2026-08-26T12:45:38.183Z"
+    },
+    {
+      "state": "MI",
+      "bill_number": "HB5279",
+      "label": "Driver's License Veteran Designation",
+      "category": "Veteran Recognition (NOAA/USPHS)",
+      "chapter": "Michigan Council of Chapters",
+      "summary": "Amends 1949 PA 300 (Michigan Vehicle Code) to extend the veteran designation on driver's licenses to NOAA and USPHS commissioned officers.",
+      "priority": false,
+      "advocacy_url": "https://moaa-mcoc.github.io/LAC/?bill=HB5279",
+      "chamber_target": "lower",
+      "position": "support",
+      "position_notes": "",
+      "email_subject": "Support for HB 5279 — Veteran Driver's License Recognition for NOAA & USPHS Officers",
+      "email_template": "Dear [LEGISLATOR_NAME],\n\nI am writing to request your support for HB 5279, which would extend the veteran designation on Michigan driver's licenses to commissioned officers of NOAA and the USPHS.\n\nThese federally recognized uniformed service veterans currently cannot receive the veteran designation on their Michigan driver's license — an inconsistency with federal law that this bill would correct. The change carries no meaningful fiscal impact and simply provides fair, equal recognition to all who have served.\n\nI ask that you support HB 5279 and help advance it through the House Government Operations Committee.\n\nRespectfully,\n[FULL_NAME]\n[CITY], [STATE]\nMember, [CHAPTER]",
+      "title": "Vehicles: registration plates; individuals who served in the NOAACOC or USPHSCC; include in the definition of veteran and provide special registration plates for. Amends sec. 310 of 1949 PA 300 (MCL 257.310) & adds secs. 803v & 803w.",
+      "status": 1,
+      "status_label": "Introduced",
+      "status_note": null,
+      "last_action_date": "2025-11-13",
+      "last_action": "Bill Electronically Reproduced 11/12/2025",
+      "committee": "Government Operations",
+      "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5279",
+      "legiscan_url": "https://legiscan.com/MI/bill/HB5279/2025",
+      "final_date": null,
+      "updated": "2026-08-26T12:45:38.663Z"
+    },
+    {
+      "state": "MI",
+      "bill_number": "HB5280",
+      "label": "Retirement Pay Tax Equity",
+      "category": "Veteran Recognition (NOAA/USPHS)",
+      "chapter": "Michigan Council of Chapters",
+      "summary": "Amends 1967 PA 281 (Income Tax Act) to extend Michigan retirement/pension tax deductions to NOAA and USPHS commissioned officers on par with other uniformed services veterans.",
+      "priority": true,
+      "advocacy_url": "https://moaa-mcoc.github.io/LAC/?bill=HB5280",
+      "chamber_target": "lower",
+      "position": "support",
+      "position_notes": "",
+      "email_subject": "Support for HB 5280 — Retirement Pay Tax Equity for NOAA & USPHS Officers",
+      "email_template": "Dear [LEGISLATOR_NAME],\n\nI am writing to respectfully request your support for HB 5280, which would extend Michigan retirement tax fairness to active duty, retired officers, and surviving spouses of the United States Public Health Service (USPHS) and National Oceanic and Atmospheric Administration (NOAA) Commissioned Corps.\n\nThese individuals are members of the uniformed services of the United States and are recognized as veterans by the Department of Veterans Affairs. HB 5280 is a narrow, fiscally responsible measure that simply ensures equal treatment among federally recognized uniformed services retirees.\n\nI respectfully ask that you support HB 5280 and assist in advancing the bill through the House Government Operations Committee.\n\nRespectfully,\n[FULL_NAME]\n[CITY], [STATE]\nMember, [CHAPTER]",
+      "title": "Individual income tax: deductions; retirement and pension benefits and student loan forgiveness deductions for certain commissioned officers; provide for. Amends sec. 30 of 1967 PA 281 (MCL 206.30).",
+      "status": 1,
+      "status_label": "Introduced",
+      "status_note": null,
+      "last_action_date": "2025-11-13",
+      "last_action": "Bill Electronically Reproduced 11/12/2025",
+      "committee": "Government Operations",
+      "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5280",
+      "legiscan_url": "https://legiscan.com/MI/bill/HB5280/2025",
+      "final_date": null,
+      "updated": "2026-08-26T12:45:39.137Z"
+    },
+    {
+      "state": "MI",
+      "bill_number": "HB5456",
+      "label": "Hyperbaric Oxygen Treatment Pilot Program",
+      "category": "Health",
+      "chapter": "SE Michigan Chapter, MOAA",
+      "summary": "Establishes a hyperbaric oxygen therapy (HBOT) grant and pilot program to provide treatment to veterans with traumatic brain injuries or post-traumatic stress disorder.",
+      "priority": true,
+      "advocacy_url": "https://moaa-mcoc.github.io/LAC/?bill=HB5456",
+      "chamber_target": "upper",
+      "position": "support",
+      "position_notes": "Submitted by Rich Higgins, SE Michigan Chapter. 13 states have enacted HBOT legislation (AZ, OK, TN, TX, VA, WY, MO, ND, NC, KY, FL, IN, MD); 9 more states (MI, IA, OH, PA, OR, NY, NJ, KS, NE) are drafting/introducing similar bills. Chamber target set to Senate (upper) per submitter's request even though it's a House bill.",
+      "email_subject": "Support for HB 5456 — Hyperbaric Oxygen Treatment Pilot Program for Veterans",
+      "email_template": "Dear [LEGISLATOR_NAME],\n\nI am writing to urge your support for HB 5456, which would establish a hyperbaric oxygen therapy (HBOT) grant and pilot program to provide treatment to veterans with traumatic brain injuries (TBI) or post-traumatic stress disorder (PTSD).\n\nHBOT shows significant promise in suicide prevention, particularly for veterans with TBI or PTSD, by delivering concentrated oxygen to heal brain wounds, reduce inflammation, and improve neuroplasticity, leading to decreased suicidal ideation, anxiety, and depression. Post-treatment studies point to a vital, drug-free pathway to recovery when standard treatments have failed.\n\nThirteen states (AZ, OK, TN, TX, VA, WY, MO, ND, NC, KY, FL, IN, and MD) have already enacted HBOT treatment legislation, and nine more (MI, IA, OH, PA, OR, NY, NJ, KS, NE) are currently drafting or advancing similar bills. Michigan has an opportunity to join this growing, bipartisan effort to give veterans a proven, non-pharmaceutical treatment option.\n\nI respectfully ask for your support in advancing HB 5456 through the Senate.\n\nThank you for your service to the veterans of Michigan.\n\nRespectfully,\n[FULL_NAME]\n[CITY], [STATE]\nMember, [CHAPTER]",
+      "title": "Military affairs: other; hyperbaric oxygen treatment pilot program; establish. Creates new act. TIE BAR WITH: HB 5457'26",
+      "status": 2,
+      "status_label": "Engrossed",
+      "status_note": null,
+      "last_action_date": "2026-06-23",
+      "last_action": "Referred To Committee On Health Policy",
+      "committee": "Health Policy",
+      "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5456",
+      "legiscan_url": "https://legiscan.com/MI/bill/HB5456/2025",
+      "final_date": null,
+      "updated": "2026-08-26T12:45:39.625Z"
+    },
+    {
+      "state": "MI",
+      "bill_number": "HB5457",
+      "label": "Hyperbaric Oxygen Therapy Pilot Program, Appropriations Funding Request",
+      "category": "Health",
+      "chapter": "SE Michigan Chapter, MOAA",
+      "summary": "Creates a hyperbaric oxygen therapy fund and provides for the administration of and distributions from the fund, appropriating the funding needed for HB 5456's HBOT pilot program.",
+      "priority": true,
+      "advocacy_url": "https://moaa-mcoc.github.io/LAC/?bill=HB5457",
+      "chamber_target": "upper",
+      "position": "support",
+      "position_notes": "Submitted by Rich Higgins, SE Michigan Chapter. Companion appropriations/funding bill to HB 5456 (creates the HBOT fund and provides for its administration and distributions). Same 13 states enacted / 9 states drafting context as HB 5456. Chamber target set to Senate (upper) per submitter's request.",
+      "email_subject": "Support for HB 5457 — Funding for the Hyperbaric Oxygen Treatment Pilot Program",
+      "email_template": "Dear [LEGISLATOR_NAME],\n\nI am writing to urge your support for HB 5457, which would create a hyperbaric oxygen therapy (HBOT) fund and provide for the administration of and distributions from that fund, appropriating the funding needed to carry out Michigan's HBOT pilot program for veterans.\n\nHBOT shows significant promise in suicide prevention, particularly for veterans with traumatic brain injury (TBI) or post-traumatic stress disorder (PTSD), by delivering concentrated oxygen to heal brain wounds, reduce inflammation, and improve neuroplasticity, leading to decreased suicidal ideation, anxiety, and depression. Without dedicated funding, the pilot program authorized elsewhere in statute cannot be carried out.\n\nThirteen states (AZ, OK, TN, TX, VA, WY, MO, ND, NC, KY, FL, IN, and MD) have already enacted HBOT treatment legislation, and nine more (MI, IA, OH, PA, OR, NY, NJ, KS, NE) are currently drafting or advancing similar bills. I respectfully ask for your support in advancing HB 5457 through the Senate.\n\nThank you for your service to the veterans of Michigan.\n\nRespectfully,\n[FULL_NAME]\n[CITY], [STATE]\nMember, [CHAPTER]",
+      "title": "Military affairs: other; hyperbaric oxygen therapy pilot program; establish. Creates new act. TIE BAR WITH: HB 5456'26",
+      "status": 2,
+      "status_label": "Engrossed",
+      "status_note": null,
+      "last_action_date": "2026-06-23",
+      "last_action": "Referred To Committee On Health Policy",
+      "committee": "Health Policy",
+      "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5457",
+      "legiscan_url": "https://legiscan.com/MI/bill/HB5457/2025",
+      "final_date": null,
+      "updated": "2026-08-26T12:45:40.101Z"
+    },
+    {
+      "state": "PA",
+      "bill_number": "SB1209",
+      "label": "PA Benefit Scam Protection",
+      "category": "Benefits",
+      "chapter": "Pennsylvania Council of Chapters",
+      "summary": "An Act amending Title 51 (Military Affairs) of the Pennsylvania Consolidated Statutes to strengthen the Veterans' Trust Fund, provide for grants to veterans' service officer programs, establish veterans' claims assistance standards, and impose penalties on those who exploit veterans through fraudulent benefits claims assistance.",
+      "priority": true,
+      "advocacy_url": "https://moaa-mcoc.github.io/LAC/?bill=SB1209",
+      "chamber_target": "upper",
+      "position": "oppose",
+      "position_notes": "Bill does not require VA accreditation contrary to USC Title 38",
+      "email_subject": "Opposition to SB 1209 — VA Accreditation Requirement Missing",
+      "email_template": "Dear [LEGISLATOR_NAME],\n\nI am writing to express opposition to SB 1209 in its current form, which amends Title 51 (Military Affairs) of the Pennsylvania Consolidated Statutes regarding veterans’ claims assistance standards.\n\nWhile the goal of protecting veterans from predatory claims consultants is commendable, SB 1209 falls critically short by failing to require VA accreditation as a condition for providing veterans’ claims assistance. Under Title 38 of the United States Code, individuals who assist veterans with VA benefits claims are required to be accredited by the Department of Veterans Affairs. This federal accreditation standard exists precisely to ensure that those helping veterans are trained, accountable, and subject to oversight.\n\nBy omitting this requirement, SB 1209 would create a parallel state framework that is weaker than existing federal law — potentially enabling unaccredited individuals to operate under a false veneer of state legitimacy while still falling short of the federal protections veterans deserve.\n\nI urge you to amend SB 1209 to explicitly require VA accreditation under 38 USC for anyone providing veterans’ claims assistance in Pennsylvania, bringing the bill into full alignment with federal law before advancing it.\n\nThank you for your service to the people of Pennsylvania.\n\nRespectfully,\n[FULL_NAME]\n[CITY], [STATE]\nMember, [CHAPTER]",
+      "title": "In State Veterans' Commission and Deputy Adjutant General for Veterans' Affairs, further providing for Veterans' Trust Fund; in veterans' organizations, further providing for grants to veterans' service officer programs and providing for veterans' claims assistance standards; and imposing penalties.",
+      "status": 1,
+      "status_label": "Introduced",
+      "status_note": null,
+      "last_action_date": "2026-03-18",
+      "last_action": "Re-referred to Appropriations",
+      "committee": "Appropriations",
+      "state_link": "https://www.palegis.us/legislation/bills/2025/sb1209",
+      "legiscan_url": "https://legiscan.com/PA/bill/SB1209/2025",
+      "final_date": null,
+      "updated": "2026-08-26T12:45:40.884Z"
+    },
+    {
+      "state": "PA",
+      "bill_number": "HB1918",
+      "label": "Prohibiting Compensation for Veterans' Benefits Assistance",
+      "category": "Benefits",
+      "chapter": "Cumberland Valley (PA) Chapter",
+      "summary": "Amends Title 51 (Military Affairs) of the Pennsylvania Consolidated Statutes to prohibit charging veterans for benefits claims assistance, except as permitted under federal law, mirroring the proposed federal GUARD VA Benefits Act.",
+      "priority": true,
+      "advocacy_url": "https://moaa-mcoc.github.io/LAC/?bill=HB1918",
+      "chamber_target": "both",
+      "position": "support",
+      "position_notes": "",
+      "email_subject": "Support for HB 1918 — Prohibiting Predatory Fees for Veterans’ Benefits Assistance",
+      "email_template": "Dear [LEGISLATOR_NAME],\n\nI am writing to urge your support for HB 1918, which would amend Title 51 (Military Affairs) of the Pennsylvania Consolidated Statutes to prohibit the charging of fees for veterans’ benefits claims assistance, except as expressly permitted under federal law.\n\nVeterans often face significant challenges when applying for the benefits they have earned through their service and sacrifice. Unfortunately, their need for assistance makes them vulnerable to “claim sharks” — unaccredited individuals and organizations that charge excessive fees and engage in predatory practices to exploit veterans’ trust. These bad actors do not adhere to the professional standards required of VA-accredited representatives, leaving veterans worse off than before.\n\nHB 1918 mirrors the proposed federal GUARD VA Benefits Act and would ensure that Pennsylvania veterans can access the benefits they have rightfully earned without fear of being taken advantage of. I respectfully ask for your support in advancing this bill.\n\nThank you for your service to the people of Pennsylvania.\n\nRespectfully,\n[FULL_NAME]\n[CITY], [STATE]\nMember, [CHAPTER]",
+      "title": "In general provisions, providing for prohibiting the receipt of compensation with regard to veterans' benefits.",
+      "status": 1,
+      "status_label": "Introduced",
+      "status_note": null,
+      "last_action_date": "2025-10-06",
+      "last_action": "Referred to Veterans Affairs & Emergency Preparedness",
+      "committee": "Veterans Affairs & Emergency Preparedness",
+      "state_link": "https://www.palegis.us/legislation/bills/2025/hb1918",
+      "legiscan_url": "https://legiscan.com/PA/bill/HB1918/2025",
+      "final_date": null,
+      "updated": "2026-08-26T12:45:41.362Z"
+    },
+    {
+      "state": "PA",
+      "bill_number": "HB1177",
+      "label": "Income Tax Relief for USPHS and NOAA Officers on Active Duty",
+      "category": "Taxes",
+      "chapter": "Cumberland Valley (PA) Chapter",
+      "summary": "Amends the Tax Reform Code of 1971 to extend Pennsylvania income tax relief to USPHS and NOAA commissioned officers while on active duty or active-duty orders outside Pennsylvania, consistent with the exemption already provided to Armed Forces members.",
+      "priority": true,
+      "advocacy_url": "https://moaa-mcoc.github.io/LAC/?bill=HB1177",
+      "chamber_target": "both",
+      "position": "support",
+      "position_notes": "",
+      "email_subject": "Support for HB 1177 — Income Tax Relief for USPHS & NOAA Officers",
+      "email_template": "Dear [LEGISLATOR_NAME],\n\nI am writing to urge your support for HB 1177, which would amend the Tax Reform Code of 1971 to extend Pennsylvania income tax relief to commissioned officers of the United States Public Health Service (USPHS) and the National Oceanic and Atmospheric Administration (NOAA) while serving on active duty or active-duty orders outside Pennsylvania.\n\nBoth USPHS and NOAA serve vital roles for our nation’s health and well-being. Their officers routinely go into harm’s way in service to our country, just as members of the Armed Forces do. Yet while Pennsylvania exempts Armed Forces income from state income tax, USPHS and NOAA officers’ income remains taxable — an inequity that HB 1177 would correct.\n\nThis is a straightforward matter of equal treatment for those who serve in uniform. I respectfully ask for your support in advancing HB 1177.\n\nThank you for your service to the people of Pennsylvania.\n\nRespectfully,\n[FULL_NAME]\n[CITY], [STATE]\nMember, [CHAPTER]",
+      "title": "In personal income tax, further providing for classes of income.",
+      "status": 1,
+      "status_label": "Introduced",
+      "status_note": null,
+      "last_action_date": "2025-04-09",
+      "last_action": "Referred to Finance",
+      "committee": "Finance",
+      "state_link": "https://www.palegis.us/legislation/bills/2025/hb1177",
+      "legiscan_url": "https://legiscan.com/PA/bill/HB1177/2025",
+      "final_date": null,
+      "updated": "2026-08-26T12:45:41.840Z"
+    },
+    {
+      "state": "PA",
+      "bill_number": "HB2439",
+      "label": "Aligning the Veterans Service Officer Grant Program to the Calendar Year",
+      "category": "Budget",
+      "chapter": "Pennsylvania Council of Chapters",
+      "summary": "Aligns the disbursement schedule of the Veterans Service Officer Grant Program to the calendar year, so that veterans service organizations receive their January funding on time instead of waiting two months or longer for processing, especially when the state budget is late.",
+      "priority": true,
+      "advocacy_url": "https://moaa-mcoc.github.io/LAC/?bill=HB2439",
+      "chamber_target": "lower",
+      "position": "support",
+      "position_notes": "Submitted by Robert Gray, PA Council of Chapters. Prevents veterans service organizations from having to front money to pay service officers while waiting two months or longer, if a budget is not passed on time, for the grant to be processed and paid.",
+      "email_subject": "Support for HB 2439 — Aligning Veterans Service Officer Grant Payments to the Calendar Year",
+      "email_template": "Dear [LEGISLATOR_NAME],\n\nI am writing to urge your support for HB 2439, which would align the disbursement schedule of the Veterans Service Officer Grant Program to the calendar year.\n\nState veterans organizations rely on this grant program to employ service officers who help veterans across Pennsylvania file VA claims and apply for other state and federal benefits. Under current law, the payment schedule can delay funding for the January cycle by two months or longer — especially when the state budget is late — forcing these organizations to front their own money just to keep service officers on the job.\n\nHB 2439 is a simple, low-cost fix that ensures veterans service organizations receive their funding on time, without interruption to the critical claims assistance they provide. I respectfully ask for your support in advancing this bill.\n\nThank you for your service to the veterans of Pennsylvania.\n\nRespectfully,\n[FULL_NAME]\n[CITY], [STATE]\nMember, [CHAPTER]",
+      "title": "In veterans' organizations, further providing for grants to veterans' service officer programs.",
+      "status": 1,
+      "status_label": "Introduced",
+      "status_note": null,
+      "last_action_date": "2026-04-27",
+      "last_action": "Laid on the table",
+      "state_link": "https://www.palegis.us/legislation/bills/2025/hb2439",
+      "legiscan_url": "https://legiscan.com/PA/bill/HB2439/2025",
+      "final_date": null,
+      "updated": "2026-08-26T12:45:42.336Z"
+    },
+    {
+      "state": "PA",
+      "bill_number": "HB1144",
+      "label": "Pension Increase for Blind, Amputee, and Paralyzed Veterans",
+      "category": "Benefits",
+      "chapter": "Pennsylvania Council of Chapters",
+      "summary": "Increases the Pennsylvania Blind, Amputee, and Paralyzed Veterans Pension, which has remained at $150 per month for more than twenty years and has lost significant purchasing power to inflation.",
+      "priority": true,
+      "advocacy_url": "https://moaa-mcoc.github.io/LAC/?bill=HB1144",
+      "chamber_target": "upper",
+      "position": "support",
+      "position_notes": "Submitted by Robert Gray, PA Council of Chapters. These disabled veterans are elderly and need the increase in income to provide a better standard of living.",
+      "email_subject": "Support for HB 1144 — Pension Increase for Blind, Amputee, and Paralyzed Veterans",
+      "email_template": "Dear [LEGISLATOR_NAME],\n\nI am writing to urge your support for HB 1144, which would increase the Pennsylvania Blind, Amputee, and Paralyzed Veterans Pension.\n\nThis pension has remained at $150 per month for more than twenty years. Over that time, inflation has significantly eroded its purchasing power, leaving many of our state's most severely disabled veterans — who are now elderly — without adequate support to maintain a decent standard of living.\n\nHB 1144 would restore meaningful value to this benefit for veterans who have given so much in service to our country. I respectfully ask for your support in advancing this bill.\n\nThank you for your service to the veterans of Pennsylvania.\n\nRespectfully,\n[FULL_NAME]\n[CITY], [STATE]\nMember, [CHAPTER]",
+      "title": "In veterans' pensions and benefits, further providing for blind veteran's pension and for amputee and paralyzed veteran's pension.",
+      "status": 2,
+      "status_label": "Engrossed",
+      "status_note": null,
+      "last_action_date": "2025-05-22",
+      "last_action": "Referred to Veterans Affairs & Emergency Preparedness",
+      "committee": "Veterans Affairs & Emergency Preparedness",
+      "state_link": "https://www.palegis.us/legislation/bills/2025/hb1144",
+      "legiscan_url": "https://legiscan.com/PA/bill/HB1144/2025",
+      "final_date": null,
+      "updated": "2026-08-26T12:45:42.829Z"
+    },
+    {
+      "state": "PA",
+      "bill_number": "HB1257",
+      "label": "Expanding the Disabled Veterans Real Estate Tax Exemption Program",
+      "category": "Taxes",
+      "chapter": "Pennsylvania Council of Chapters",
+      "summary": "Expands eligibility for the 100% disabled veterans real estate tax exemption to veterans disabled outside of an armed conflict, and extends eligibility to surviving spouses of servicemembers killed on active duty or listed as missing in action or prisoner of war.",
+      "priority": true,
+      "advocacy_url": "https://moaa-mcoc.github.io/LAC/?bill=HB1257",
+      "chamber_target": "upper",
+      "position": "support",
+      "position_notes": "Submitted by Robert Gray, PA Council of Chapters. Removes the war-service requirement to include peacetime deaths, and adds eligibility for spouses of servicemembers killed on active duty or who die of active-duty injuries, and spouses of servicemembers declared missing in action or prisoner of war.",
+      "email_subject": "Support for HB 1257 — Expanding the Disabled Veterans Real Estate Tax Exemption",
+      "email_template": "Dear [LEGISLATOR_NAME],\n\nI am writing to urge your support for HB 1257, which would expand Pennsylvania's Disabled Veterans Real Estate Tax Exemption Program.\n\nThis program currently exempts 100% disabled veterans from property taxes for life, with the exemption reverting to a surviving spouse upon the veteran's death. HB 1257 would remove the requirement that the disability have occurred during an armed conflict, and would extend eligibility to surviving spouses of servicemembers killed on active duty or listed as missing in action or prisoner of war.\n\nThis expansion ensures that severely disabled veterans and the families of those who gave their lives in service receive the same recognition and relief, regardless of whether their injury or loss occurred during wartime. I respectfully ask for your support in advancing this bill.\n\nThank you for your service to the veterans of Pennsylvania.\n\nRespectfully,\n[FULL_NAME]\n[CITY], [STATE]\nMember, [CHAPTER]",
+      "title": "A Joint Resolution proposing an amendment to the Constitution of the Commonwealth of Pennsylvania, further providing for exemptions and special provisions.",
+      "status": 2,
+      "status_label": "Engrossed",
+      "status_note": null,
+      "last_action_date": "2026-03-30",
+      "last_action": "Referred to State Government",
+      "committee": "State Government",
+      "state_link": "https://www.palegis.us/legislation/bills/2025/hb1257",
+      "legiscan_url": "https://legiscan.com/PA/bill/HB1257/2025",
+      "final_date": null,
+      "updated": "2026-08-26T12:45:43.318Z"
+    },
+    {
+      "state": "NJ",
+      "bill_number": "S1194",
+      "label": "Veterans' Gross Income Tax Exemption Parity for All Uniformed Services",
+      "category": "Taxes",
+      "chapter": "Greater Cincinnati",
+      "summary": "Extends eligibility for the Armed Forces retirement pay income tax exemption to include veterans of all Uniformed Services of the United States.",
+      "priority": true,
+      "advocacy_url": "https://moaa-mcoc.github.io/LAC/?bill=SB1194",
+      "chamber_target": "both",
+      "position": "support",
+      "position_notes": "Tax parity will cost the state very little (two NOAA Corps retirees and 49 USPHS retirees live in New Jersey) but will be very meaningful recognition of the USPHS and NOAA Corps retirees' service.",
+      "email_subject": "Support for S1194 — Income Tax Exemption Parity for USPHS & NOAA Retirees",
+      "email_template": "Dear [LEGISLATOR_NAME],\n\nI am writing to urge your support for S1194, which would extend New Jersey's gross income tax exemption for Armed Forces retirement pay to veterans of all Uniformed Services of the United States, including the United States Public Health Service (USPHS) and the National Oceanic and Atmospheric Administration (NOAA) Commissioned Corps.\n\nUSPHS and NOAA Corps officers are recognized as veterans under federal law (Title 38 USC) and serve alongside the Armed Forces in vital roles for our nation's health and environmental security. New Jersey currently taxes their retirement pay while exempting that of Armed Forces retirees — an inconsistency S1194 would correct at minimal cost to the state, as only a small number of USPHS and NOAA Corps retirees reside in New Jersey.\n\nI respectfully ask for your support in advancing S1194.\n\nThank you for your service to the people of New Jersey.\n\nRespectfully,\n[FULL_NAME]\n[CITY], [STATE]\nMember, [CHAPTER]",
+      "title": "Extends eligibility for certain veterans' gross income tax exemptions to include veterans of all Uniformed Services of United States.",
+      "status": 1,
+      "status_label": "Introduced",
+      "status_note": null,
+      "last_action_date": "2026-01-13",
+      "last_action": "Introduced in the Senate, Referred to Senate Military and Veterans' Affairs Committee",
+      "committee": "Military and Veterans' Affairs",
+      "state_link": "https://www.njleg.state.nj.us/bill-search/2026/S1194",
+      "legiscan_url": "https://legiscan.com/NJ/bill/S1194/2026",
+      "final_date": null,
+      "updated": "2026-08-26T12:45:44.164Z"
+    },
+    {
+      "state": "DE",
+      "bill_number": "SB219",
+      "label": "Military Pension Tax Exclusion Increase",
+      "category": "Taxes",
+      "chapter": "MD01, MD05",
+      "summary": "Phases in a subtraction modification for military pensions from all Uniformed Services (including NOAA and USPHS) from $12,500 to $25,000 by tax year 2029, with a domicile-duration requirement for retirees age 60 and older as a cost-control measure.",
+      "priority": true,
+      "advocacy_url": null,
+      "chamber_target": "upper",
+      "position": "support",
+      "position_notes": "Subtraction modification covering all Uniformed Services, including NOAA and USPHS commissioned corps. Phases in from $12,500 to $25,000 by tax year 2029. Per Senate Amendment 1, individuals age 60 or older must meet a domicile-duration requirement to qualify: 3 years if domiciled in DE before 1/1/2027, or 5 years if domiciled on/after 1/1/2027 (no such requirement for those under 60). The subtraction limit applies individually to each spouse receiving a military pension on a joint return. Fiscal note estimates General Fund revenue impact of $0.4M (FY27), $1.5M (FY28), and $2.8M (FY29).",
+      "email_subject": null,
+      "email_template": null,
+      "title": "An Act To Amend Title 30 Of The Delaware Code Relating To Exclusion Of Military Pensions From Taxable Income.",
+      "status": 4,
+      "status_label": "Passed",
+      "status_note": null,
+      "last_action_date": "2026-08-17",
+      "last_action": "Signed by Governor",
+      "state_link": "https://legis.delaware.gov/BillDetail?LegislationId=142742",
+      "legiscan_url": "https://legiscan.com/DE/bill/SB219/2025",
+      "final_date": "2026-08-25",
+      "updated": "2026-08-26T12:45:44.788Z"
     }
-  }
-  throw lastErr;
+  ]
 }
-
-// Build a map of normalized bill_number -> bill_id for a given state's
-// current session, via getSessionList + getMasterListRaw. Also returns
-// whether that session has formally adjourned (sine_die), which LegiScan
-// reports as a first-class field on the session object — this is what
-// lets us catch bills that die by inaction (no floor vote before
-// adjournment) even though LegiScan may not have re-coded their numeric
-// `status` to 6 ("Failed / Dead") yet. See "Bill status vs. session
-// adjournment" note below simplifyBill().
-async function buildBillIdMap(state) {
-  const sessionData = await legiscanGet("getSessionList", { state });
-  const sessions = sessionData.sessions || [];
-  const currentYear = new Date().getFullYear();
-
-  let session =
-    sessions.find((s) => s.session_tag === "Regular Session" && !s.special && s.year_end >= currentYear) ||
-    sessions.find((s) => s.year_end >= currentYear) ||
-    sessions[sessions.length - 1];
-
-  if (!session) {
-    throw new Error(`No session found for state ${state}`);
-  }
-
-  console.log(
-    `  [${state}] Using session: ${session.session_name} (id ${session.session_id}, sine_die=${session.sine_die})`
-  );
-
-  const masterData = await legiscanGet("getMasterListRaw", { id: session.session_id });
-  const masterList = masterData.masterlist || {};
-
-  const map = {};
-  for (const key of Object.keys(masterList)) {
-    if (key === "session") continue;
-    const entry = masterList[key];
-    if (!entry || !entry.number) continue;
-    const normalized = entry.number.replace(/\s+/g, "").toUpperCase();
-    map[normalized] = entry.bill_id;
-  }
-
-  return { map, sineDie: !!session.sine_die, sessionName: session.session_name };
-}
-
-async function fetchBillDetail(billId) {
-  const data = await legiscanGet("getBill", { id: billId });
-  return data.bill;
-}
-
-// LegiScan progress/status codes -> human-readable labels
-const STATUS_LABELS = {
-  0: "Pending",
-  1: "Introduced",
-  2: "Engrossed",
-  3: "Enrolled",
-  4: "Passed",
-  5: "Vetoed",
-  6: "Failed / Dead",
-};
-
-// Status codes that represent a bill still actively moving (i.e. not yet
-// passed, vetoed, enrolled, or already marked dead). If the legislature's
-// session has adjourned sine die while a bill is stuck in one of these
-// states, the bill cannot proceed until it is reintroduced next session —
-// it is functionally dead even though LegiScan hasn't recoded `status` to
-// 6 yet. (3 "Enrolled" is deliberately excluded: an enrolled bill has
-// already passed both chambers and is only awaiting gubernatorial action,
-// which can still happen after sine die, so it is not dead.)
-const NON_TERMINAL_IN_PROGRESS = new Set([0, 1, 2]);
-
-// Status labels considered terminal — bill will be removed from bills.json
-// 30 days after first reaching one of these states.
-const FINAL_STATUSES = new Set(["Passed", "Vetoed", "Failed / Dead"]);
-const EXPIRY_DAYS = 30;
-
-function simplifyBill(bill, meta, sessionInfo) {
-  const history = bill.history || [];
-  const lastAction = history.length ? history[history.length - 1] : null;
-  let statusLabel = STATUS_LABELS[bill.status] || "Unknown";
-  let statusNote = null;
-
-  // Bill status vs. session adjournment
-  // --------------------------------------
-  // LegiScan's numeric `status` code only changes when LegiScan's editors
-  // (or the state's own data feed) explicitly recode a bill. Bills that
-  // die quietly by inaction — never getting a committee hearing or floor
-  // vote before the legislature adjourns sine die — often keep a stale
-  // "Introduced"/"Engrossed" status code for a long time after they are,
-  // in practice, dead for the biennium. `getSessionList` exposes a
-  // `sine_die` flag on the session itself, so we use that (rather than
-  // trying to scrape/parse LegiScan's free-text status descriptions,
-  // which aren't part of the structured API response) to catch this case
-  // and correct the label ourselves.
-  if (sessionInfo?.sineDie && NON_TERMINAL_IN_PROGRESS.has(bill.status)) {
-    statusNote = `Session adjourned sine die with bill still at "${statusLabel}" — treated as dead; must be reintroduced next session.`;
-    console.log(`  [${meta.state}] ${bill.bill_number} — ${statusNote}`);
-    statusLabel = "Failed / Dead";
-  }
-
-  // Stamp final_date the first time a bill reaches a terminal status.
-  // Once set, never overwrite it — the 30-day expiry clock starts here.
-  let finalDate = meta.final_date || null;
-  if (FINAL_STATUSES.has(statusLabel) && !finalDate) {
-    finalDate = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
-    console.log(`  [${meta.state}] ${bill.bill_number} reached final status "${statusLabel}" — stamping final_date ${finalDate}`);
-  }
-
-  return {
-    state: meta.state,
-    bill_number: bill.bill_number,
-    label: meta.label || null,
-    category: meta.category || null,
-    chapter: meta.chapter || null,
-    summary: meta.summary || bill.description || null,
-    priority: !!meta.priority,
-    advocacy_url: meta.advocacy_url || null,
-    chamber_target: meta.chamber_target || 'both',
-    position: meta.position || 'support',
-    position_notes: meta.position_notes || '',
-    email_subject: meta.email_subject || null,
-    email_template: meta.email_template || null,
-    title: bill.title,
-    status: bill.status,
-    status_label: statusLabel,
-    status_note: statusNote,
-    last_action_date: lastAction ? lastAction.date : null,
-    last_action: lastAction ? lastAction.action : null,
-    committee: bill.committee ? bill.committee.name : null,
-    // Prefer the live LegiScan/state link, but fall back to the curated
-    // bill_url from tracked-bills.json if the API ever returns one blank.
-    state_link: bill.state_link || meta.bill_url || null,
-    legiscan_url: bill.url || meta.bill_url || null,
-    final_date: finalDate,
-    updated: new Date().toISOString(),
-  };
-}
-
-function errorEntry(state, entry, statusLabel, errorMsg) {
-  return {
-    state,
-    bill_number: entry.bill_number,
-    label: entry.label || null,
-    category: entry.category || null,
-    chapter: entry.chapter || null,
-    summary: entry.summary || null,
-    priority: !!entry.priority,
-    advocacy_url: entry.advocacy_url || null,
-    chamber_target: entry.chamber_target || 'both',
-    email_subject: entry.email_subject || null,
-    email_template: entry.email_template || null,
-    status_label: statusLabel,
-    status_note: null,
-    // Hardwired fallback link — even when the LegiScan API call fails
-    // (rate limit, outage, session lookup error), users can still read
-    // the bill text via the manually-curated bill_url.
-    state_link: entry.bill_url || null,
-    legiscan_url: entry.bill_url || null,
-    error: errorMsg,
-    updated: new Date().toISOString(),
-  };
-}
-
-async function main() {
-  const trackedRaw = await fs.readFile(TRACKED_BILLS_FILE, "utf-8");
-  const tracked = JSON.parse(trackedRaw);
-  const trackedBills = tracked.bills || [];
-
-  // Group tracked bills by state so we only build the bill-id map once per state
-  const byState = {};
-  for (const entry of trackedBills) {
-    const state = (entry.state || "").toUpperCase();
-    if (!byState[state]) byState[state] = [];
-    byState[state].push(entry);
-  }
-
-  const results = [];
-
-  for (const [state, entries] of Object.entries(byState)) {
-    console.log(`Processing state: ${state} (${entries.length} bill(s))`);
-    let billIdMap = {};
-    let sessionInfo = null;
-    try {
-      const built = await buildBillIdMap(state);
-      billIdMap = built.map;
-      sessionInfo = { sineDie: built.sineDie, sessionName: built.sessionName };
-    } catch (err) {
-      console.error(`  [${state}] Failed to build bill ID map: ${err.message}`);
-      for (const entry of entries) {
-        results.push(errorEntry(state, entry, "Error", err.message));
-      }
-      continue;
-    }
-
-    for (const entry of entries) {
-      const normalized = entry.bill_number.replace(/\s+/g, "").toUpperCase();
-      const billId = billIdMap[normalized];
-      if (!billId) {
-        console.warn(`  [${state}] Could not resolve bill_id for ${entry.bill_number}`);
-        results.push(errorEntry(state, entry, "Not found", null));
-        continue;
-      }
-
-      try {
-        console.log(`  [${state}] Fetching detail for ${entry.bill_number} (id ${billId})...`);
-        const bill = await fetchBillDetail(billId);
-        results.push(simplifyBill(bill, entry, sessionInfo));
-        await new Promise((r) => setTimeout(r, 400)); // be polite to the API
-      } catch (err) {
-        console.error(`  [${state}] Error fetching ${entry.bill_number}: ${err.message}`);
-        results.push(errorEntry(state, entry, "Error", err.message));
-      }
-    }
-  }
-
-  // Remove bills that reached a final status more than EXPIRY_DAYS ago.
-  const now = Date.now();
-  const activeBills = results.filter((b) => {
-    if (!b.final_date) return true; // not final yet — keep
-    const finalMs = new Date(b.final_date).getTime();
-    const ageDays = (now - finalMs) / (1000 * 60 * 60 * 24);
-    if (ageDays > EXPIRY_DAYS) {
-      console.log(`  Removing ${b.state} ${b.bill_number} — final_date ${b.final_date} is ${Math.floor(ageDays)} days ago (>${EXPIRY_DAYS}-day limit)`);
-      return false;
-    }
-    return true;
-  });
-
-  const removed = results.length - activeBills.length;
-  if (removed > 0) {
-    console.log(`Removed ${removed} expired bill(s) from output.`);
-  }
-
-  // Build a set of bill keys still active so we can prune tracked-bills.json
-  // to match. A bill is pruned when it has been removed from activeBills —
-  // i.e. its final_date is older than EXPIRY_DAYS. This stops the script
-  // fetching it from LegiScan on future runs.
-  const activeKeys = new Set(
-    activeBills.map((b) => `${b.state.toUpperCase()}:${b.bill_number.replace(/\s+/g, "").toUpperCase()}`)
-  );
-
-  const remainingTracked = trackedBills.filter((b) => {
-    const key = `${(b.state || "").toUpperCase()}:${(b.bill_number || "").replace(/\s+/g, "").toUpperCase()}`;
-    if (!activeKeys.has(key)) {
-      console.log(`  Pruning ${b.state} ${b.bill_number} from ${TRACKED_BILLS_FILE}`);
-      return false;
-    }
-    return true;
-  });
-
-  // Also carry final_date back into tracked-bills.json so the expiry clock
-  // survives across runs even before the bill is pruned.
-  const finalDateMap = {};
-  for (const b of results) {
-    if (b.final_date) {
-      const key = `${b.state.toUpperCase()}:${b.bill_number.replace(/\s+/g, "").toUpperCase()}`;
-      finalDateMap[key] = b.final_date;
-    }
-  }
-  for (const b of remainingTracked) {
-    const key = `${(b.state || "").toUpperCase()}:${(b.bill_number || "").replace(/\s+/g, "").toUpperCase()}`;
-    if (finalDateMap[key] && !b.final_date) {
-      b.final_date = finalDateMap[key];
-    }
-  }
-
-  const trackedPruned = remainingTracked.length < trackedBills.length;
-  if (trackedPruned) {
-    const updatedTracked = { ...tracked, bills: remainingTracked };
-    await fs.writeFile(TRACKED_BILLS_FILE, JSON.stringify(updatedTracked, null, 2));
-    console.log(`Updated ${TRACKED_BILLS_FILE}: ${remainingTracked.length} bill(s) remaining (${trackedBills.length - remainingTracked.length} pruned)`);
-  } else if (Object.keys(finalDateMap).length > 0) {
-    // No pruning, but final_dates may have been stamped — write back to preserve them
-    const updatedTracked = { ...tracked, bills: remainingTracked };
-    await fs.writeFile(TRACKED_BILLS_FILE, JSON.stringify(updatedTracked, null, 2));
-    console.log(`Updated ${TRACKED_BILLS_FILE}: final_date stamped on newly finalised bill(s)`);
-  }
-
-  const output = {
-    generated: new Date().toISOString(),
-    bills: activeBills,
-  };
-
-  await fs.writeFile(OUTPUT_FILE, JSON.stringify(output, null, 2));
-  console.log(`Wrote ${OUTPUT_FILE} with ${activeBills.length} bill(s)`);
-}
-
-main().catch((err) => {
-  console.error(err);
-  process.exit(1);
-});
