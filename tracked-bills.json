@@ -1,6 +1,27 @@
 {
-  "_comment": "Curated list of veteran-related state bills tracked for the SLEF national tracker. Add new entries as MOAA chapters identify priority bills. 'state' must be a 2-letter postal code (used for both LegiScan and Open States). 'bill_number' must match LegiScan's format (e.g. HB5262, SB123). 'bill_url' is a manually-set, stable link to the official bill page (state legislature site preferred) — used as the 'View bill text' link whenever the LegiScan API fetch fails, so the link never disappears even during an outage. 'chamber_target' is 'lower' (House/Assembly), 'upper' (Senate), or 'both' — determines which legislators from the ZIP lookup are shown as recipients. 'email_template' supports placeholders: [LEGISLATOR_NAME], [FULL_NAME], [CITY], [STATE], [CHAPTER].",
+  "_comment": "Curated list of veteran-related state bills tracked for the SLEF national tracker. Add new entries as MOAA chapters identify priority bills. 'state' must be a 2-letter postal code (used for both LegiScan and Open States). 'bill_number' must match LegiScan's format (e.g. HB5262, SB123). 'bill_url' is a manually-set, stable link to the official bill page (state legislature site preferred) — used as the 'View bill text' link whenever the LegiScan API fetch fails, so the link never disappears even during an outage. 'chamber_target' is 'lower' (House/Assembly), 'upper' (Senate), or 'both' — determines which legislators from the ZIP lookup are shown as recipients. 'email_template' supports placeholders: [LEGISLATOR_NAME], [FULL_NAME], [CITY], [STATE], [CHAPTER]. Optional fields for non-bill advocacy 'campaigns' (e.g. asking legislators to introduce a resolution, rather than tracking an already-introduced bill): 'skip_legiscan' (true) tells fetch-bill-status.mjs to pass the entry straight through to bills.json without querying LegiScan (no status_label lifecycle, never auto-expires); 'template_url' is a link to a model resolution/letter document, rendered by squarespace-embed.html as a distinct 'View Resolution Template' button alongside 'Take action'; 'badges' is an array of extra short pill labels (e.g. ['DISTRICT']) shown next to the automatic 'PRIORITY' pill when 'priority' is true. A campaign that applies to every state rather than one specific state should set 'state' to an empty string ('') and 'chapter' to an empty string as well (the take-action page then asks the visitor for their own state and chapter instead of assuming one) — squarespace-embed.html shows these on every state's page regardless of the selected state pill, and take-action.html skips its usual 'this ZIP isn't in the bill's state' check when 'state' is blank.",
   "bills": [
+    {
+      "state": "",
+      "bill_number": "STARACT-RES",
+      "bill_url": "https://www.congress.gov/bill/119th-congress/house-bill/2102",
+      "label": "Richard Star Act — State Resolution",
+      "category": "Priority Campaign",
+      "chapter": "",
+      "summary": "Ask your state legislator to introduce a resolution supporting the Major Richard Star Act.",
+      "priority": true,
+      "badges": [
+        "DISTRICT"
+      ],
+      "skip_legiscan": true,
+      "advocacy_url": "",
+      "template_url": "https://www.staractalliance.org/media/vsefcjdy/major-richard-star-act-model-state-resolution-template.pdf",
+      "chamber_target": "both",
+      "position": "support",
+      "position_notes": "This is a state resolution ask, not a bill — it would not change state law and requires no funding in any state. It simply urges Congress to pass the Major Richard Star Act (H.R. 2102 / S. 1032), which corrects a 2004 oversight preventing more than 50,000 medically retired combat-wounded veterans nationwide from receiving their full earned DoD retirement pay alongside their VA disability compensation.",
+      "email_subject": "Request for Meeting — Major Richard Star Act State Resolution",
+      "email_template": "Dear [LEGISLATOR_NAME],\n\nMy name is [FULL_NAME], and I am a veteran and member of [CHAPTER] living in [CITY], [STATE]. I'm reaching out to ask for a brief meeting to discuss a state resolution that would support combat-wounded veterans here in [STATE].\n\nThe resolution would not change state law and would not require any funding. It would simply urge Congress to pass the Major Richard Star Act (H.R. 2102 / S. 1032), which corrects a 2004 oversight that leaves more than 50,000 medically retired combat-wounded veterans nationwide unable to receive their full earned DoD retirement pay alongside their VA disability compensation.\n\nFor your reference, here is some background on the legislation along with sample language that could serve as a starting point for a resolution:\nMajor Richard Star Act — Resolution & Fact Sheet: https://www.moaamcoc.com/uploads/1/4/8/4/148483887/star_act_resolution___fact_sheet.pdf\n\nI'm happy to meet in person, by phone, or by video, whatever is easiest for your schedule — please let me know who on your staff I should coordinate with.\n\nThank you for your time and consideration.\n\nRespectfully,\n[FULL_NAME]\n[CITY], [STATE]\nMember, [CHAPTER]"
+    },
     {
       "state": "MI",
       "bill_number": "HB5262",
