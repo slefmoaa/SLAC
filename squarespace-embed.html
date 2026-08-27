@@ -103,6 +103,27 @@
   color: #fff;
 }
 
+/* Nationwide campaign shortcut â€” sits in the selector row but is a
+   direct link out to that campaign's Take Action page, not a filter
+   toggle, so it's styled distinctly from the rounded state pills:
+   square-ish corners and a bold border instead of a pill shape. */
+.sleflac-campaign-tab {
+  display: inline-flex;
+  align-items: center;
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 6px;
+  border: 2px solid var(--navy);
+  background: #fff;
+  color: var(--navy);
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.15s;
+}
+.sleflac-campaign-tab:hover { background: var(--gold-pale); }
+
 /* Suggest-a-bill footer */
 .sleflac-footer {
   padding: 1rem 1.5rem;
@@ -157,6 +178,97 @@
   background: #faeaea;
   color: #8b1a1a;
   border: 1px solid #d98080;
+}
+
+/* Campaign card â€” used for non-bill advocacy asks (e.g. "introduce a
+   resolution") that have a template_url. Distinct from the standard
+   bill row: badge pills up top instead of a bill code, and two
+   side-by-side action buttons instead of one. */
+.sleflac-campaign-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  border-top: 1px solid var(--gray-100);
+  background: var(--gold-pale);
+  transition: background 0.15s;
+}
+.sleflac-campaign-card:hover { background: #fbf0d4; }
+.sleflac-campaign-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 0 0 auto;
+}
+.sleflac-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 4px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+.sleflac-badge.priority {
+  background: var(--gold);
+  color: #fff;
+}
+.sleflac-badge.district {
+  background: #eaf5ef;
+  color: #1a6b3c;
+  border: 1px solid #7dbf99;
+}
+.sleflac-campaign-main {
+  flex: 1 1 260px;
+  min-width: 0;
+}
+.sleflac-campaign-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 3px;
+}
+.sleflac-campaign-desc {
+  font-size: 12.5px;
+  color: var(--gray-700);
+  line-height: 1.5;
+}
+.sleflac-campaign-actions {
+  display: flex;
+  gap: 10px;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+}
+.sleflac-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #fff;
+  color: var(--navy);
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 7px 16px;
+  border-radius: var(--radius);
+  border: 1.5px solid var(--gray-300);
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: border-color 0.15s;
+}
+.sleflac-btn-secondary:hover { border-color: var(--navy); }
+
+@container sleflac (max-width: 640px) {
+  .sleflac-campaign-card { flex-direction: column; align-items: flex-start; }
+  .sleflac-campaign-badges { flex-direction: row; }
+  .sleflac-campaign-actions { width: 100%; }
+}
+@media (max-width: 640px) {
+  .sleflac-campaign-card { flex-direction: column; align-items: flex-start; }
+  .sleflac-campaign-badges { flex-direction: row; }
+  .sleflac-campaign-actions { width: 100%; }
 }
 
 /* Category section */
@@ -417,7 +529,7 @@
   function deathReason(bill) {
     if (bill.status_note && bill.status_note.trim()) return bill.status_note.trim();
     if (bill.last_action) {
-      return (bill.last_action_date ? bill.last_action_date + ' â€” ' : '') + bill.last_action;
+      return (bill.last_action_date ? bill.last_action_date + ' Ã¢â‚¬â€ ' : '') + bill.last_action;
     }
     return 'This bill did not pass and is no longer active this session.';
   }
@@ -444,7 +556,7 @@
     if (metaParts.length) metaLine = '<div class="sleflac-bill-meta-line">' + metaParts.join('') + '</div>';
 
     // Once a bill is dead, there's no legislator left to lobby this
-    // session â€” drop the Take Action button and explain why instead.
+    // session Ã¢â‚¬â€ drop the Take Action button and explain why instead.
     var deadNoteHtml = isDead
       ? '<div class="sleflac-dead-note"><strong>Why it died:</strong> ' + escapeHtml(deathReason(bill)) + '</div>'
       : '';
@@ -483,12 +595,54 @@
       '</div>';
   }
 
+  // Renders a "campaign" card â€” an advocacy ask that isn't a real,
+  // trackable bill (e.g. asking legislators to introduce a resolution).
+  // Distinguished by the presence of template_url. Shows pill badges
+  // (PRIORITY + any custom badges) instead of a bill code, and two
+  // side-by-side buttons: "Take action" (same take-action.html flow as
+  // a normal bill) and "View Resolution Template" (direct link).
+  function renderCampaignCard(bill) {
+    var badgesHtml = '<div class="sleflac-campaign-badges">';
+    if (bill.priority) badgesHtml += '<span class="sleflac-badge priority">&#9733; PRIORITY</span>';
+    (bill.badges || []).forEach(function (b) {
+      badgesHtml += '<span class="sleflac-badge district">' + escapeHtml(b) + '</span>';
+    });
+    badgesHtml += '</div>';
+
+    var TAKE_ACTION_BASE = 'https://slefmoaa.github.io/SLAC/take-action.html';
+    var actionUrl = bill.email_template
+      ? TAKE_ACTION_BASE + '?bill=' + encodeURIComponent(bill.bill_number || '') + '&state=' + encodeURIComponent(bill.state || '')
+      : bill.advocacy_url;
+
+    var actionsHtml = '<div class="sleflac-campaign-actions">';
+    if (actionUrl) {
+      actionsHtml += '<a class="sleflac-take-action" href="' + escapeHtml(actionUrl) + '" target="_blank" rel="noopener">Take action &rarr;</a>';
+    }
+    if (bill.template_url) {
+      actionsHtml += '<a class="sleflac-btn-secondary" href="' + escapeHtml(bill.template_url) + '" target="_blank" rel="noopener">View Resolution Template &#8599;</a>';
+    }
+    actionsHtml += '</div>';
+
+    return '' +
+      '<div class="sleflac-campaign-card">' +
+        badgesHtml +
+        '<div class="sleflac-campaign-main">' +
+          '<div class="sleflac-campaign-title">' + escapeHtml(bill.label || bill.title || '') + '</div>' +
+          '<div class="sleflac-campaign-desc">' + escapeHtml(bill.summary || '') + '</div>' +
+        '</div>' +
+        actionsHtml +
+      '</div>';
+  }
+
   var allBills = [];
   var generatedStr = '';
 
   function renderForState(selectedState) {
     var container = document.getElementById('sleflac-tracker');
+    // Nationwide campaigns (template_url set, no fixed state) show on
+    // every state's page, not just when their own state is selected.
     var bills = allBills.filter(function (b) {
+      if (b.template_url && !b.state) return true;
       return !selectedState || b.state === selectedState;
     });
 
@@ -516,6 +670,16 @@
         var active = st === selectedState ? ' active' : '';
         selectorHtml += '<button type="button" class="sleflac-state-pill' + active + '" data-state="' + escapeHtml(st) + '">' + escapeHtml(STATE_NAMES[st] || st) + '</button>';
       });
+      // Nationwide campaigns (template_url, no fixed state) get their own
+      // shortcut button alongside the state pills â€” a direct link to
+      // that campaign's Take Action page, not a filter toggle.
+      var TAKE_ACTION_BASE_SEL = 'https://slefmoaa.github.io/SLAC/take-action.html';
+      allBills.forEach(function (b) {
+        if (b.template_url && !b.state) {
+          var url = TAKE_ACTION_BASE_SEL + '?bill=' + encodeURIComponent(b.bill_number || '') + '&state=';
+          selectorHtml += '<a class="sleflac-campaign-tab" href="' + escapeHtml(url) + '" target="_blank" rel="noopener">' + escapeHtml(b.label || '') + '</a>';
+        }
+      });
       selectorHtml += '</div>';
     }
 
@@ -526,7 +690,7 @@
       order.forEach(function (cat) {
         rowsHtml += '<div class="sleflac-category-title">' + escapeHtml(cat) + '</div>';
         byCategory[cat].forEach(function (bill) {
-          rowsHtml += renderRow(bill);
+          rowsHtml += bill.template_url ? renderCampaignCard(bill) : renderRow(bill);
         });
       });
     }
