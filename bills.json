@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-28T17:12:19.879Z",
+  "generated": "2026-08-28T17:16:45.293Z",
   "bills": [
     {
       "state": "",
@@ -28,7 +28,7 @@
       "state_link": "https://www.congress.gov/bill/119th-congress/house-bill/2102",
       "legiscan_url": "https://www.congress.gov/bill/119th-congress/house-bill/2102",
       "final_date": null,
-      "updated": "2026-08-28T17:12:11.228Z"
+      "updated": "2026-08-28T17:16:38.501Z"
     },
     {
       "state": "MI",
@@ -56,7 +56,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5262",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5262/2025",
       "final_date": null,
-      "updated": "2026-08-28T17:12:11.562Z"
+      "updated": "2026-08-28T17:16:38.792Z"
     },
     {
       "state": "MI",
@@ -84,7 +84,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5278",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5278/2025",
       "final_date": null,
-      "updated": "2026-08-28T17:12:11.992Z"
+      "updated": "2026-08-28T17:16:39.206Z"
     },
     {
       "state": "MI",
@@ -112,7 +112,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5279",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5279/2025",
       "final_date": null,
-      "updated": "2026-08-28T17:12:12.420Z"
+      "updated": "2026-08-28T17:16:39.622Z"
     },
     {
       "state": "MI",
@@ -140,7 +140,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5280",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5280/2025",
       "final_date": null,
-      "updated": "2026-08-28T17:12:12.848Z"
+      "updated": "2026-08-28T17:16:40.037Z"
     },
     {
       "state": "MI",
@@ -168,7 +168,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5456",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5456/2025",
       "final_date": null,
-      "updated": "2026-08-28T17:12:13.276Z"
+      "updated": "2026-08-28T17:16:40.452Z"
     },
     {
       "state": "MI",
@@ -196,7 +196,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5457",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5457/2025",
       "final_date": null,
-      "updated": "2026-08-28T17:12:13.701Z"
+      "updated": "2026-08-28T17:16:40.865Z"
     },
     {
       "state": "PA",
@@ -224,7 +224,7 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/sb1209",
       "legiscan_url": "https://legiscan.com/PA/bill/SB1209/2025",
       "final_date": null,
-      "updated": "2026-08-28T17:12:14.247Z"
+      "updated": "2026-08-28T17:16:41.347Z"
     },
     {
       "state": "PA",
@@ -252,7 +252,7 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/hb1918",
       "legiscan_url": "https://legiscan.com/PA/bill/HB1918/2025",
       "final_date": null,
-      "updated": "2026-08-28T17:12:14.673Z"
+      "updated": "2026-08-28T17:16:41.758Z"
     },
     {
       "state": "PA",
@@ -280,7 +280,7 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/hb1177",
       "legiscan_url": "https://legiscan.com/PA/bill/HB1177/2025",
       "final_date": null,
-      "updated": "2026-08-28T17:12:15.100Z"
+      "updated": "2026-08-28T17:16:42.173Z"
     },
     {
       "state": "PA",
@@ -307,7 +307,7 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/hb2439",
       "legiscan_url": "https://legiscan.com/PA/bill/HB2439/2025",
       "final_date": null,
-      "updated": "2026-08-28T17:12:15.527Z"
+      "updated": "2026-08-28T17:16:42.587Z"
     },
     {
       "state": "PA",
@@ -335,7 +335,7 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/hb1144",
       "legiscan_url": "https://legiscan.com/PA/bill/HB1144/2025",
       "final_date": null,
-      "updated": "2026-08-28T17:12:15.957Z"
+      "updated": "2026-08-28T17:16:43.008Z"
     },
     {
       "state": "PA",
@@ -363,7 +363,7 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/hb1257",
       "legiscan_url": "https://legiscan.com/PA/bill/HB1257/2025",
       "final_date": null,
-      "updated": "2026-08-28T17:12:16.384Z"
+      "updated": "2026-08-28T17:16:43.423Z"
     },
     {
       "state": "NJ",
@@ -391,7 +391,7 @@
       "state_link": "https://www.njleg.state.nj.us/bill-search/2026/S1194",
       "legiscan_url": "https://legiscan.com/NJ/bill/S1194/2026",
       "final_date": null,
-      "updated": "2026-08-28T17:12:16.974Z"
+      "updated": "2026-08-28T17:16:43.949Z"
     },
     {
       "state": "DE",
@@ -418,35 +418,7 @@
       "state_link": "https://legis.delaware.gov/BillDetail?LegislationId=142742",
       "legiscan_url": "https://legiscan.com/DE/bill/SB219/2025",
       "final_date": "2026-08-25",
-      "updated": "2026-08-28T17:12:17.463Z"
-    },
-    {
-      "state": "MO",
-      "bill_number": "HCR34",
-      "label": "Richard Star Act Support Resolution",
-      "category": "Richard Star Act Resolutions",
-      "chapter": "SLEF-MOAA",
-      "summary": "A resolution urging Congress to pass the Major Richard Star Act, already introduced in the Missouri legislature.",
-      "priority": true,
-      "badges": [],
-      "advocacy_url": null,
-      "template_url": null,
-      "chamber_target": "both",
-      "position": "support",
-      "position_notes": "This resolution urges Congress to pass the Major Richard Star Act (H.R. 2102 / S. 1032); it does not change state law and requires no state funding.",
-      "email_subject": "Support for HCR 34 — Major Richard Star Act Resolution",
-      "email_template": "Dear [LEGISLATOR_NAME],\n\nMy name is [FULL_NAME], and I am a veteran and member of [CHAPTER] living in [CITY], [STATE]. I'm writing to ask for your support and a yes vote on HCR 34, a resolution urging Congress to pass the Major Richard Star Act (H.R. 2102 / S. 1032).\n\nThis resolution would not change state law and would not require any funding. It simply urges Congress to correct a 2004 oversight that leaves more than 50,000 medically retired combat-wounded veterans nationwide unable to receive their full earned DoD retirement pay alongside their VA disability compensation.\n\nThank you for your consideration and for your support of Missouri's veterans.\n\nRespectfully,\n[FULL_NAME]\n[CITY], [STATE]\nMember, [CHAPTER]",
-      "title": "Urges Congress to support the Major Richard Star Act to allow all medically retired service members to receive full access to their retirement pay and benefits",
-      "status": 1,
-      "status_label": "Failed / Dead",
-      "status_note": "Session adjourned sine die with bill still at \"Introduced\" — treated as dead; must be reintroduced next session.",
-      "last_action_date": "2026-05-15",
-      "last_action": "Referred: Emerging Issues(H)",
-      "committee": "Emerging Issues",
-      "state_link": "https://house.mo.gov/Bill.aspx?bill=HCR34&year=2026&code=R",
-      "legiscan_url": "https://legiscan.com/MO/bill/HCR34/2026",
-      "final_date": "2026-08-28",
-      "updated": "2026-08-28T17:12:17.967Z"
+      "updated": "2026-08-28T17:16:44.410Z"
     },
     {
       "state": "SC",
@@ -474,62 +446,7 @@
       "state_link": "https://www.scstatehouse.gov/billsearch.php?billnumbers=4575&session=126&summary=B",
       "legiscan_url": "https://legiscan.com/SC/bill/H4575/2025",
       "final_date": null,
-      "updated": "2026-08-28T17:12:18.469Z"
-    },
-    {
-      "state": "WA",
-      "bill_number": "HJM4012",
-      "label": "Richard Star Act Support Resolution",
-      "category": "Richard Star Act Resolutions",
-      "chapter": "SLEF-MOAA",
-      "summary": "A House Joint Memorial urging Congress to pass the Major Richard Star Act, already introduced in the Washington legislature.",
-      "priority": true,
-      "badges": [],
-      "advocacy_url": null,
-      "template_url": null,
-      "chamber_target": "both",
-      "position": "support",
-      "position_notes": "This resolution urges Congress to pass the Major Richard Star Act (H.R. 2102 / S. 1032); it does not change state law and requires no state funding.",
-      "email_subject": "Support for HJM 4012 — Major Richard Star Act Resolution",
-      "email_template": "Dear [LEGISLATOR_NAME],\n\nMy name is [FULL_NAME], and I am a veteran and member of [CHAPTER] living in [CITY], [STATE]. I'm writing to ask for your support and a yes vote on HJM 4012, a resolution urging Congress to pass the Major Richard Star Act (H.R. 2102 / S. 1032).\n\nThis resolution would not change state law and would not require any funding. It simply urges Congress to correct a 2004 oversight that leaves more than 50,000 medically retired combat-wounded veterans nationwide unable to receive their full earned DoD retirement pay alongside their VA disability compensation.\n\nThank you for your consideration and for your support of Washington's veterans.\n\nRespectfully,\n[FULL_NAME]\n[CITY], [STATE]\nMember, [CHAPTER]",
-      "title": "Supporting combat-injured veterans.",
-      "status": 1,
-      "status_label": "Failed / Dead",
-      "status_note": "Session adjourned sine die with bill still at \"Introduced\" — treated as dead; must be reintroduced next session.",
-      "last_action_date": "2026-02-19",
-      "last_action": "House Rules \"X\" file.",
-      "state_link": "https://app.leg.wa.gov/billsummary?BillNumber=4012&Year=2025&Initiative=false",
-      "legiscan_url": "https://legiscan.com/WA/bill/HJM4012/2025",
-      "final_date": "2026-08-28",
-      "updated": "2026-08-28T17:12:18.985Z"
-    },
-    {
-      "state": "WV",
-      "bill_number": "HCR30",
-      "label": "Richard Star Act Support Resolution",
-      "category": "Richard Star Act Resolutions",
-      "chapter": "SLEF-MOAA",
-      "summary": "A House Concurrent Resolution urging Congress to pass the Major Richard Star Act, already introduced in the West Virginia legislature.",
-      "priority": true,
-      "badges": [],
-      "advocacy_url": null,
-      "template_url": null,
-      "chamber_target": "both",
-      "position": "support",
-      "position_notes": "This resolution urges Congress to pass the Major Richard Star Act (H.R. 2102 / S. 1032); it does not change state law and requires no state funding.",
-      "email_subject": "Support for HCR 30 — Major Richard Star Act Resolution",
-      "email_template": "Dear [LEGISLATOR_NAME],\n\nMy name is [FULL_NAME], and I am a veteran and member of [CHAPTER] living in [CITY], [STATE]. I'm writing to ask for your support and a yes vote on HCR 30, a resolution urging Congress to pass the Major Richard Star Act (H.R. 2102 / S. 1032).\n\nThis resolution would not change state law and would not require any funding. It simply urges Congress to correct a 2004 oversight that leaves more than 50,000 medically retired combat-wounded veterans nationwide unable to receive their full earned DoD retirement pay alongside their VA disability compensation.\n\nThank you for your consideration and for your support of West Virginia's veterans.\n\nRespectfully,\n[FULL_NAME]\n[CITY], [STATE]\nMember, [CHAPTER]",
-      "title": "Urging the United States Congress to pass the Major Richard Star Act",
-      "status": 1,
-      "status_label": "Failed / Dead",
-      "status_note": "Session adjourned sine die with bill still at \"Introduced\" — treated as dead; must be reintroduced next session.",
-      "last_action_date": "2026-03-05",
-      "last_action": "To House Rules",
-      "committee": "Rules",
-      "state_link": "http://www.wvlegislature.gov/Bill_Status/Resolution_History.cfm?year=2026&sessiontype=RS&input4=30&billtype=CR&houseorig=H&btype=res",
-      "legiscan_url": "https://legiscan.com/WV/bill/HCR30/2026",
-      "final_date": "2026-08-28",
-      "updated": "2026-08-28T17:12:19.477Z"
+      "updated": "2026-08-28T17:16:44.891Z"
     }
   ]
 }
