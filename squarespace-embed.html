@@ -103,27 +103,6 @@
   color: #fff;
 }
 
-/* Nationwide campaign shortcut â€” sits in the selector row but is a
-   direct link out to that campaign's Take Action page, not a filter
-   toggle, so it's styled distinctly from the rounded state pills:
-   square-ish corners and a bold border instead of a pill shape. */
-.sleflac-campaign-tab {
-  display: inline-flex;
-  align-items: center;
-  font-size: 12.5px;
-  font-weight: 700;
-  padding: 6px 16px;
-  border-radius: 6px;
-  border: 2px solid var(--navy);
-  background: #fff;
-  color: var(--navy);
-  cursor: pointer;
-  text-decoration: none;
-  white-space: nowrap;
-  transition: all 0.15s;
-}
-.sleflac-campaign-tab:hover { background: var(--gold-pale); }
-
 /* Suggest-a-bill footer */
 .sleflac-footer {
   padding: 1rem 1.5rem;
@@ -190,7 +169,9 @@
   align-items: center;
   gap: 14px;
   padding: 14px 18px;
-  border-top: 1px solid var(--gray-100);
+  margin-bottom: 14px;
+  border-radius: var(--radius);
+  border: 1px solid var(--gray-100);
   background: var(--gold-pale);
   transition: background 0.15s;
 }
@@ -639,10 +620,15 @@
 
   function renderForState(selectedState) {
     var container = document.getElementById('sleflac-tracker');
-    // Nationwide campaigns (template_url set, no fixed state) show on
-    // every state's page, not just when their own state is selected.
+    // Nationwide campaigns (template_url set, no fixed state) render as
+    // their own full card above the state selector, shown once
+    // regardless of which state is picked â€” not mixed into the
+    // per-state, per-category bill list below.
+    var campaignBills = allBills.filter(function (b) {
+      return b.template_url && !b.state;
+    });
     var bills = allBills.filter(function (b) {
-      if (b.template_url && !b.state) return true;
+      if (b.template_url && !b.state) return false;
       return !selectedState || b.state === selectedState;
     });
 
@@ -663,22 +649,14 @@
       return (STATE_NAMES[a] || a).localeCompare(STATE_NAMES[b] || b);
     });
 
+    var campaignCardHtml = campaignBills.map(renderCampaignCard).join('');
+
     var selectorHtml = '';
     if (states.length) {
       selectorHtml = '<div class="sleflac-state-selector">';
       states.forEach(function (st) {
         var active = st === selectedState ? ' active' : '';
         selectorHtml += '<button type="button" class="sleflac-state-pill' + active + '" data-state="' + escapeHtml(st) + '">' + escapeHtml(STATE_NAMES[st] || st) + '</button>';
-      });
-      // Nationwide campaigns (template_url, no fixed state) get their own
-      // shortcut button alongside the state pills â€” a direct link to
-      // that campaign's Take Action page, not a filter toggle.
-      var TAKE_ACTION_BASE_SEL = 'https://slefmoaa.github.io/SLAC/take-action.html';
-      allBills.forEach(function (b) {
-        if (b.template_url && !b.state) {
-          var url = TAKE_ACTION_BASE_SEL + '?bill=' + encodeURIComponent(b.bill_number || '') + '&state=';
-          selectorHtml += '<a class="sleflac-campaign-tab" href="' + escapeHtml(url) + '" target="_blank" rel="noopener">' + escapeHtml(b.label || '') + '</a>';
-        }
       });
       selectorHtml += '</div>';
     }
@@ -690,7 +668,7 @@
       order.forEach(function (cat) {
         rowsHtml += '<div class="sleflac-category-title">' + escapeHtml(cat) + '</div>';
         byCategory[cat].forEach(function (bill) {
-          rowsHtml += bill.template_url ? renderCampaignCard(bill) : renderRow(bill);
+          rowsHtml += renderRow(bill);
         });
       });
     }
@@ -727,6 +705,7 @@
       '</div>' +
       introHtml +
       disclaimerHtml +
+      campaignCardHtml +
       selectorHtml +
       rowsHtml +
       footerHtml;
