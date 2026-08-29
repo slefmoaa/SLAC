@@ -1,13 +1,13 @@
 {
-  "generated": "2026-08-29T16:10:55.963Z",
+  "generated": "2026-08-29T20:41:39.000Z",
   "bills": [
     {
       "state": "",
       "bill_number": "STARACT-RES",
       "label": "Richard Star Act - State Resolution",
       "category": "Priority Campaign",
-      "chapter": null,
-      "summary": "Ask your state legislator to introduce a resolution supporting the Major Richard Star Act — open to every state, not just Michigan.",
+      "chapter": "",
+      "summary": "Ask your state legislator to introduce a resolution supporting the Major Richard Star Act.",
       "priority": true,
       "badges": [
         "DISTRICT"
@@ -28,7 +28,7 @@
       "state_link": "https://www.congress.gov/bill/119th-congress/house-bill/2102",
       "legiscan_url": "https://www.congress.gov/bill/119th-congress/house-bill/2102",
       "final_date": null,
-      "updated": "2026-08-29T16:10:48.554Z"
+      "updated": "2026-08-29T20:41:39.000Z"
     },
     {
       "state": "MI",
@@ -38,9 +38,7 @@
       "chapter": "Michigan Council of Chapters",
       "summary": "Amends 1965 PA 190 (MCL 35.61) to define 'veteran of the uniformed services' to include NOAA and U.S. Public Health Service commissioned officers, consistent with Title 38 USC.",
       "priority": false,
-      "badges": [],
       "advocacy_url": "https://moaa-mcoc.github.io/LAC/?bill=HB5262",
-      "template_url": null,
       "chamber_target": "lower",
       "position": "support",
       "position_notes": "",
@@ -56,7 +54,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5262",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5262/2025",
       "final_date": null,
-      "updated": "2026-08-29T16:10:48.921Z"
+      "updated": "2026-08-26T12:45:37.669Z"
     },
     {
       "state": "MI",
@@ -66,9 +64,7 @@
       "chapter": "Michigan Council of Chapters",
       "summary": "Amends 1972 PA 222 to extend the veteran designation on Michigan state ID cards to NOAA and USPHS commissioned officers.",
       "priority": false,
-      "badges": [],
       "advocacy_url": "https://moaa-mcoc.github.io/LAC/?bill=HB5278",
-      "template_url": null,
       "chamber_target": "lower",
       "position": "support",
       "position_notes": "",
@@ -84,7 +80,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5278",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5278/2025",
       "final_date": null,
-      "updated": "2026-08-29T16:10:49.371Z"
+      "updated": "2026-08-26T12:45:38.183Z"
     },
     {
       "state": "MI",
@@ -94,9 +90,7 @@
       "chapter": "Michigan Council of Chapters",
       "summary": "Amends 1949 PA 300 (Michigan Vehicle Code) to extend the veteran designation on driver's licenses to NOAA and USPHS commissioned officers.",
       "priority": false,
-      "badges": [],
       "advocacy_url": "https://moaa-mcoc.github.io/LAC/?bill=HB5279",
-      "template_url": null,
       "chamber_target": "lower",
       "position": "support",
       "position_notes": "",
@@ -112,7 +106,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5279",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5279/2025",
       "final_date": null,
-      "updated": "2026-08-29T16:10:49.821Z"
+      "updated": "2026-08-26T12:45:38.663Z"
     },
     {
       "state": "MI",
@@ -122,9 +116,7 @@
       "chapter": "Michigan Council of Chapters",
       "summary": "Amends 1967 PA 281 (Income Tax Act) to extend Michigan retirement/pension tax deductions to NOAA and USPHS commissioned officers on par with other uniformed services veterans.",
       "priority": true,
-      "badges": [],
       "advocacy_url": "https://moaa-mcoc.github.io/LAC/?bill=HB5280",
-      "template_url": null,
       "chamber_target": "lower",
       "position": "support",
       "position_notes": "",
@@ -140,7 +132,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5280",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5280/2025",
       "final_date": null,
-      "updated": "2026-08-29T16:10:50.266Z"
+      "updated": "2026-08-26T12:45:39.137Z"
     },
     {
       "state": "MI",
@@ -150,9 +142,7 @@
       "chapter": "SE Michigan Chapter, MOAA",
       "summary": "Establishes a hyperbaric oxygen therapy (HBOT) grant and pilot program to provide treatment to veterans with traumatic brain injuries or post-traumatic stress disorder.",
       "priority": true,
-      "badges": [],
       "advocacy_url": "https://moaa-mcoc.github.io/LAC/?bill=HB5456",
-      "template_url": null,
       "chamber_target": "upper",
       "position": "support",
       "position_notes": "Submitted by Rich Higgins, SE Michigan Chapter. 13 states have enacted HBOT legislation (AZ, OK, TN, TX, VA, WY, MO, ND, NC, KY, FL, IN, MD); 9 more states (MI, IA, OH, PA, OR, NY, NJ, KS, NE) are drafting/introducing similar bills. Chamber target set to Senate (upper) per submitter's request even though it's a House bill.",
@@ -168,7 +158,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5456",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5456/2025",
       "final_date": null,
-      "updated": "2026-08-29T16:10:50.696Z"
+      "updated": "2026-08-26T12:45:39.625Z"
     },
     {
       "state": "MI",
@@ -178,9 +168,7 @@
       "chapter": "SE Michigan Chapter, MOAA",
       "summary": "Creates a hyperbaric oxygen therapy fund and provides for the administration of and distributions from the fund, appropriating the funding needed for HB 5456's HBOT pilot program.",
       "priority": true,
-      "badges": [],
       "advocacy_url": "https://moaa-mcoc.github.io/LAC/?bill=HB5457",
-      "template_url": null,
       "chamber_target": "upper",
       "position": "support",
       "position_notes": "Submitted by Rich Higgins, SE Michigan Chapter. Companion appropriations/funding bill to HB 5456 (creates the HBOT fund and provides for its administration and distributions). Same 13 states enacted / 9 states drafting context as HB 5456. Chamber target set to Senate (upper) per submitter's request.",
@@ -196,7 +184,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5457",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5457/2025",
       "final_date": null,
-      "updated": "2026-08-29T16:10:51.150Z"
+      "updated": "2026-08-26T12:45:40.101Z"
     },
     {
       "state": "PA",
@@ -206,9 +194,7 @@
       "chapter": "Pennsylvania Council of Chapters",
       "summary": "An Act amending Title 51 (Military Affairs) of the Pennsylvania Consolidated Statutes to strengthen the Veterans' Trust Fund, provide for grants to veterans' service officer programs, establish veterans' claims assistance standards, and impose penalties on those who exploit veterans through fraudulent benefits claims assistance.",
       "priority": true,
-      "badges": [],
       "advocacy_url": "https://moaa-mcoc.github.io/LAC/?bill=SB1209",
-      "template_url": null,
       "chamber_target": "upper",
       "position": "oppose",
       "position_notes": "Bill does not require VA accreditation contrary to USC Title 38",
@@ -224,7 +210,7 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/sb1209",
       "legiscan_url": "https://legiscan.com/PA/bill/SB1209/2025",
       "final_date": null,
-      "updated": "2026-08-29T16:10:51.716Z"
+      "updated": "2026-08-26T12:45:40.884Z"
     },
     {
       "state": "PA",
@@ -234,9 +220,7 @@
       "chapter": "Cumberland Valley (PA) Chapter",
       "summary": "Amends Title 51 (Military Affairs) of the Pennsylvania Consolidated Statutes to prohibit charging veterans for benefits claims assistance, except as permitted under federal law, mirroring the proposed federal GUARD VA Benefits Act.",
       "priority": true,
-      "badges": [],
       "advocacy_url": "https://moaa-mcoc.github.io/LAC/?bill=HB1918",
-      "template_url": null,
       "chamber_target": "both",
       "position": "support",
       "position_notes": "",
@@ -252,7 +236,7 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/hb1918",
       "legiscan_url": "https://legiscan.com/PA/bill/HB1918/2025",
       "final_date": null,
-      "updated": "2026-08-29T16:10:52.145Z"
+      "updated": "2026-08-26T12:45:41.362Z"
     },
     {
       "state": "PA",
@@ -262,9 +246,7 @@
       "chapter": "Cumberland Valley (PA) Chapter",
       "summary": "Amends the Tax Reform Code of 1971 to extend Pennsylvania income tax relief to USPHS and NOAA commissioned officers while on active duty or active-duty orders outside Pennsylvania, consistent with the exemption already provided to Armed Forces members.",
       "priority": true,
-      "badges": [],
       "advocacy_url": "https://moaa-mcoc.github.io/LAC/?bill=HB1177",
-      "template_url": null,
       "chamber_target": "both",
       "position": "support",
       "position_notes": "",
@@ -280,7 +262,7 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/hb1177",
       "legiscan_url": "https://legiscan.com/PA/bill/HB1177/2025",
       "final_date": null,
-      "updated": "2026-08-29T16:10:52.574Z"
+      "updated": "2026-08-26T12:45:41.840Z"
     },
     {
       "state": "PA",
@@ -290,9 +272,7 @@
       "chapter": "Pennsylvania Council of Chapters",
       "summary": "Aligns the disbursement schedule of the Veterans Service Officer Grant Program to the calendar year, so that veterans service organizations receive their January funding on time instead of waiting two months or longer for processing, especially when the state budget is late.",
       "priority": true,
-      "badges": [],
       "advocacy_url": "https://moaa-mcoc.github.io/LAC/?bill=HB2439",
-      "template_url": null,
       "chamber_target": "lower",
       "position": "support",
       "position_notes": "Submitted by Robert Gray, PA Council of Chapters. Prevents veterans service organizations from having to front money to pay service officers while waiting two months or longer, if a budget is not passed on time, for the grant to be processed and paid.",
@@ -307,7 +287,7 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/hb2439",
       "legiscan_url": "https://legiscan.com/PA/bill/HB2439/2025",
       "final_date": null,
-      "updated": "2026-08-29T16:10:53.002Z"
+      "updated": "2026-08-26T12:45:42.336Z"
     },
     {
       "state": "PA",
@@ -317,9 +297,7 @@
       "chapter": "Pennsylvania Council of Chapters",
       "summary": "Increases the Pennsylvania Blind, Amputee, and Paralyzed Veterans Pension, which has remained at $150 per month for more than twenty years and has lost significant purchasing power to inflation.",
       "priority": true,
-      "badges": [],
       "advocacy_url": "https://moaa-mcoc.github.io/LAC/?bill=HB1144",
-      "template_url": null,
       "chamber_target": "upper",
       "position": "support",
       "position_notes": "Submitted by Robert Gray, PA Council of Chapters. These disabled veterans are elderly and need the increase in income to provide a better standard of living.",
@@ -335,7 +313,7 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/hb1144",
       "legiscan_url": "https://legiscan.com/PA/bill/HB1144/2025",
       "final_date": null,
-      "updated": "2026-08-29T16:10:53.432Z"
+      "updated": "2026-08-26T12:45:42.829Z"
     },
     {
       "state": "PA",
@@ -345,9 +323,7 @@
       "chapter": "Pennsylvania Council of Chapters",
       "summary": "Expands eligibility for the 100% disabled veterans real estate tax exemption to veterans disabled outside of an armed conflict, and extends eligibility to surviving spouses of servicemembers killed on active duty or listed as missing in action or prisoner of war.",
       "priority": true,
-      "badges": [],
       "advocacy_url": "https://moaa-mcoc.github.io/LAC/?bill=HB1257",
-      "template_url": null,
       "chamber_target": "upper",
       "position": "support",
       "position_notes": "Submitted by Robert Gray, PA Council of Chapters. Removes the war-service requirement to include peacetime deaths, and adds eligibility for spouses of servicemembers killed on active duty or who die of active-duty injuries, and spouses of servicemembers declared missing in action or prisoner of war.",
@@ -363,7 +339,7 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/hb1257",
       "legiscan_url": "https://legiscan.com/PA/bill/HB1257/2025",
       "final_date": null,
-      "updated": "2026-08-29T16:10:53.865Z"
+      "updated": "2026-08-26T12:45:43.318Z"
     },
     {
       "state": "NJ",
@@ -373,9 +349,7 @@
       "chapter": "Greater Cincinnati",
       "summary": "Extends eligibility for the Armed Forces retirement pay income tax exemption to include veterans of all Uniformed Services of the United States.",
       "priority": true,
-      "badges": [],
       "advocacy_url": "https://moaa-mcoc.github.io/LAC/?bill=SB1194",
-      "template_url": null,
       "chamber_target": "both",
       "position": "support",
       "position_notes": "Tax parity will cost the state very little (two NOAA Corps retirees and 49 USPHS retirees live in New Jersey) but will be very meaningful recognition of the USPHS and NOAA Corps retirees' service.",
@@ -391,7 +365,7 @@
       "state_link": "https://www.njleg.state.nj.us/bill-search/2026/S1194",
       "legiscan_url": "https://legiscan.com/NJ/bill/S1194/2026",
       "final_date": null,
-      "updated": "2026-08-29T16:10:54.497Z"
+      "updated": "2026-08-26T12:45:44.164Z"
     },
     {
       "state": "DE",
@@ -401,9 +375,7 @@
       "chapter": "MD01, MD05",
       "summary": "Phases in a subtraction modification for military pensions from all Uniformed Services (including NOAA and USPHS) from $12,500 to $25,000 by tax year 2029, with a domicile-duration requirement for retirees age 60 and older as a cost-control measure.",
       "priority": true,
-      "badges": [],
       "advocacy_url": null,
-      "template_url": null,
       "chamber_target": "upper",
       "position": "support",
       "position_notes": "Subtraction modification covering all Uniformed Services, including NOAA and USPHS commissioned corps. Phases in from $12,500 to $25,000 by tax year 2029. Per Senate Amendment 1, individuals age 60 or older must meet a domicile-duration requirement to qualify: 3 years if domiciled in DE before 1/1/2027, or 5 years if domiciled on/after 1/1/2027 (no such requirement for those under 60). The subtraction limit applies individually to each spouse receiving a military pension on a joint return. Fiscal note estimates General Fund revenue impact of $0.4M (FY27), $1.5M (FY28), and $2.8M (FY29).",
@@ -418,35 +390,7 @@
       "state_link": "https://legis.delaware.gov/BillDetail?LegislationId=142742",
       "legiscan_url": "https://legiscan.com/DE/bill/SB219/2025",
       "final_date": "2026-08-25",
-      "updated": "2026-08-29T16:10:55.033Z"
-    },
-    {
-      "state": "SC",
-      "bill_number": "H4575",
-      "label": "Richard Star Act Support Resolution",
-      "category": "Richard Star Act Resolutions",
-      "chapter": "SLEF-MOAA",
-      "summary": "A House bill urging Congress to pass the Major Richard Star Act, already introduced in the South Carolina legislature.",
-      "priority": true,
-      "badges": [],
-      "advocacy_url": null,
-      "template_url": null,
-      "chamber_target": "lower",
-      "position": "support",
-      "position_notes": "This is a standalone House bill (no Senate companion) urging Congress to pass the Major Richard Star Act (H.R. 2102 / S. 1032); it does not change state law and requires no state funding.",
-      "email_subject": "Support for H. 4575 — Major Richard Star Act Resolution",
-      "email_template": "Dear [LEGISLATOR_NAME],\n\nMy name is [FULL_NAME], and I am a veteran and member of [CHAPTER] living in [CITY], [STATE]. I'm writing to ask for your support and a yes vote on H. 4575, a resolution urging Congress to pass the Major Richard Star Act (H.R. 2102 / S. 1032).\n\nThis resolution would not change state law and would not require any funding. It simply urges Congress to correct a 2004 oversight that leaves more than 50,000 medically retired combat-wounded veterans nationwide unable to receive their full earned DoD retirement pay alongside their VA disability compensation.\n\nThank you for your consideration and for your support of South Carolina's veterans.\n\nRespectfully,\n[FULL_NAME]\n[CITY], [STATE]\nMember, [CHAPTER]",
-      "title": "Major Richard Star Act",
-      "status": 1,
-      "status_label": "Introduced",
-      "status_note": null,
-      "last_action_date": "2026-01-13",
-      "last_action": "Referred to Committee on Invitations and Memorial Resolutions",
-      "committee": "Invitations and Memorial Resolutions",
-      "state_link": "https://www.scstatehouse.gov/billsearch.php?billnumbers=4575&session=126&summary=B",
-      "legiscan_url": "https://legiscan.com/SC/bill/H4575/2025",
-      "final_date": null,
-      "updated": "2026-08-29T16:10:55.562Z"
+      "updated": "2026-08-26T12:45:44.788Z"
     }
   ]
 }
