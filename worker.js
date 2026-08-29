@@ -113,13 +113,79 @@ async function geocodeZip(zip) {
     lng: parseFloat(place.longitude),
     state: data['country abbreviation'] === 'US' ? place['state abbreviation'] : null,
     place_name: place['place name'] || null,
+    geocoded_by: 'zippopotam_zip',
   };
 }
 
-// Geocode a full street address using the US Census Bureau Geocoder.
-// Free, no API key required. Returns lat/lng and the matched state.
-// Falls back to ZIP centroid if the address cannot be matched.
-async function geocodeAddress(street, zip) {
+// Full-name -> 2-letter abbreviation, used only to normalize Nominatim's
+// state field (it returns full names, e.g. "Arizona", not "AZ").
+var STATE_ABBR = {
+  alabama: 'AL', alaska: 'AK', arizona: 'AZ', arkansas: 'AR', california: 'CA',
+  colorado: 'CO', connecticut: 'CT', delaware: 'DE', florida: 'FL', georgia: 'GA',
+  hawaii: 'HI', idaho: 'ID', illinois: 'IL', indiana: 'IN', iowa: 'IA',
+  kansas: 'KS', kentucky: 'KY', louisiana: 'LA', maine: 'ME', maryland: 'MD',
+  massachusetts: 'MA', michigan: 'MI', minnesota: 'MN', mississippi: 'MS',
+  missouri: 'MO', montana: 'MT', nebraska: 'NE', nevada: 'NV',
+  'new hampshire': 'NH', 'new jersey': 'NJ', 'new mexico': 'NM', 'new york': 'NY',
+  'north carolina': 'NC', 'north dakota': 'ND', ohio: 'OH', oklahoma: 'OK',
+  oregon: 'OR', pennsylvania: 'PA', 'rhode island': 'RI', 'south carolina': 'SC',
+  'south dakota': 'SD', tennessee: 'TN', texas: 'TX', utah: 'UT', vermont: 'VT',
+  virginia: 'VA', washington: 'WA', 'west virginia': 'WV', wisconsin: 'WI',
+  wyoming: 'WY', 'district of columbia': 'DC',
+};
+
+// Second-choice ZIP-centroid fallback, used only when BOTH the Census
+// street match AND Zippopotam.us fail. Zippopotam's underlying dataset
+// has known coverage gaps for some otherwise-valid, standard US ZIPs
+// (see e.g. ZIP 86005 — a real, populated Flagstaff, AZ ZIP that
+// Zippopotam does not have indexed). Nominatim/OpenStreetMap has much
+// broader postal-code coverage and needs no API key, just a descriptive
+// User-Agent per its usage policy.
+async function geocodeZipViaNominatim(zip) {
+  var url = 'https://nominatim.openstreetmap.org/search?postalcode=' +
+    encodeURIComponent(zip) + '&country=us&format=jsonv2&addressdetails=1&limit=1';
+  var res = await fetch(url, {
+    headers: { 'User-Agent': 'SLEF-SLAC-LegislatorLookup/1.0 (team@slef-moaa.com)' },
+  });
+  if (!res.ok) throw new Error('Nominatim lookup failed for ZIP: ' + zip);
+  var results = await res.json();
+  var place = (results && results[0]) || null;
+  if (!place) throw new Error('No location data from Nominatim for ZIP: ' + zip);
+  var stateName = (place.address && place.address.state || '').toLowerCase();
+  return {
+    lat: parseFloat(place.lat),
+    lng: parseFloat(place.lon),
+    state: STATE_ABBR[stateName] || null,
+    place_name: place.display_name || null,
+    geocoded_by: 'nominatim_zip',
+  };
+}
+
+// Tries Zippopotam first (fast, simple), and only falls back to Nominatim
+// if Zippopotam itself fails — keeping the common case cheap while still
+// covering the ZIPs Zippopotam is missing.
+async function geocodeZipWithFallback(zip) {
+  try {
+    return await geocodeZip(zip);
+  } catch (_) {
+    return await geocodeZipViaNominatim(zip);
+  }
+}
+
+// Strips apartment/unit/suite markers and collapses whitespace. The
+// Census geocoder's address matcher can be thrown off by unit info or
+// stray punctuation that doesn't affect which parcel/district the
+// address falls in, so retrying without it recovers a real match in
+// cases that would otherwise incorrectly fall through to a ZIP-only
+// (and therefore less precise) lookup.
+function normalizeStreet(street) {
+  return street
+    .replace(/[,#]?\s*(apt|apartment|unit|ste|suite|#)\.?\s*[\w-]*/gi, '')
+    .replace(/\s{2,}/g, ' ')
+    .trim();
+}
+
+async function tryCensusMatch(street, zip) {
   var params = new URLSearchParams({
     street: street,
     zip: zip,
@@ -127,31 +193,52 @@ async function geocodeAddress(street, zip) {
     format: 'json',
   });
   var url = 'https://geocoding.geo.census.gov/geocoder/locations/address?' + params.toString();
+  var res = await fetch(url);
+  if (!res.ok) throw new Error('Census geocoder HTTP ' + res.status);
+  var data = await res.json();
+  var matches = (data.result && data.result.addressMatches) || [];
+  return matches.length ? matches[0] : null;
+}
 
-  try {
-    var res = await fetch(url);
-    if (!res.ok) throw new Error('Census geocoder HTTP ' + res.status);
-    var data = await res.json();
-    var matches = (data.result && data.result.addressMatches) || [];
-    if (!matches.length) {
-      // No match — fall back to ZIP centroid
-      return geocodeZip(zip);
+// Geocode a full street address using the US Census Bureau Geocoder.
+// Free, no API key required. Returns lat/lng and the matched state.
+//
+// Retries with a normalized (unit/apartment-stripped) version of the
+// street before giving up on Census entirely, since a surprising share
+// of "no match" results are caused by formatting Census's strict
+// matcher rejects rather than the address genuinely not existing.
+//
+// If Census can't match in either form, falls back to a ZIP-centroid
+// lookup (Zippopotam, then Nominatim) rather than failing outright.
+async function geocodeAddress(street, zip) {
+  var candidates = [street, normalizeStreet(street)];
+  var tried = {};
+
+  for (var i = 0; i < candidates.length; i++) {
+    var candidate = candidates[i];
+    if (!candidate || tried[candidate]) continue;
+    tried[candidate] = true;
+
+    try {
+      var match = await tryCensusMatch(candidate, zip);
+      if (match) {
+        var coords = match.coordinates;
+        // Census returns state FIPS; derive abbreviation from the matched address components
+        var stateAbbr = (match.addressComponents && match.addressComponents.state) || null;
+        return {
+          lat: coords.y,
+          lng: coords.x,
+          state: stateAbbr,
+          place_name: match.matchedAddress || null,
+          geocoded_by: 'census_address',
+        };
+      }
+    } catch (_) {
+      // Try the next candidate form; if none work, fall through below.
     }
-    var match = matches[0];
-    var coords = match.coordinates;
-    // Census returns state FIPS; derive abbreviation from the matched address components
-    var stateAbbr = (match.addressComponents && match.addressComponents.state) || null;
-    return {
-      lat: coords.y,
-      lng: coords.x,
-      state: stateAbbr,
-      place_name: match.matchedAddress || null,
-      geocoded_by: 'census_address',
-    };
-  } catch (_) {
-    // On any error fall back to ZIP centroid silently
-    return geocodeZip(zip);
   }
+
+  return geocodeZipWithFallback(zip);
 }
 
 async function lookupLegislators(lat, lng, apiKey) {
@@ -575,7 +662,7 @@ export default {
     try {
       var geo = street
         ? await geocodeAddress(street, zip)
-        : await geocodeZip(zip);
+        : await geocodeZipWithFallback(zip);
 
       var legislators = await lookupLegislators(geo.lat, geo.lng, env.OPENSTATES_API_KEY);
 
