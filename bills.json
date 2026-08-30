@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-30T11:14:02.764Z",
+  "generated": "2026-08-30T11:16:59.310Z",
   "bills": [
     {
       "state": "",
@@ -18,7 +18,7 @@
       "position": "support",
       "position_notes": "This is a state resolution ask, not a bill — it would not change state law and requires no funding in any state. It simply urges Congress to pass the Major Richard Star Act (H.R. 2102 / S. 1032), which corrects a 2004 oversight preventing more than 50,000 medically retired combat-wounded veterans nationwide from receiving their full earned DoD retirement pay alongside their VA disability compensation.",
       "email_subject": "Request for Meeting — Major Richard Star Act State Resolution",
-      "email_template": "Dear [LEGISLATOR_NAME],\n\nMy name is [FULL_NAME], and I am a veteran and member of [CHAPTER] of the Military Officers Association of America (MOAA) living in [CITY], [STATE]. I'm reaching out to ask for a brief meeting to discuss a state resolution that would support combat-wounded veterans here in [STATE].\n\nThe resolution would not change state law and would not require any funding. It would simply urge Congress to pass the Major Richard Star Act (H.R. 2102 / S. 1032), which corrects a 2004 oversight that leaves more than 50,000 medically retired combat-wounded veterans nationwide unable to receive their full earned DoD retirement pay alongside their VA disability compensation.\n\nFor your reference, here is some background on the legislation along with sample language that could serve as a starting point for a resolution:\nMajor Richard Star Act — Resolution & Fact Sheet: https://www.moaamcoc.com/uploads/1/4/8/4/148483887/star_act_resolution___fact_sheet.pdf\n\nI'm happy to meet in person, by phone, or by video, whatever is easiest for your schedule — please let me know who on your staff I should coordinate with.\n\nThank you for your time and consideration.\n\nRespectfully,\n[FULL_NAME]\n[CITY], [STATE]\n[CHAPTER], MOAA",
+      "email_template": "Dear [LEGISLATOR_NAME],\n\nMy name is [FULL_NAME], and I am a veteran and member of the [CHAPTER] of the Military Officers Association of America (MOAA) living in [CITY], [STATE]. I'm reaching out to ask for a brief meeting to discuss a state resolution that would support combat-wounded veterans here in [STATE].\n\nThe resolution would not change state law and would not require any funding. It would simply urge Congress to pass the Major Richard Star Act (H.R. 2102 / S. 1032), which corrects a 2004 oversight that leaves more than 50,000 medically retired combat-wounded veterans nationwide unable to receive their full earned DoD retirement pay alongside their VA disability compensation.\n\nFor your reference, here is some background on the legislation along with sample language that could serve as a starting point for a resolution:\nMajor Richard Star Act — Resolution & Fact Sheet: https://www.moaamcoc.com/uploads/1/4/8/4/148483887/star_act_resolution___fact_sheet.pdf\n\nI'm happy to meet in person, by phone, or by video, whatever is easiest for your schedule — please let me know who on your staff I should coordinate with.\n\nThank you for your time and consideration.\n\nRespectfully,\n[FULL_NAME]\n[CITY], [STATE]\n[CHAPTER], MOAA",
       "title": "Richard Star Act - State Resolution",
       "status_label": "Ongoing",
       "status_note": null,
@@ -28,7 +28,7 @@
       "state_link": "https://www.congress.gov/bill/119th-congress/house-bill/2102",
       "legiscan_url": "https://www.congress.gov/bill/119th-congress/house-bill/2102",
       "final_date": null,
-      "updated": "2026-08-30T11:13:53.622Z"
+      "updated": "2026-08-30T11:16:52.254Z"
     },
     {
       "state": "MI",
@@ -56,7 +56,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5262",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5262/2025",
       "final_date": null,
-      "updated": "2026-08-30T11:13:54.498Z"
+      "updated": "2026-08-30T11:16:52.618Z"
     },
     {
       "state": "MI",
@@ -84,7 +84,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5278",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5278/2025",
       "final_date": null,
-      "updated": "2026-08-30T11:13:54.976Z"
+      "updated": "2026-08-30T11:16:53.042Z"
     },
     {
       "state": "MI",
@@ -112,7 +112,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5279",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5279/2025",
       "final_date": null,
-      "updated": "2026-08-30T11:13:55.457Z"
+      "updated": "2026-08-30T11:16:53.465Z"
     },
     {
       "state": "MI",
@@ -140,7 +140,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5280",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5280/2025",
       "final_date": null,
-      "updated": "2026-08-30T11:13:55.932Z"
+      "updated": "2026-08-30T11:16:53.889Z"
     },
     {
       "state": "MI",
@@ -168,7 +168,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5456",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5456/2025",
       "final_date": null,
-      "updated": "2026-08-30T11:13:56.436Z"
+      "updated": "2026-08-30T11:16:54.315Z"
     },
     {
       "state": "MI",
@@ -196,7 +196,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5457",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5457/2025",
       "final_date": null,
-      "updated": "2026-08-30T11:13:56.913Z"
+      "updated": "2026-08-30T11:16:54.740Z"
     },
     {
       "state": "PA",
@@ -224,7 +224,7 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/sb1209",
       "legiscan_url": "https://legiscan.com/PA/bill/SB1209/2025",
       "final_date": null,
-      "updated": "2026-08-30T11:13:57.763Z"
+      "updated": "2026-08-30T11:16:55.264Z"
     },
     {
       "state": "PA",
@@ -252,7 +252,7 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/hb1918",
       "legiscan_url": "https://legiscan.com/PA/bill/HB1918/2025",
       "final_date": null,
-      "updated": "2026-08-30T11:13:58.234Z"
+      "updated": "2026-08-30T11:16:55.686Z"
     },
     {
       "state": "PA",
@@ -280,7 +280,7 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/hb1177",
       "legiscan_url": "https://legiscan.com/PA/bill/HB1177/2025",
       "final_date": null,
-      "updated": "2026-08-30T11:13:58.720Z"
+      "updated": "2026-08-30T11:16:56.107Z"
     },
     {
       "state": "PA",
@@ -307,7 +307,7 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/hb2439",
       "legiscan_url": "https://legiscan.com/PA/bill/HB2439/2025",
       "final_date": null,
-      "updated": "2026-08-30T11:13:59.207Z"
+      "updated": "2026-08-30T11:16:56.529Z"
     },
     {
       "state": "PA",
@@ -335,7 +335,7 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/hb1144",
       "legiscan_url": "https://legiscan.com/PA/bill/HB1144/2025",
       "final_date": null,
-      "updated": "2026-08-30T11:13:59.705Z"
+      "updated": "2026-08-30T11:16:56.953Z"
     },
     {
       "state": "PA",
@@ -363,7 +363,7 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/hb1257",
       "legiscan_url": "https://legiscan.com/PA/bill/HB1257/2025",
       "final_date": null,
-      "updated": "2026-08-30T11:14:00.210Z"
+      "updated": "2026-08-30T11:16:57.380Z"
     },
     {
       "state": "NJ",
@@ -391,7 +391,7 @@
       "state_link": "https://www.njleg.state.nj.us/bill-search/2026/S1194",
       "legiscan_url": "https://legiscan.com/NJ/bill/S1194/2026",
       "final_date": null,
-      "updated": "2026-08-30T11:14:01.056Z"
+      "updated": "2026-08-30T11:16:57.940Z"
     },
     {
       "state": "DE",
@@ -418,7 +418,7 @@
       "state_link": "https://legis.delaware.gov/BillDetail?LegislationId=142742",
       "legiscan_url": "https://legiscan.com/DE/bill/SB219/2025",
       "final_date": "2026-08-25",
-      "updated": "2026-08-30T11:14:01.702Z"
+      "updated": "2026-08-30T11:16:58.417Z"
     },
     {
       "state": "SC",
@@ -446,7 +446,7 @@
       "state_link": "https://www.scstatehouse.gov/billsearch.php?billnumbers=4575&session=126&summary=B",
       "legiscan_url": "https://legiscan.com/SC/bill/H4575/2025",
       "final_date": null,
-      "updated": "2026-08-30T11:14:02.362Z"
+      "updated": "2026-08-30T11:16:58.908Z"
     }
   ]
 }
