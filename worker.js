@@ -522,7 +522,8 @@ async function sendSubmissionEmail(body) {
 // Click tracking — KV helpers
 // ---------------------------------------------------------------------------
 
-// Builds the KV key for a bill, e.g. "click:MI:HB5262"
+// Builds the KV key for a bill, e.g. "click:MI:HB5262", or
+// "click:US:STARACT-RES" for a nationwide campaign (blank state).
 function clickKey(state, billNumber) {
   return 'click:' + state.toUpperCase() + ':' + billNumber.replace(/\s+/g, '').toUpperCase();
 }
@@ -592,6 +593,7 @@ export default {
     // ------------------------------------------------------------------
     // POST /track — increment click count for a bill
     // Body: { state: 'MI', bill_number: 'HB5262' }
+    // state may be '' for a nationwide campaign (stored under "US").
     // Called fire-and-forget from take-action.html on send button click.
     // ------------------------------------------------------------------
     if (request.method === 'POST' && url.pathname === '/track') {
@@ -610,15 +612,24 @@ export default {
       var state      = (body.state || '').trim().toUpperCase();
       var billNumber = (body.bill_number || '').trim();
 
-      if (!state || !/^[A-Z]{2}$/.test(state)) {
-        return jsonResponse({ error: 'state must be a 2-letter postal code' }, 400);
+      // A blank state is valid — it represents a nationwide advocacy
+      // campaign (see tracked-bills.json's skip_legiscan/template_url
+      // entries), which by design isn't tied to one state. Anything
+      // non-blank must still be a real 2-letter postal code.
+      if (state && !/^[A-Z]{2}$/.test(state)) {
+        return jsonResponse({ error: 'state must be blank (nationwide campaign) or a 2-letter postal code' }, 400);
       }
       if (!billNumber) {
         return jsonResponse({ error: 'bill_number is required' }, 400);
       }
 
+      // Nationwide campaigns are stored under a "US" placeholder key
+      // instead of an empty string, since KV/metrics keys read more
+      // sensibly as "US:STARACT-RES" than ":STARACT-RES".
+      var keyState = state || 'US';
+
       try {
-        var newCount = await incrementClick(env.CLICKS, state, billNumber);
+        var newCount = await incrementClick(env.CLICKS, keyState, billNumber);
         return jsonResponse({ ok: true, count: newCount });
       } catch (err) {
         return jsonResponse({ error: err.message || 'Failed to record click' }, 502);
