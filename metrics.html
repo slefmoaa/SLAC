@@ -324,7 +324,10 @@ tr.gridjs-tr:hover td { background: #faf9f5 !important; }
 
   // ── Build state filter buttons ────────────────────────
   function buildStateFilters(bills) {
-    var states = ['ALL'].concat([...new Set(bills.map(function (b) { return b.state; }))].sort());
+    // Normalize blank state (nationwide campaigns) to "US" here too, so
+    // the button label isn't blank and matches the same value used in
+    // buildRows' row[0] for filtering.
+    var states = ['ALL'].concat([...new Set(bills.map(function (b) { return b.state || 'US'; }))].sort());
     var wrap = document.getElementById('state-filters');
     wrap.innerHTML = '';
     states.forEach(function (s) {
@@ -345,12 +348,17 @@ tr.gridjs-tr:hover td { background: #faf9f5 !important; }
   // ── Build Grid.js rows ────────────────────────────────
   function buildRows(bills, counts, maxClicks) {
     return bills.map(function (b) {
-      var key = (b.state + ':' + b.bill_number.replace(/\s+/g, '')).toUpperCase();
+      // Nationwide campaigns (blank state) are stored under a "US"
+      // placeholder key by worker.js's /track endpoint — normalize here
+      // too, so the state filter buttons and row grouping don't end up
+      // with a blank/unlabeled entry.
+      var stateOrUS = b.state || 'US';
+      var key = (stateOrUS + ':' + b.bill_number.replace(/\s+/g, '')).toUpperCase();
       var clicks = counts[key] || 0;
       var pct = maxClicks > 0 ? Math.round((clicks / maxClicks) * 100) : 0;
       return [
-        b.state,                          // [0] state (for filtering, hidden)
-        b.state + ' ' + b.bill_number,    // [1] bill code
+        stateOrUS,                         // [0] state (for filtering, hidden) — "US" for nationwide
+        (b.state || 'US') + ' ' + b.bill_number, // [1] bill code
         b.label || '',                     // [2] label
         b.category || '',                  // [3] category
         b.status_label || '',              // [4] status
