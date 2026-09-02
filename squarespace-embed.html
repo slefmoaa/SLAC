@@ -548,7 +548,7 @@
   function deathReason(bill) {
     if (bill.status_note && bill.status_note.trim()) return bill.status_note.trim();
     if (bill.last_action) {
-      return (bill.last_action_date ? bill.last_action_date + ' Ã¢â‚¬â€ ' : '') + bill.last_action;
+      return (bill.last_action_date ? bill.last_action_date + ' â€” ' : '') + bill.last_action;
     }
     return 'This bill did not pass and is no longer active this session.';
   }
@@ -575,7 +575,7 @@
     if (metaParts.length) metaLine = '<div class="sleflac-bill-meta-line">' + metaParts.join('') + '</div>';
 
     // Once a bill is dead, there's no legislator left to lobby this
-    // session Ã¢â‚¬â€ drop the Take Action button and explain why instead.
+    // session â€” drop the Take Action button and explain why instead.
     var deadNoteHtml = isDead
       ? '<div class="sleflac-dead-note"><strong>Why it died:</strong> ' + escapeHtml(deathReason(bill)) + '</div>'
       : '';
