@@ -486,6 +486,23 @@
 (function () {
   var DATA_URL = 'https://slefmoaa.github.io/SLAC/bills.json';
   var SUGGEST_FORM_URL = 'https://forms.gle/kFd8oKXxBBZGjef87';
+
+  // Single delegated click listener, attached ONCE to the outer
+  // container (which the page provides and never gets replaced) rather
+  // than to each individual pill button (which DOES get destroyed and
+  // recreated every time renderForState() rebuilds the inner HTML).
+  // This is immune to timing issues between the click-triggered render
+  // and the separate, independent /counts-triggered re-render below â€”
+  // there is nothing to "re-attach," since the listener never lived on
+  // a pill in the first place.
+  var trackerContainer = document.getElementById('sleflac-tracker');
+  if (trackerContainer) {
+    trackerContainer.addEventListener('click', function (event) {
+      var pill = event.target.closest && event.target.closest('.sleflac-state-pill');
+      if (pill) renderForState(pill.getAttribute('data-state'));
+    });
+  }
+
   var STATE_NAMES = {
     AL:'Alabama', AK:'Alaska', AZ:'Arizona', AR:'Arkansas', CA:'California',
     CO:'Colorado', CT:'Connecticut', DE:'Delaware', FL:'Florida', GA:'Georgia',
@@ -750,12 +767,6 @@
       footerHtml;
 
     container.innerHTML = html;
-
-    container.querySelectorAll('.sleflac-state-pill').forEach(function (pill) {
-      pill.addEventListener('click', function () {
-        renderForState(pill.getAttribute('data-state'));
-      });
-    });
   }
 
   function render(data) {
