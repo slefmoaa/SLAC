@@ -219,9 +219,16 @@
 }
 .sleflac-campaign-actions {
   display: flex;
+  align-items: flex-start;
   gap: 10px;
   flex: 0 0 auto;
   flex-wrap: wrap;
+}
+.sleflac-campaign-take-action-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
 }
 .sleflac-btn-secondary {
   display: inline-flex;
@@ -380,6 +387,20 @@
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: #fff;
+}
+.sleflac-letters-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.03em;
+  color: var(--navy);
+  background: var(--gold-pale);
+  border: 1px solid #e8d9ae;
+  white-space: nowrap;
 }
 .sleflac-take-action {
   display: inline-flex;
@@ -572,6 +593,7 @@
             ? '<span class="sleflac-position-badge oppose">&#9660; Opposed</span>'
             : '<span class="sleflac-position-badge support">&#9650; Supported</span>') +
           actionBtn +
+          '<span class="sleflac-letters-badge">' + lettersSentFor(bill) + ' Letters Sent</span>' +
         '</div>' +
       '</div>';
   }
@@ -595,10 +617,17 @@
       ? TAKE_ACTION_BASE + '?bill=' + encodeURIComponent(bill.bill_number || '') + '&state=' + encodeURIComponent(bill.state || '')
       : bill.advocacy_url;
 
-    var actionsHtml = '<div class="sleflac-campaign-actions">';
+    // "X Letters Sent" is grouped and centered directly under the Take
+    // action button specifically (not the row as a whole), independent
+    // of whether the secondary template button is present alongside it.
+    var takeActionGroupHtml = '<div class="sleflac-campaign-take-action-group">';
     if (actionUrl) {
-      actionsHtml += '<a class="sleflac-take-action" href="' + escapeHtml(actionUrl) + '" target="_blank" rel="noopener">Take action &rarr;</a>';
+      takeActionGroupHtml += '<a class="sleflac-take-action" href="' + escapeHtml(actionUrl) + '" target="_blank" rel="noopener">Take action &rarr;</a>';
     }
+    takeActionGroupHtml += '<span class="sleflac-letters-badge">' + lettersSentFor(bill) + ' Letters Sent</span>';
+    takeActionGroupHtml += '</div>';
+
+    var actionsHtml = '<div class="sleflac-campaign-actions">' + takeActionGroupHtml;
     if (bill.template_url) {
       actionsHtml += '<a class="sleflac-btn-secondary" href="' + escapeHtml(bill.template_url) + '" target="_blank" rel="noopener">View Resolution Template &#8599;</a>';
     }
@@ -617,8 +646,18 @@
 
   var allBills = [];
   var generatedStr = '';
+  var clickCounts = {};
+
+  // Same key scheme worker.js's /track and /counts endpoints use:
+  // (state || 'US') + ':' + bill_number, uppercased. A nationwide
+  // campaign (blank state) is stored under the "US" placeholder.
+  function lettersSentFor(bill) {
+    var key = ((bill.state || 'US') + ':' + (bill.bill_number || '').replace(/\s+/g, '')).toUpperCase();
+    return clickCounts[key] || 0;
+  }
 
   function renderForState(selectedState) {
+    currentRenderedState = selectedState;
     var container = document.getElementById('sleflac-tracker');
     // Nationwide campaigns (template_url set, no fixed state) render as
     // their own full card above the state selector, shown once
@@ -752,6 +791,26 @@
       var container = document.getElementById('sleflac-tracker');
       container.innerHTML = '<div class="sleflac-error">Bill tracker is temporarily unavailable. Please check back later.</div>';
       console.warn('SLEFLAC tracker: failed to load bills.json', err);
+    });
+
+  // Letter counts are a non-essential enhancement â€” fetched separately
+  // from bills.json, and any failure here (Worker down, slow, CORS
+  // hiccup) must never block or break the main tracker render. If this
+  // resolves after the initial render, re-render with counts merged in
+  // for whichever state is currently showing.
+  var COUNTS_URL = 'https://slac-legislator-lookup.team-86d.workers.dev/counts';
+  var currentRenderedState = null;
+  fetch(COUNTS_URL, { cache: 'no-store' })
+    .then(function (res) {
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      return res.json();
+    })
+    .then(function (data) {
+      clickCounts = (data && data.counts) || {};
+      if (allBills.length) renderForState(currentRenderedState);
+    })
+    .catch(function (err) {
+      console.warn('SLEFLAC tracker: failed to load letter counts (non-fatal)', err);
     });
 })();
 </script>
