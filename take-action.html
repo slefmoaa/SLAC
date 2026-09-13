@@ -350,7 +350,12 @@ textarea {
 
   // ---- Step 1: ZIP lookup via Cloudflare Worker ----
   function chamberMatches(target, chamber) {
-    if (!target || target === 'both') return true;
+    // 'unicameral' is for Nebraska, the only state with a single-chamber
+    // legislature — Open States reports its members' org_classification
+    // as something other than 'upper'/'lower', so there's nothing
+    // meaningful to filter on. Treat it like 'both' and accept whatever
+    // comes back (in practice, exactly one legislator per address).
+    if (!target || target === 'both' || target === 'unicameral') return true;
     return target === chamber;
   }
 
@@ -418,7 +423,7 @@ textarea {
         legStep.classList.remove('hidden');
 
         filtered.forEach(function (leg, idx) {
-          var chamberLabel = leg.chamber === 'upper' ? 'Senate' : (leg.chamber === 'lower' ? 'House' : (leg.title || ''));
+          var chamberLabel = leg.chamber === 'upper' ? 'Senate' : (leg.chamber === 'lower' ? 'House' : (leg.title || 'Senator'));
           var district = leg.district ? 'District ' + escapeHtml(leg.district) : '';
           var meta = [chamberLabel, district].filter(Boolean).join(' · ');
           var noEmail = !leg.email ? '<div class="legislator-noemail">No email on file — use contact form</div>' : '';
