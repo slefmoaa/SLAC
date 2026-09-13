@@ -275,7 +275,8 @@
       "position": "support",
       "position_notes": "Speaker-priority bill sponsored by Sen. Rita Sanders; passed the Unicameral 49-0. Test entry to verify the take-action flow for Nebraska's single-chamber legislature.",
       "email_subject": "Support for NE LB787 — Commission on Military & Veterans Affairs",
-      "email_template": "Dear [LEGISLATOR_NAME],\n\nAs a member of [CHAPTER] of the Military Officers Association of America (MOAA), I am writing to express support for LB787, which updates the membership and reporting requirements of the Commission on Military and Veterans Affairs.\n\nThis bill strengthens coordination between the Commission and Nebraska's military installations by adding ex officio representation from key commands, helping ensure decisions affecting veterans and service members reflect current realities on the ground.\n\nI urge you to support LB787.\n\nRespectfully,\n[FULL_NAME]\n[CITY], [STATE]\n[CHAPTER], MOAA"
+      "email_template": "Dear [LEGISLATOR_NAME],\n\nAs a member of [CHAPTER] of the Military Officers Association of America (MOAA), I am writing to express support for LB787, which updates the membership and reporting requirements of the Commission on Military and Veterans Affairs.\n\nThis bill strengthens coordination between the Commission and Nebraska's military installations by adding ex officio representation from key commands, helping ensure decisions affecting veterans and service members reflect current realities on the ground.\n\nI urge you to support LB787.\n\nRespectfully,\n[FULL_NAME]\n[CITY], [STATE]\n[CHAPTER], MOAA",
+      "final_date": "2026-09-13"
     }
   ]
 }
