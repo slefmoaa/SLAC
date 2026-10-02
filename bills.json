@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-01T17:59:46.364Z",
+  "generated": "2026-10-02T17:26:17.019Z",
   "bills": [
     {
       "state": "",
@@ -28,7 +28,7 @@
       "state_link": "https://www.congress.gov/bill/119th-congress/house-bill/2102",
       "legiscan_url": "https://www.congress.gov/bill/119th-congress/house-bill/2102",
       "final_date": null,
-      "updated": "2026-10-01T17:59:27.327Z"
+      "updated": "2026-10-02T17:26:07.764Z"
     },
     {
       "state": "MI",
@@ -56,7 +56,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5262",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5262/2025",
       "final_date": null,
-      "updated": "2026-10-01T17:59:27.754Z"
+      "updated": "2026-10-02T17:26:08.714Z"
     },
     {
       "state": "MI",
@@ -84,7 +84,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5278",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5278/2025",
       "final_date": null,
-      "updated": "2026-10-01T17:59:28.209Z"
+      "updated": "2026-10-02T17:26:09.209Z"
     },
     {
       "state": "MI",
@@ -112,7 +112,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5279",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5279/2025",
       "final_date": null,
-      "updated": "2026-10-01T17:59:28.664Z"
+      "updated": "2026-10-02T17:26:09.701Z"
     },
     {
       "state": "MI",
@@ -140,7 +140,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5280",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5280/2025",
       "final_date": null,
-      "updated": "2026-10-01T17:59:29.118Z"
+      "updated": "2026-10-02T17:26:10.197Z"
     },
     {
       "state": "MI",
@@ -168,7 +168,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5456",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5456/2025",
       "final_date": null,
-      "updated": "2026-10-01T17:59:29.585Z"
+      "updated": "2026-10-02T17:26:10.692Z"
     },
     {
       "state": "MI",
@@ -196,7 +196,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5457",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5457/2025",
       "final_date": null,
-      "updated": "2026-10-01T17:59:30.036Z"
+      "updated": "2026-10-02T17:26:11.179Z"
     },
     {
       "state": "PA",
@@ -224,7 +224,7 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/sb1209",
       "legiscan_url": "https://legiscan.com/PA/bill/SB1209/2025",
       "final_date": null,
-      "updated": "2026-10-01T17:59:30.645Z"
+      "updated": "2026-10-02T17:26:11.983Z"
     },
     {
       "state": "PA",
@@ -252,7 +252,7 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/hb1918",
       "legiscan_url": "https://legiscan.com/PA/bill/HB1918/2025",
       "final_date": null,
-      "updated": "2026-10-01T17:59:31.094Z"
+      "updated": "2026-10-02T17:26:12.466Z"
     },
     {
       "state": "PA",
@@ -280,7 +280,7 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/hb1177",
       "legiscan_url": "https://legiscan.com/PA/bill/HB1177/2025",
       "final_date": null,
-      "updated": "2026-10-01T17:59:31.547Z"
+      "updated": "2026-10-02T17:26:12.944Z"
     },
     {
       "state": "PA",
@@ -307,7 +307,7 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/hb2439",
       "legiscan_url": "https://legiscan.com/PA/bill/HB2439/2025",
       "final_date": null,
-      "updated": "2026-10-01T17:59:31.999Z"
+      "updated": "2026-10-02T17:26:13.434Z"
     },
     {
       "state": "PA",
@@ -335,7 +335,7 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/hb1144",
       "legiscan_url": "https://legiscan.com/PA/bill/HB1144/2025",
       "final_date": null,
-      "updated": "2026-10-01T17:59:32.459Z"
+      "updated": "2026-10-02T17:26:13.909Z"
     },
     {
       "state": "PA",
@@ -363,7 +363,7 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/hb1257",
       "legiscan_url": "https://legiscan.com/PA/bill/HB1257/2025",
       "final_date": null,
-      "updated": "2026-10-01T17:59:32.921Z"
+      "updated": "2026-10-02T17:26:14.418Z"
     },
     {
       "state": "NJ",
@@ -391,7 +391,7 @@
       "state_link": "https://www.njleg.state.nj.us/bill-search/2026/S1194",
       "legiscan_url": "https://legiscan.com/NJ/bill/S1194/2026",
       "final_date": null,
-      "updated": "2026-10-01T17:59:33.572Z"
+      "updated": "2026-10-02T17:26:15.308Z"
     },
     {
       "state": "SC",
@@ -405,14 +405,21 @@
       "advocacy_url": null,
       "template_url": null,
       "chamber_target": "lower",
+      "position": "support",
+      "position_notes": "This is a standalone House bill (no Senate companion) urging Congress to pass the Major Richard Star Act (H.R. 2102 / S. 1032); it does not change state law and requires no state funding.",
       "email_subject": "Support for H. 4575 — Major Richard Star Act Resolution",
       "email_template": "Dear [LEGISLATOR_NAME],\n\nMy name is [FULL_NAME], and I am a veteran and member of [CHAPTER] of the Military Officers Association of America (MOAA) living in [CITY], [STATE]. I'm writing to ask for your support and a yes vote on H. 4575, a resolution urging Congress to pass the Major Richard Star Act (H.R. 2102 / S. 1032).\n\nThis resolution would not change state law and would not require any funding. It simply urges Congress to correct a 2004 oversight that leaves more than 50,000 medically retired combat-wounded veterans nationwide unable to receive their full earned DoD retirement pay alongside their VA disability compensation.\n\nThank you for your consideration and for your support of South Carolina's veterans.\n\nRespectfully,\n[FULL_NAME]\n[CITY], [STATE]\n[CHAPTER], MOAA",
-      "status_label": "Error",
+      "title": "Major Richard Star Act",
+      "status": 1,
+      "status_label": "Introduced",
       "status_note": null,
-      "state_link": "https://www.scstatehouse.gov/sess126_2025-2026/bills/4575.htm",
-      "legiscan_url": "https://www.scstatehouse.gov/sess126_2025-2026/bills/4575.htm",
-      "error": "LegiScan API error for op=getMasterListRaw: 429 Too Many Requests",
-      "updated": "2026-10-01T17:59:40.250Z"
+      "last_action_date": "2026-01-13",
+      "last_action": "Referred to Committee on Invitations and Memorial Resolutions",
+      "committee": "Invitations and Memorial Resolutions",
+      "state_link": "https://www.scstatehouse.gov/billsearch.php?billnumbers=4575&session=126&summary=B",
+      "legiscan_url": "https://legiscan.com/SC/bill/H4575/2025",
+      "final_date": null,
+      "updated": "2026-10-02T17:26:15.971Z"
     },
     {
       "state": "NE",
@@ -426,14 +433,20 @@
       "advocacy_url": null,
       "template_url": null,
       "chamber_target": "unicameral",
+      "position": "support",
+      "position_notes": "Speaker-priority bill sponsored by Sen. Rita Sanders; passed the Unicameral 49-0. Test entry to verify the take-action flow for Nebraska's single-chamber legislature.",
       "email_subject": "Support for NE LB787 — Commission on Military & Veterans Affairs",
       "email_template": "Dear [LEGISLATOR_NAME],\n\nAs a member of [CHAPTER] of the Military Officers Association of America (MOAA), I am writing to express support for LB787, which updates the membership and reporting requirements of the Commission on Military and Veterans Affairs.\n\nThis bill strengthens coordination between the Commission and Nebraska's military installations by adding ex officio representation from key commands, helping ensure decisions affecting veterans and service members reflect current realities on the ground.\n\nI urge you to support LB787.\n\nRespectfully,\n[FULL_NAME]\n[CITY], [STATE]\n[CHAPTER], MOAA",
-      "status_label": "Error",
+      "title": "Change provisions relating to the Commission on Military and Veterans Affairs and eliminate provisions relating to veterans homes",
+      "status": 4,
+      "status_label": "Passed",
       "status_note": null,
-      "state_link": "https://nebraskalegislature.gov/bills/view_bill.php?DocumentID=62778&docnum=LB787&leg=109",
-      "legiscan_url": "https://nebraskalegislature.gov/bills/view_bill.php?DocumentID=62778&docnum=LB787&leg=109",
-      "error": "LegiScan API error for op=getSessionList: 429 Too Many Requests",
-      "updated": "2026-10-01T17:59:46.363Z"
+      "last_action_date": "2026-04-17",
+      "last_action": "Approved by Governor on April 14, 2026",
+      "state_link": "https://nebraskalegislature.gov/bills/view_bill.php?DocumentID=62778",
+      "legiscan_url": "https://legiscan.com/NE/bill/LB787/2025",
+      "final_date": "2026-09-13",
+      "updated": "2026-10-02T17:26:16.618Z"
     }
   ]
 }
