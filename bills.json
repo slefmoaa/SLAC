@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-12T20:53:17.398Z",
+  "generated": "2026-10-13T18:51:26.848Z",
   "bills": [
     {
       "state": "",
@@ -28,7 +28,7 @@
       "state_link": "https://www.congress.gov/bill/119th-congress/house-bill/2102",
       "legiscan_url": "https://www.congress.gov/bill/119th-congress/house-bill/2102",
       "final_date": null,
-      "updated": "2026-10-12T20:53:07.629Z"
+      "updated": "2026-10-13T18:51:18.035Z"
     },
     {
       "state": "MI",
@@ -56,7 +56,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5262",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5262/2025",
       "final_date": null,
-      "updated": "2026-10-12T20:53:08.692Z"
+      "updated": "2026-10-13T18:51:18.690Z"
     },
     {
       "state": "MI",
@@ -84,7 +84,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5278",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5278/2025",
       "final_date": null,
-      "updated": "2026-10-12T20:53:09.218Z"
+      "updated": "2026-10-13T18:51:19.181Z"
     },
     {
       "state": "MI",
@@ -112,7 +112,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5279",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5279/2025",
       "final_date": null,
-      "updated": "2026-10-12T20:53:09.720Z"
+      "updated": "2026-10-13T18:51:19.672Z"
     },
     {
       "state": "MI",
@@ -140,7 +140,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5280",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5280/2025",
       "final_date": null,
-      "updated": "2026-10-12T20:53:10.243Z"
+      "updated": "2026-10-13T18:51:20.170Z"
     },
     {
       "state": "MI",
@@ -168,7 +168,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5456",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5456/2025",
       "final_date": null,
-      "updated": "2026-10-12T20:53:10.770Z"
+      "updated": "2026-10-13T18:51:20.672Z"
     },
     {
       "state": "MI",
@@ -196,7 +196,7 @@
       "state_link": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5457",
       "legiscan_url": "https://legiscan.com/MI/bill/HB5457/2025",
       "final_date": null,
-      "updated": "2026-10-12T20:53:11.264Z"
+      "updated": "2026-10-13T18:51:21.161Z"
     },
     {
       "state": "PA",
@@ -224,7 +224,7 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/sb1209",
       "legiscan_url": "https://legiscan.com/PA/bill/SB1209/2025",
       "final_date": null,
-      "updated": "2026-10-12T20:53:12.145Z"
+      "updated": "2026-10-13T18:51:21.875Z"
     },
     {
       "state": "PA",
@@ -252,7 +252,7 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/hb1918",
       "legiscan_url": "https://legiscan.com/PA/bill/HB1918/2025",
       "final_date": null,
-      "updated": "2026-10-12T20:53:12.645Z"
+      "updated": "2026-10-13T18:51:22.518Z"
     },
     {
       "state": "PA",
@@ -280,7 +280,7 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/hb1177",
       "legiscan_url": "https://legiscan.com/PA/bill/HB1177/2025",
       "final_date": null,
-      "updated": "2026-10-12T20:53:13.142Z"
+      "updated": "2026-10-13T18:51:22.993Z"
     },
     {
       "state": "PA",
@@ -307,7 +307,7 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/hb2439",
       "legiscan_url": "https://legiscan.com/PA/bill/HB2439/2025",
       "final_date": null,
-      "updated": "2026-10-12T20:53:13.670Z"
+      "updated": "2026-10-13T18:51:23.498Z"
     },
     {
       "state": "PA",
@@ -335,7 +335,7 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/hb1144",
       "legiscan_url": "https://legiscan.com/PA/bill/HB1144/2025",
       "final_date": null,
-      "updated": "2026-10-12T20:53:14.150Z"
+      "updated": "2026-10-13T18:51:23.970Z"
     },
     {
       "state": "PA",
@@ -363,7 +363,7 @@
       "state_link": "https://www.palegis.us/legislation/bills/2025/hb1257",
       "legiscan_url": "https://legiscan.com/PA/bill/HB1257/2025",
       "final_date": null,
-      "updated": "2026-10-12T20:53:14.672Z"
+      "updated": "2026-10-13T18:51:24.433Z"
     },
     {
       "state": "NJ",
@@ -391,7 +391,7 @@
       "state_link": "https://www.njleg.state.nj.us/bill-search/2026/S1194",
       "legiscan_url": "https://legiscan.com/NJ/bill/S1194/2026",
       "final_date": null,
-      "updated": "2026-10-12T20:53:15.598Z"
+      "updated": "2026-10-13T18:51:25.215Z"
     },
     {
       "state": "SC",
@@ -419,34 +419,7 @@
       "state_link": "https://www.scstatehouse.gov/billsearch.php?billnumbers=4575&session=126&summary=B",
       "legiscan_url": "https://legiscan.com/SC/bill/H4575/2025",
       "final_date": null,
-      "updated": "2026-10-12T20:53:16.285Z"
-    },
-    {
-      "state": "NE",
-      "bill_number": "LB787",
-      "label": "Modernize Commission on Military & Veterans Affairs",
-      "category": "Veterans Affairs Governance",
-      "chapter": "SLEF-MOAA",
-      "summary": "Updates the membership of Nebraska's Commission on Military and Veteran Affairs to add ex officio seats for regional military commands and changes its reporting requirement from an automatic annual report to one made on request.",
-      "priority": false,
-      "badges": [],
-      "advocacy_url": null,
-      "template_url": null,
-      "chamber_target": "unicameral",
-      "position": "support",
-      "position_notes": "Speaker-priority bill sponsored by Sen. Rita Sanders; passed the Unicameral 49-0. Test entry to verify the take-action flow for Nebraska's single-chamber legislature.",
-      "email_subject": "Support for NE LB787 — Commission on Military & Veterans Affairs",
-      "email_template": "Dear [LEGISLATOR_NAME],\n\nAs a member of [CHAPTER] of the Military Officers Association of America (MOAA), I am writing to express support for LB787, which updates the membership and reporting requirements of the Commission on Military and Veterans Affairs.\n\nThis bill strengthens coordination between the Commission and Nebraska's military installations by adding ex officio representation from key commands, helping ensure decisions affecting veterans and service members reflect current realities on the ground.\n\nI urge you to support LB787.\n\nRespectfully,\n[FULL_NAME]\n[CITY], [STATE]\n[CHAPTER], MOAA",
-      "title": "Change provisions relating to the Commission on Military and Veterans Affairs and eliminate provisions relating to veterans homes",
-      "status": 4,
-      "status_label": "Passed",
-      "status_note": null,
-      "last_action_date": "2026-04-17",
-      "last_action": "Approved by Governor on April 14, 2026",
-      "state_link": "https://nebraskalegislature.gov/bills/view_bill.php?DocumentID=62778",
-      "legiscan_url": "https://legiscan.com/NE/bill/LB787/2025",
-      "final_date": "2026-09-13",
-      "updated": "2026-10-12T20:53:16.996Z"
+      "updated": "2026-10-13T18:51:25.849Z"
     }
   ]
 }

@@ -245,23 +245,6 @@
       "position_notes": "This is a standalone House bill (no Senate companion) urging Congress to pass the Major Richard Star Act (H.R. 2102 / S. 1032); it does not change state law and requires no state funding.",
       "email_subject": "Support for H. 4575 — Major Richard Star Act Resolution",
       "email_template": "Dear [LEGISLATOR_NAME],\n\nMy name is [FULL_NAME], and I am a veteran and member of [CHAPTER] of the Military Officers Association of America (MOAA) living in [CITY], [STATE]. I'm writing to ask for your support and a yes vote on H. 4575, a resolution urging Congress to pass the Major Richard Star Act (H.R. 2102 / S. 1032).\n\nThis resolution would not change state law and would not require any funding. It simply urges Congress to correct a 2004 oversight that leaves more than 50,000 medically retired combat-wounded veterans nationwide unable to receive their full earned DoD retirement pay alongside their VA disability compensation.\n\nThank you for your consideration and for your support of South Carolina's veterans.\n\nRespectfully,\n[FULL_NAME]\n[CITY], [STATE]\n[CHAPTER], MOAA"
-    },
-    {
-      "state": "NE",
-      "bill_number": "LB787",
-      "bill_url": "https://nebraskalegislature.gov/bills/view_bill.php?DocumentID=62778&docnum=LB787&leg=109",
-      "label": "Modernize Commission on Military & Veterans Affairs",
-      "category": "Veterans Affairs Governance",
-      "chapter": "SLEF-MOAA",
-      "summary": "Updates the membership of Nebraska's Commission on Military and Veteran Affairs to add ex officio seats for regional military commands and changes its reporting requirement from an automatic annual report to one made on request.",
-      "priority": false,
-      "advocacy_url": "",
-      "chamber_target": "unicameral",
-      "position": "support",
-      "position_notes": "Speaker-priority bill sponsored by Sen. Rita Sanders; passed the Unicameral 49-0. Test entry to verify the take-action flow for Nebraska's single-chamber legislature.",
-      "email_subject": "Support for NE LB787 — Commission on Military & Veterans Affairs",
-      "email_template": "Dear [LEGISLATOR_NAME],\n\nAs a member of [CHAPTER] of the Military Officers Association of America (MOAA), I am writing to express support for LB787, which updates the membership and reporting requirements of the Commission on Military and Veterans Affairs.\n\nThis bill strengthens coordination between the Commission and Nebraska's military installations by adding ex officio representation from key commands, helping ensure decisions affecting veterans and service members reflect current realities on the ground.\n\nI urge you to support LB787.\n\nRespectfully,\n[FULL_NAME]\n[CITY], [STATE]\n[CHAPTER], MOAA",
-      "final_date": "2026-09-13"
     }
   ]
 }
